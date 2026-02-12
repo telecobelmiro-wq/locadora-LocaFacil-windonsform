@@ -1,6 +1,6 @@
 ﻿namespace LocadoraDeCarros
 {
-    partial class TelaAdministrador
+    partial class TelaLoginAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaAdministrador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLoginAdministrador));
             btnEntrar = new Button();
             txtSenha = new TextBox();
             lblSenha = new Label();
@@ -44,12 +44,13 @@
             btnEntrar.FlatAppearance.BorderColor = Color.Black;
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(278, 372);
+            btnEntrar.Location = new Point(278, 386);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(144, 27);
             btnEntrar.TabIndex = 18;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // txtSenha
             // 
@@ -98,7 +99,7 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // TelaAdministrador
+            // TelaLoginAdministrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -110,7 +111,7 @@
             Controls.Add(txtLogin);
             Controls.Add(lblLogin);
             Controls.Add(pictureBox1);
-            Name = "TelaAdministrador";
+            Name = "TelaLoginAdministrador";
             Text = "TelaAdministrador";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

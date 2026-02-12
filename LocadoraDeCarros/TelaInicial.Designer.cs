@@ -92,6 +92,7 @@
             btnCliente.TabIndex = 9;
             btnCliente.Text = "Cliente";
             btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.Click += btnCliente_Click;
             // 
             // btnAdministrador
             // 

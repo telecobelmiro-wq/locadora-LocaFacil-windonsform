@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace LocadoraDeCarros
 {
-    public partial class TelaAdministrador : Form
+    public partial class TelaPrincipal : Form
     {
-        public TelaAdministrador()
+        public TelaPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

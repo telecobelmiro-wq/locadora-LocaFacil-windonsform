@@ -19,9 +19,17 @@ namespace LocadoraDeCarros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var telaAdministrador = new TelaAdministrador();
+            var telaAdministrador = new TelaLoginAdministrador();
             this.Hide();
             telaAdministrador.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            var telaCliente = new TelaLoginCliente();
+            this.Hide();
+            telaCliente.ShowDialog();
             this.Show();
         }
     }
