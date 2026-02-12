@@ -133,5 +133,6 @@
         private Label label3;
         private Button btnCliente;
         private Button btnAdministrador;
+
     }
 }

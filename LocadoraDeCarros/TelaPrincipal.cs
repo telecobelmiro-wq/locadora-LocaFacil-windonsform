@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel;
+using LocadoraDeCarros.Modelo;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using LocadoraDeCarros.Repositories;
+
 
 namespace LocadoraDeCarros
 {
@@ -15,14 +12,28 @@ namespace LocadoraDeCarros
         public TelaPrincipal()
         {
             InitializeComponent();
+
+            Load += TelaPrincipal_Load;
         }
 
-        private void TelaPrincipal_Load(object sender, EventArgs e)
+     
+        private async void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+            await AtualizarTabela();
+        }
+
+        public async Task AtualizarTabela()
+        {
+            var clientes = await ClienteRepository.ObterTodos();
+            dgvTabela.DataSource = new BindingList<Cliente>(clientes.ToList());
+        }
+      
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void dgvTabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

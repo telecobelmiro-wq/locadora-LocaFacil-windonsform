@@ -94,6 +94,7 @@
             dgvTabela.Name = "dgvTabela";
             dgvTabela.Size = new Size(751, 436);
             dgvTabela.TabIndex = 16;
+            dgvTabela.CellContentClick += dgvTabela_CellContentClick;
             // 
             // button1
             // 
