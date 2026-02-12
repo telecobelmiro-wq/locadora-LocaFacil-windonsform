@@ -44,7 +44,7 @@
             btnEntrar.FlatAppearance.BorderColor = Color.Black;
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(278, 386);
+            btnEntrar.Location = new Point(262, 357);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(144, 27);
             btnEntrar.TabIndex = 18;
@@ -56,7 +56,7 @@
             // 
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Segoe UI", 15F);
-            txtSenha.Location = new Point(278, 319);
+            txtSenha.Location = new Point(262, 290);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(144, 27);
             txtSenha.TabIndex = 17;
@@ -65,7 +65,7 @@
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Segoe UI", 15F);
-            lblSenha.Location = new Point(315, 277);
+            lblSenha.Location = new Point(299, 248);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(75, 28);
             lblSenha.TabIndex = 16;
@@ -75,7 +75,7 @@
             // 
             txtLogin.BorderStyle = BorderStyle.None;
             txtLogin.Font = new Font("Segoe UI", 15F);
-            txtLogin.Location = new Point(278, 238);
+            txtLogin.Location = new Point(262, 209);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(144, 27);
             txtLogin.TabIndex = 15;
@@ -84,7 +84,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 15F);
-            lblLogin.Location = new Point(315, 198);
+            lblLogin.Location = new Point(299, 169);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(69, 28);
             lblLogin.TabIndex = 14;
@@ -93,9 +93,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(180, 51);
+            pictureBox1.Location = new Point(154, 36);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(312, 115);
+            pictureBox1.Size = new Size(374, 115);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
