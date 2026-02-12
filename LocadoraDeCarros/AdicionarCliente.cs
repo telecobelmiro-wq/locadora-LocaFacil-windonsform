@@ -16,5 +16,10 @@ namespace LocadoraDeCarros
         {
             InitializeComponent();
         }
+
+        private void lblCor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
