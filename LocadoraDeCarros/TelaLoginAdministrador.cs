@@ -19,7 +19,7 @@ namespace LocadoraDeCarros
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text == "admin" && txtSenha.Text == "1234")
+            if (txtLogin.Text == "admin" && txtSenha.Text == "00")
             {
                 var telaPrincipal = new TelaPrincipal();
                 this.Hide();

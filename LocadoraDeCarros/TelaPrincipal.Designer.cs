@@ -34,9 +34,9 @@
             btnCarros = new Button();
             btnEmprestimos = new Button();
             dgvTabela = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnNovo = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
             SuspendLayout();
@@ -62,6 +62,7 @@
             btnClientes.TabIndex = 13;
             btnClientes.Text = "CLIENTES";
             btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnCarros
             // 
@@ -74,6 +75,7 @@
             btnCarros.TabIndex = 14;
             btnCarros.Text = "CARROS";
             btnCarros.UseVisualStyleBackColor = false;
+            btnCarros.Click += btnCarros_Click;
             // 
             // btnEmprestimos
             // 
@@ -89,39 +91,45 @@
             // 
             // dgvTabela
             // 
+            dgvTabela.AllowUserToAddRows = false;
+            dgvTabela.AllowUserToDeleteRows = false;
             dgvTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTabela.Location = new Point(318, 36);
             dgvTabela.Name = "dgvTabela";
+            dgvTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTabela.Size = new Size(751, 436);
-            dgvTabela.TabIndex = 16;
+            dgvTabela.TabIndex = 0;
             dgvTabela.CellContentClick += dgvTabela_CellContentClick;
             // 
-            // button1
+            // btnNovo
             // 
-            button1.Location = new Point(703, 515);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 45);
-            button1.TabIndex = 17;
-            button1.Text = "NOVO";
-            button1.UseVisualStyleBackColor = true;
+            btnNovo.Location = new Point(703, 515);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(120, 45);
+            btnNovo.TabIndex = 17;
+            btnNovo.Text = "NOVO";
+            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += button1_Click;
             // 
-            // button2
+            // btnEditar
             // 
-            button2.Location = new Point(838, 515);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 45);
-            button2.TabIndex = 18;
-            button2.Text = "EDITAR";
-            button2.UseVisualStyleBackColor = true;
+            btnEditar.Location = new Point(838, 515);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(120, 45);
+            btnEditar.TabIndex = 18;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += button2_Click;
             // 
-            // button3
+            // btnExcluir
             // 
-            button3.Location = new Point(974, 515);
-            button3.Name = "button3";
-            button3.Size = new Size(120, 45);
-            button3.TabIndex = 19;
-            button3.Text = "EXCLUIR";
-            button3.UseVisualStyleBackColor = true;
+            btnExcluir.Location = new Point(974, 515);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(120, 45);
+            btnExcluir.TabIndex = 19;
+            btnExcluir.Text = "EXCLUIR";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // TelaPrincipal
             // 
@@ -129,9 +137,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1106, 577);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnEditar);
+            Controls.Add(btnNovo);
             Controls.Add(dgvTabela);
             Controls.Add(btnEmprestimos);
             Controls.Add(btnCarros);
@@ -152,8 +160,8 @@
         private Button btnCarros;
         private Button btnEmprestimos;
         private DataGridView dgvTabela;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnNovo;
+        private Button btnEditar;
+        private Button btnExcluir;
     }
 }

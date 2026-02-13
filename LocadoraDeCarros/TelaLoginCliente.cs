@@ -16,5 +16,22 @@ namespace LocadoraDeCarros
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (txtNomeCliente.Text == "")
+            {
+                MessageBox.Show("Digite seu nome!");
+                return;
+            }
+
+            MessageBox.Show("Bem-vindo " + txtNomeCliente.Text + ", meu galo");
+        }
+
+        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
