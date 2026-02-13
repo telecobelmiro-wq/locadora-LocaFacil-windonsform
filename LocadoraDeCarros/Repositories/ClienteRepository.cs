@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LocadoraDeCarros.Banco;
+﻿using LocadoraDeCarros.Banco;
 using LocadoraDeCarros.Modelo;
 using Dapper;
 namespace LocadoraDeCarros.Repositories

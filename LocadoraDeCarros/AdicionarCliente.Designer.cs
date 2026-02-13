@@ -29,122 +29,152 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarCliente));
-            btnAdicionarCarro = new Button();
-            this.txtCPF = new TextBox();
-            this.txtEmail = new TextBox();
-            this.txtNome = new TextBox();
-            this.lblCPF = new Label();
-            this.lblSexo = new Label();
-            this.lblEmail = new Label();
-            lblNome = new Label();
             pictureBox1 = new PictureBox();
-            rdbMasculino = new RadioButton();
-            rdbFeminino = new RadioButton();
+            lblModelo = new Label();
+            lblMarca = new Label();
+            lblPreco = new Label();
+            lblSexo = new Label();
+            btnAdicionarNovoCliente = new Button();
+            txtNome = new TextBox();
+            txtEmail = new TextBox();
+            txtCpf = new TextBox();
+            rbMasculino = new RadioButton();
+            rbFeminino = new RadioButton();
+            lblDataNascimento = new Label();
+            dtpDataNascimento = new DateTimePicker();
+            lblErro = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnAdicionarCarro
-            // 
-            btnAdicionarCarro.BackColor = Color.Transparent;
-            btnAdicionarCarro.Location = new Point(330, 357);
-            btnAdicionarCarro.Name = "btnAdicionarCarro";
-            btnAdicionarCarro.Size = new Size(130, 38);
-            btnAdicionarCarro.TabIndex = 35;
-            btnAdicionarCarro.Text = "Adicionar Carro";
-            btnAdicionarCarro.UseVisualStyleBackColor = false;
-            // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new Point(281, 282);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new Size(100, 23);
-            this.txtCPF.TabIndex = 33;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new Point(417, 215);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new Size(100, 23);
-            this.txtEmail.TabIndex = 32;
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new Point(281, 215);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new Size(100, 23);
-            this.txtNome.TabIndex = 30;
-            // 
-            // lblCPF
-            // 
-            this.lblCPF.AutoSize = true;
-            this.lblCPF.Font = new Font("Segoe UI", 12F);
-            this.lblCPF.Location = new Point(316, 258);
-            this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new Size(37, 21);
-            this.lblCPF.TabIndex = 28;
-            this.lblCPF.Text = "CPF";
-            // 
-            // lblSexo
-            // 
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Font = new Font("Segoe UI", 12F);
-            this.lblSexo.Location = new Point(446, 258);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new Size(48, 21);
-            this.lblSexo.TabIndex = 27;
-            this.lblSexo.Text = "SEXO";
-            this.lblSexo.Click += this.lblCor_Click;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new Font("Segoe UI", 12F);
-            this.lblEmail.Location = new Point(440, 191);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new Size(54, 21);
-            this.lblEmail.TabIndex = 26;
-            this.lblEmail.Text = "EMAIL";
-            // 
-            // lblNome
-            // 
-            lblNome.AutoSize = true;
-            lblNome.Font = new Font("Segoe UI", 12F);
-            lblNome.Location = new Point(307, 191);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(56, 21);
-            lblNome.TabIndex = 25;
-            lblNome.Text = "NOME";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(211, 65);
+            pictureBox1.Location = new Point(218, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(378, 115);
-            pictureBox1.TabIndex = 24;
+            pictureBox1.Size = new Size(308, 109);
+            pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // rdbMasculino
+            // lblModelo
             // 
-            rdbMasculino.AutoSize = true;
-            rdbMasculino.Location = new Point(418, 286);
-            rdbMasculino.Name = "rdbMasculino";
-            rdbMasculino.Size = new Size(80, 19);
-            rdbMasculino.TabIndex = 36;
-            rdbMasculino.TabStop = true;
-            rdbMasculino.Text = "Masculino";
-            rdbMasculino.UseVisualStyleBackColor = true;
+            lblModelo.AutoSize = true;
+            lblModelo.Location = new Point(208, 194);
+            lblModelo.Name = "lblModelo";
+            lblModelo.Size = new Size(42, 15);
+            lblModelo.TabIndex = 14;
+            lblModelo.Text = "NOME";
             // 
-            // rdbFeminino
+            // lblMarca
             // 
-            rdbFeminino.AutoSize = true;
-            rdbFeminino.Location = new Point(418, 311);
-            rdbFeminino.Name = "rdbFeminino";
-            rdbFeminino.Size = new Size(75, 19);
-            rdbFeminino.TabIndex = 37;
-            rdbFeminino.TabStop = true;
-            rdbFeminino.Text = "Feminino";
-            rdbFeminino.UseVisualStyleBackColor = true;
+            lblMarca.AutoSize = true;
+            lblMarca.Location = new Point(208, 270);
+            lblMarca.Name = "lblMarca";
+            lblMarca.Size = new Size(41, 15);
+            lblMarca.TabIndex = 15;
+            lblMarca.Text = "EMAIL";
+            // 
+            // lblPreco
+            // 
+            lblPreco.AutoSize = true;
+            lblPreco.Location = new Point(482, 194);
+            lblPreco.Name = "lblPreco";
+            lblPreco.Size = new Size(28, 15);
+            lblPreco.TabIndex = 16;
+            lblPreco.Text = "CPF";
+            // 
+            // lblSexo
+            // 
+            lblSexo.AutoSize = true;
+            lblSexo.Location = new Point(482, 270);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(35, 15);
+            lblSexo.TabIndex = 17;
+            lblSexo.Text = "SEXO";
+            // 
+            // btnAdicionarNovoCliente
+            // 
+            btnAdicionarNovoCliente.BackColor = Color.Black;
+            btnAdicionarNovoCliente.FlatStyle = FlatStyle.Popup;
+            btnAdicionarNovoCliente.ForeColor = SystemColors.ControlLight;
+            btnAdicionarNovoCliente.Location = new Point(307, 385);
+            btnAdicionarNovoCliente.Name = "btnAdicionarNovoCliente";
+            btnAdicionarNovoCliente.Size = new Size(169, 23);
+            btnAdicionarNovoCliente.TabIndex = 19;
+            btnAdicionarNovoCliente.Text = "ADICIONAR NOVO CLIENTE";
+            btnAdicionarNovoCliente.UseVisualStyleBackColor = false;
+            btnAdicionarNovoCliente.Click += btnAdicionarNovoCliente_Click;
+            // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(198, 223);
+            txtNome.Name = "txtNome";
+            txtNome.PlaceholderText = "Dioclésio Santos";
+            txtNome.Size = new Size(125, 23);
+            txtNome.TabIndex = 20;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(198, 300);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "exemplo@gmail.com";
+            txtEmail.Size = new Size(125, 23);
+            txtEmail.TabIndex = 21;
+            txtEmail.TextChanged += txtEmail_TextChanged;
+            // 
+            // txtCpf
+            // 
+            txtCpf.Location = new Point(479, 218);
+            txtCpf.Name = "txtCpf";
+            txtCpf.PlaceholderText = "000.000.000-00";
+            txtCpf.Size = new Size(100, 23);
+            txtCpf.TabIndex = 22;
+            // 
+            // rbMasculino
+            // 
+            rbMasculino.AutoSize = true;
+            rbMasculino.Location = new Point(479, 288);
+            rbMasculino.Name = "rbMasculino";
+            rbMasculino.Size = new Size(93, 19);
+            rbMasculino.TabIndex = 23;
+            rbMasculino.TabStop = true;
+            rbMasculino.Text = "MASCULINO";
+            rbMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rbFeminino
+            // 
+            rbFeminino.AutoSize = true;
+            rbFeminino.Location = new Point(479, 313);
+            rbFeminino.Name = "rbFeminino";
+            rbFeminino.Size = new Size(81, 19);
+            rbFeminino.TabIndex = 24;
+            rbFeminino.TabStop = true;
+            rbFeminino.Text = "FEMININO";
+            rbFeminino.UseVisualStyleBackColor = true;
+            // 
+            // lblDataNascimento
+            // 
+            lblDataNascimento.AutoSize = true;
+            lblDataNascimento.Location = new Point(582, 160);
+            lblDataNascimento.Name = "lblDataNascimento";
+            lblDataNascimento.Size = new Size(131, 15);
+            lblDataNascimento.TabIndex = 25;
+            lblDataNascimento.Text = "DATA DE NASCIMENTO";
+            // 
+            // dtpDataNascimento
+            // 
+            dtpDataNascimento.Location = new Point(582, 186);
+            dtpDataNascimento.Name = "dtpDataNascimento";
+            dtpDataNascimento.Size = new Size(200, 23);
+            dtpDataNascimento.TabIndex = 26;
+            // 
+            // lblErro
+            // 
+            lblErro.AutoSize = true;
+            lblErro.ForeColor = Color.Red;
+            lblErro.Location = new Point(307, 160);
+            lblErro.Name = "lblErro";
+            lblErro.Size = new Size(0, 15);
+            lblErro.TabIndex = 27;
             // 
             // AdicionarCliente
             // 
@@ -152,19 +182,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(800, 450);
-            Controls.Add(rdbFeminino);
-            Controls.Add(rdbMasculino);
-            Controls.Add(btnAdicionarCarro);
-            Controls.Add(this.txtCPF);
-            Controls.Add(this.txtEmail);
-            Controls.Add(this.txtNome);
-            Controls.Add(this.lblCPF);
-            Controls.Add(this.lblSexo);
-            Controls.Add(this.lblEmail);
-            Controls.Add(lblNome);
+            Controls.Add(lblErro);
+            Controls.Add(dtpDataNascimento);
+            Controls.Add(lblDataNascimento);
+            Controls.Add(rbFeminino);
+            Controls.Add(rbMasculino);
+            Controls.Add(txtCpf);
+            Controls.Add(txtEmail);
+            Controls.Add(txtNome);
+            Controls.Add(btnAdicionarNovoCliente);
+            Controls.Add(lblSexo);
+            Controls.Add(lblPreco);
+            Controls.Add(lblMarca);
+            Controls.Add(lblModelo);
             Controls.Add(pictureBox1);
             Name = "AdicionarCliente";
             Text = "AdicionarCliente";
+            Load += AdicionarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -172,17 +206,21 @@
 
         #endregion
 
-        private Button btnAdicionarCarro;
-        private TextBox txtCor;
-        private TextBox txtPreco;
-        private TextBox txtMarca;
-        private TextBox txtModelo;
-        private Label lblPreco;
-        private Label lblCor;
-        private Label lblMarca;
-        private Label lblNome;
         private PictureBox pictureBox1;
-        private RadioButton rdbMasculino;
-        private RadioButton rdbFeminino;
+        private Label lblModelo;
+        private Label lblMarca;
+        private Label lblPreco;
+        private Label lblSexo;
+        private Label lblAno;
+        private Button btnAdicionarNovoCliente;
+        private TextBox txtNome;
+        private TextBox txtEmail;
+        private TextBox txtCpf;
+        private RadioButton rbMasculino;
+        private RadioButton rbFeminino;
+        private TextBox txtAno;
+        private Label lblDataNascimento;
+        private DateTimePicker dtpDataNascimento;
+        private Label lblErro;
     }
 }
