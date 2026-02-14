@@ -44,9 +44,9 @@
             btnEntrar.FlatAppearance.BorderColor = Color.Black;
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(262, 357);
+            btnEntrar.Location = new Point(185, 298);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(144, 27);
+            btnEntrar.Size = new Size(114, 40);
             btnEntrar.TabIndex = 18;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -56,7 +56,7 @@
             // 
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Segoe UI", 15F);
-            txtSenha.Location = new Point(262, 290);
+            txtSenha.Location = new Point(170, 238);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(144, 27);
             txtSenha.TabIndex = 17;
@@ -64,10 +64,10 @@
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Font = new Font("Segoe UI", 15F);
-            lblSenha.Location = new Point(299, 248);
+            lblSenha.Font = new Font("Segoe UI", 12F);
+            lblSenha.Location = new Point(207, 214);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(75, 28);
+            lblSenha.Size = new Size(60, 21);
             lblSenha.TabIndex = 16;
             lblSenha.Text = "SENHA";
             // 
@@ -75,7 +75,7 @@
             // 
             txtLogin.BorderStyle = BorderStyle.None;
             txtLogin.Font = new Font("Segoe UI", 15F);
-            txtLogin.Location = new Point(262, 209);
+            txtLogin.Location = new Point(170, 175);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(144, 27);
             txtLogin.TabIndex = 15;
@@ -83,17 +83,18 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI", 15F);
-            lblLogin.Location = new Point(299, 169);
+            lblLogin.Font = new Font("Segoe UI", 12F);
+            lblLogin.Location = new Point(207, 151);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(69, 28);
+            lblLogin.Size = new Size(56, 21);
             lblLogin.TabIndex = 14;
             lblLogin.Text = "LOGIN";
+            lblLogin.Click += lblLogin_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(154, 36);
+            pictureBox1.Location = new Point(56, 19);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(374, 115);
             pictureBox1.TabIndex = 13;
@@ -104,7 +105,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(673, 450);
+            ClientSize = new Size(484, 361);
             Controls.Add(btnEntrar);
             Controls.Add(txtSenha);
             Controls.Add(lblSenha);

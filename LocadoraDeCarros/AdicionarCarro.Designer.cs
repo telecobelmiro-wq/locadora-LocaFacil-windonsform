@@ -47,7 +47,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(207, 51);
+            pictureBox1.Location = new Point(52, 22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(378, 115);
             pictureBox1.TabIndex = 12;
@@ -57,7 +57,7 @@
             // 
             lblModelo.AutoSize = true;
             lblModelo.Font = new Font("Segoe UI", 12F);
-            lblModelo.Location = new Point(223, 186);
+            lblModelo.Location = new Point(69, 151);
             lblModelo.Name = "lblModelo";
             lblModelo.Size = new Size(74, 21);
             lblModelo.TabIndex = 13;
@@ -67,7 +67,7 @@
             // 
             lblMarca.AutoSize = true;
             lblMarca.Font = new Font("Segoe UI", 12F);
-            lblMarca.Location = new Point(364, 186);
+            lblMarca.Location = new Point(210, 151);
             lblMarca.Name = "lblMarca";
             lblMarca.Size = new Size(64, 21);
             lblMarca.TabIndex = 14;
@@ -77,7 +77,7 @@
             // 
             lblCor.AutoSize = true;
             lblCor.Font = new Font("Segoe UI", 12F);
-            lblCor.Location = new Point(507, 186);
+            lblCor.Location = new Point(353, 151);
             lblCor.Name = "lblCor";
             lblCor.Size = new Size(42, 21);
             lblCor.TabIndex = 15;
@@ -87,7 +87,7 @@
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 12F);
-            lblPreco.Location = new Point(292, 250);
+            lblPreco.Location = new Point(138, 215);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(59, 21);
             lblPreco.TabIndex = 16;
@@ -97,7 +97,7 @@
             // 
             lblAno.AutoSize = true;
             lblAno.Font = new Font("Segoe UI", 12F);
-            lblAno.Location = new Point(440, 250);
+            lblAno.Location = new Point(286, 215);
             lblAno.Name = "lblAno";
             lblAno.Size = new Size(44, 21);
             lblAno.TabIndex = 17;
@@ -105,35 +105,35 @@
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(208, 210);
+            txtModelo.Location = new Point(54, 175);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(100, 23);
             txtModelo.TabIndex = 18;
             // 
             // txtAno
             // 
-            txtAno.Location = new Point(410, 274);
+            txtAno.Location = new Point(256, 239);
             txtAno.Name = "txtAno";
             txtAno.Size = new Size(100, 23);
             txtAno.TabIndex = 19;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(344, 210);
+            txtMarca.Location = new Point(190, 175);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(100, 23);
             txtMarca.TabIndex = 20;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(274, 274);
+            txtPreco.Location = new Point(120, 239);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(100, 23);
             txtPreco.TabIndex = 21;
             // 
             // txtCor
             // 
-            txtCor.Location = new Point(476, 210);
+            txtCor.Location = new Point(322, 175);
             txtCor.Name = "txtCor";
             txtCor.Size = new Size(100, 23);
             txtCor.TabIndex = 22;
@@ -141,7 +141,7 @@
             // btnAdicionarCarro
             // 
             btnAdicionarCarro.BackColor = Color.Transparent;
-            btnAdicionarCarro.Location = new Point(328, 333);
+            btnAdicionarCarro.Location = new Point(172, 296);
             btnAdicionarCarro.Name = "btnAdicionarCarro";
             btnAdicionarCarro.Size = new Size(130, 38);
             btnAdicionarCarro.TabIndex = 23;
@@ -153,7 +153,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(484, 361);
             Controls.Add(btnAdicionarCarro);
             Controls.Add(txtCor);
             Controls.Add(txtPreco);

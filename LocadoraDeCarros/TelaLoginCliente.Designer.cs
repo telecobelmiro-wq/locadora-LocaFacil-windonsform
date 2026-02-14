@@ -39,24 +39,24 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(220, 30);
+            pictureBox1.Location = new Point(57, 26);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(312, 115);
+            pictureBox1.Size = new Size(365, 115);
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
             // lblLoginCliente
             // 
-            lblLoginCliente.Font = new Font("Segoe UI", 15F);
-            lblLoginCliente.Location = new Point(343, 192);
+            lblLoginCliente.Font = new Font("Segoe UI", 12F);
+            lblLoginCliente.Location = new Point(213, 163);
             lblLoginCliente.Name = "lblLoginCliente";
-            lblLoginCliente.Size = new Size(74, 33);
+            lblLoginCliente.Size = new Size(57, 22);
             lblLoginCliente.TabIndex = 13;
             lblLoginCliente.Text = "LOGIN";
             // 
             // txtNomeCliente
             // 
-            txtNomeCliente.Location = new Point(312, 235);
+            txtNomeCliente.Location = new Point(176, 188);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.PlaceholderText = "Insira seu nome aqui ";
             txtNomeCliente.Size = new Size(124, 23);
@@ -69,9 +69,9 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Segoe UI", 12F);
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(319, 278);
+            btnEntrar.Location = new Point(191, 232);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(111, 45);
+            btnEntrar.Size = new Size(99, 45);
             btnEntrar.TabIndex = 15;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(484, 361);
             Controls.Add(btnEntrar);
             Controls.Add(txtNomeCliente);
             Controls.Add(lblLoginCliente);

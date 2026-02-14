@@ -44,7 +44,7 @@
             label4.BackColor = Color.Gray;
             label4.Font = new Font("Segoe UI", 10F);
             label4.ForeColor = SystemColors.ControlText;
-            label4.Location = new Point(348, 268);
+            label4.Location = new Point(268, 217);
             label4.Name = "label4";
             label4.Size = new Size(51, 19);
             label4.TabIndex = 13;
@@ -55,7 +55,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(269, 268);
+            label2.Location = new Point(170, 217);
             label2.Name = "label2";
             label2.Size = new Size(51, 19);
             label2.TabIndex = 12;
@@ -64,9 +64,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(151, 42);
+            pictureBox1.Location = new Point(53, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(312, 115);
+            pictureBox1.Size = new Size(373, 115);
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
@@ -76,7 +76,7 @@
             label3.BackColor = Color.Gray;
             label3.Font = new Font("Segoe UI", 15F);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(316, 268);
+            label3.Location = new Point(227, 217);
             label3.Name = "label3";
             label3.Size = new Size(35, 28);
             label3.TabIndex = 10;
@@ -86,7 +86,7 @@
             // 
             btnCliente.AutoSize = true;
             btnCliente.ForeColor = SystemColors.ControlText;
-            btnCliente.Location = new Point(270, 328);
+            btnCliente.Location = new Point(183, 259);
             btnCliente.Name = "btnCliente";
             btnCliente.Size = new Size(120, 34);
             btnCliente.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             btnAdministrador.BackColor = SystemColors.GradientInactiveCaption;
             btnAdministrador.ForeColor = SystemColors.ControlText;
-            btnAdministrador.Location = new Point(270, 198);
+            btnAdministrador.Location = new Point(183, 178);
             btnAdministrador.Name = "btnAdministrador";
             btnAdministrador.Size = new Size(120, 36);
             btnAdministrador.TabIndex = 8;
@@ -111,7 +111,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(667, 450);
+            ClientSize = new Size(484, 361);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
