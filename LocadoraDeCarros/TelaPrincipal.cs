@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using LocadoraDeCarros.Repositories;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace LocadoraDeCarros
@@ -41,20 +42,43 @@ namespace LocadoraDeCarros
 
         }
 
-        private void btnCarros_Click(object sender, EventArgs e)
+        private async void btnCarros_Click(object sender, EventArgs e)
         {
-          
+            dgvTabela.DataSource = await CarroRepository.ObterTodos();
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private async void btnClientes_Click(object sender, EventArgs e)
         {
-
+            dgvTabela.DataSource = null;
+            dgvTabela.DataSource = await ClienteRepository.ObterTodos();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+ 
+            if (dgvTabela.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um cliente para editar.");
+                return;
+            }
 
+            int idCliente = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
+
+            
+            var atualiza = new TelaEditarCliente(idCliente);
+
+            atualiza.ShowDialog();
+
+
+            AtualizarTabela();
         }
+
+        
+
+
+
+
+
 
 
 

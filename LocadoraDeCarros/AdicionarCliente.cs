@@ -14,6 +14,7 @@ namespace LocadoraDeCarros
             InitializeComponent();
 
             this.telaPrincipal = telaPrincipal;
+
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
