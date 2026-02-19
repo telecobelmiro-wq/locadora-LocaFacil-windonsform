@@ -88,6 +88,7 @@
             btnEmprestimos.TabIndex = 15;
             btnEmprestimos.Text = "EMPRESTIMOS";
             btnEmprestimos.UseVisualStyleBackColor = false;
+            btnEmprestimos.Click += btnEmprestimos_Click;
             // 
             // dgvTabela
             // 

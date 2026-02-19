@@ -3,6 +3,7 @@ using LocadoraDeCarros.Modelo;
 using System.ComponentModel;
 using System.Linq;
 using LocadoraDeCarros.Repositories;
+using System.Data.SqlClient;
 
 
 namespace LocadoraDeCarros
@@ -15,6 +16,8 @@ namespace LocadoraDeCarros
 
             Load += TelaPrincipal_Load;
         }
+
+        
 
 
         private async void TelaPrincipal_Load(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace LocadoraDeCarros
 
         private void btnCarros_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace LocadoraDeCarros
 
         private void button1_Click(object sender, EventArgs e)
         {
-           var adicionarCliente = new AdicionarCliente(this);
+            var adicionarCliente = new AdicionarCliente(this);
             adicionarCliente.Show();
         }
 
@@ -93,6 +96,12 @@ namespace LocadoraDeCarros
 
                 await AtualizarTabela();
             }
+        }
+
+        private void btnEmprestimos_Click(object sender, EventArgs e)
+        {
+            TelaEmprestimos tela = new TelaEmprestimos();
+            tela.ShowDialog();
         }
     }
 }
