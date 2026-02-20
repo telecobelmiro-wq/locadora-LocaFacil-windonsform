@@ -35,15 +35,18 @@
             txtEmailEditarCli = new TextBox();
             btnSalvarEditarCli = new Button();
             pictureBox1 = new PictureBox();
-            lblSexoEdiatrCli = new Label();
-            txtSexoEditarCli = new TextBox();
             lblCpfEdiatrCli = new Label();
             txtCpfEditarCli = new TextBox();
+            rbMaculinoEditarCli = new RadioButton();
+            rbFemininoEditarCli = new RadioButton();
+            lblSexoEditarCli = new Label();
+            btnCancelarEditarCli = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtNome
             // 
+            txtNome.Enabled = false;
             txtNome.Location = new Point(196, 204);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(100, 23);
@@ -61,7 +64,7 @@
             // lblEmailEditarCLi
             // 
             lblEmailEditarCLi.AutoSize = true;
-            lblEmailEditarCLi.Location = new Point(196, 255);
+            lblEmailEditarCLi.Location = new Point(196, 273);
             lblEmailEditarCLi.Name = "lblEmailEditarCLi";
             lblEmailEditarCLi.Size = new Size(41, 15);
             lblEmailEditarCLi.TabIndex = 2;
@@ -69,19 +72,19 @@
             // 
             // txtEmailEditarCli
             // 
-            txtEmailEditarCli.Location = new Point(196, 273);
+            txtEmailEditarCli.Location = new Point(196, 291);
             txtEmailEditarCli.Name = "txtEmailEditarCli";
             txtEmailEditarCli.Size = new Size(100, 23);
             txtEmailEditarCli.TabIndex = 3;
             // 
             // btnSalvarEditarCli
             // 
-            btnSalvarEditarCli.BackColor = SystemColors.InactiveCaptionText;
+            btnSalvarEditarCli.BackColor = Color.Black;
             btnSalvarEditarCli.FlatStyle = FlatStyle.Popup;
             btnSalvarEditarCli.ForeColor = SystemColors.ControlLight;
             btnSalvarEditarCli.Location = new Point(673, 379);
             btnSalvarEditarCli.Name = "btnSalvarEditarCli";
-            btnSalvarEditarCli.Size = new Size(98, 49);
+            btnSalvarEditarCli.Size = new Size(89, 49);
             btnSalvarEditarCli.TabIndex = 8;
             btnSalvarEditarCli.Text = "SALVAR";
             btnSalvarEditarCli.UseVisualStyleBackColor = false;
@@ -95,26 +98,11 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // lblSexoEdiatrCli
-            // 
-            lblSexoEdiatrCli.AutoSize = true;
-            lblSexoEdiatrCli.Location = new Point(503, 186);
-            lblSexoEdiatrCli.Name = "lblSexoEdiatrCli";
-            lblSexoEdiatrCli.Size = new Size(35, 15);
-            lblSexoEdiatrCli.TabIndex = 6;
-            lblSexoEdiatrCli.Text = "SEXO";
-            // 
-            // txtSexoEditarCli
-            // 
-            txtSexoEditarCli.Location = new Point(503, 204);
-            txtSexoEditarCli.Name = "txtSexoEditarCli";
-            txtSexoEditarCli.Size = new Size(100, 23);
-            txtSexoEditarCli.TabIndex = 7;
-            // 
             // lblCpfEdiatrCli
             // 
             lblCpfEdiatrCli.AutoSize = true;
-            lblCpfEdiatrCli.Location = new Point(503, 255);
+            lblCpfEdiatrCli.Enabled = false;
+            lblCpfEdiatrCli.Location = new Point(503, 273);
             lblCpfEdiatrCli.Name = "lblCpfEdiatrCli";
             lblCpfEdiatrCli.Size = new Size(28, 15);
             lblCpfEdiatrCli.TabIndex = 4;
@@ -122,28 +110,79 @@
             // 
             // txtCpfEditarCli
             // 
-            txtCpfEditarCli.Location = new Point(503, 273);
+            txtCpfEditarCli.Enabled = false;
+            txtCpfEditarCli.Location = new Point(503, 291);
             txtCpfEditarCli.Name = "txtCpfEditarCli";
             txtCpfEditarCli.Size = new Size(100, 23);
             txtCpfEditarCli.TabIndex = 5;
             // 
-            // TelaEditarCliente
+            // rbMaculinoEditarCli
+            // 
+            rbMaculinoEditarCli.AutoSize = true;
+            rbMaculinoEditarCli.Enabled = false;
+            rbMaculinoEditarCli.Location = new Point(503, 204);
+            rbMaculinoEditarCli.Name = "rbMaculinoEditarCli";
+            rbMaculinoEditarCli.Size = new Size(93, 19);
+            rbMaculinoEditarCli.TabIndex = 14;
+            rbMaculinoEditarCli.TabStop = true;
+            rbMaculinoEditarCli.Text = "MASCULINO";
+            rbMaculinoEditarCli.UseVisualStyleBackColor = true;
+            // 
+            // rbFemininoEditarCli
+            // 
+            rbFemininoEditarCli.AutoSize = true;
+            rbFemininoEditarCli.Enabled = false;
+            rbFemininoEditarCli.Location = new Point(503, 229);
+            rbFemininoEditarCli.Name = "rbFemininoEditarCli";
+            rbFemininoEditarCli.Size = new Size(81, 19);
+            rbFemininoEditarCli.TabIndex = 15;
+            rbFemininoEditarCli.TabStop = true;
+            rbFemininoEditarCli.Text = "FEMININO";
+            rbFemininoEditarCli.UseVisualStyleBackColor = true;
+            rbFemininoEditarCli.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // lblSexoEditarCli
+            // 
+            lblSexoEditarCli.AutoSize = true;
+            lblSexoEditarCli.Enabled = false;
+            lblSexoEditarCli.Location = new Point(503, 186);
+            lblSexoEditarCli.Name = "lblSexoEditarCli";
+            lblSexoEditarCli.Size = new Size(35, 15);
+            lblSexoEditarCli.TabIndex = 16;
+            lblSexoEditarCli.Text = "SEXO";
+            // 
+            // btnCancelarEditarCli
+            // 
+            btnCancelarEditarCli.BackColor = Color.Black;
+            btnCancelarEditarCli.FlatStyle = FlatStyle.Popup;
+            btnCancelarEditarCli.ForeColor = SystemColors.ControlLight;
+            btnCancelarEditarCli.Location = new Point(559, 379);
+            btnCancelarEditarCli.Name = "btnCancelarEditarCli";
+            btnCancelarEditarCli.Size = new Size(89, 49);
+            btnCancelarEditarCli.TabIndex = 17;
+            btnCancelarEditarCli.Text = "CANCELAR";
+            btnCancelarEditarCli.UseVisualStyleBackColor = false;
+            btnCancelarEditarCli.Click += btnCancelarEditarCli_Click;
+            // 
+            // a
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCancelarEditarCli);
+            Controls.Add(lblSexoEditarCli);
+            Controls.Add(rbFemininoEditarCli);
+            Controls.Add(rbMaculinoEditarCli);
             Controls.Add(pictureBox1);
             Controls.Add(btnSalvarEditarCli);
-            Controls.Add(txtSexoEditarCli);
-            Controls.Add(lblSexoEdiatrCli);
             Controls.Add(txtCpfEditarCli);
             Controls.Add(lblCpfEdiatrCli);
             Controls.Add(txtEmailEditarCli);
             Controls.Add(lblEmailEditarCLi);
             Controls.Add(lblNomEditarCli);
             Controls.Add(txtNome);
-            Name = "TelaEditarCliente";
+            Name = "a";
             Text = "TelaEditarCliente";
             Load += TelaEditarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -159,9 +198,11 @@
         private TextBox txtEmailEditarCli;
         private Button btnSalvarEditarCli;
         private PictureBox pictureBox1;
-        private Label lblSexoEdiatrCli;
-        private TextBox txtSexoEditarCli;
         private Label lblCpfEdiatrCli;
         private TextBox txtCpfEditarCli;
+        private RadioButton rbMaculinoEditarCli;
+        private RadioButton rbFemininoEditarCli;
+        private Label lblSexoEditarCli;
+        private Button btnCancelarEditarCli;
     }
 }

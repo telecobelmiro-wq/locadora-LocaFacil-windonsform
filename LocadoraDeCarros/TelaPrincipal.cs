@@ -63,25 +63,15 @@ namespace LocadoraDeCarros
             }
 
             int idCliente = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
-
             
             var atualiza = new TelaEditarCliente(idCliente);
+
 
             atualiza.ShowDialog();
 
 
             AtualizarTabela();
         }
-
-        
-
-
-
-
-
-
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
