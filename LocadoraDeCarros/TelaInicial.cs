@@ -15,6 +15,14 @@ namespace LocadoraDeCarros
         public TelaInicial()
         {
             InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
+            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
