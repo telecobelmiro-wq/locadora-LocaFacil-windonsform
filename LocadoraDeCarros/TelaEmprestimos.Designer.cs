@@ -158,6 +158,7 @@
             btnSalvarEmprestimos.TabIndex = 26;
             btnSalvarEmprestimos.Text = "SALVAR";
             btnSalvarEmprestimos.UseVisualStyleBackColor = false;
+            btnSalvarEmprestimos.Click += btnSalvarEmprestimos_Click;
             // 
             // cmbStatusEmprestimos
             // 

@@ -56,7 +56,7 @@
             btnClientes.BackColor = SystemColors.InactiveCaptionText;
             btnClientes.FlatStyle = FlatStyle.Popup;
             btnClientes.ForeColor = SystemColors.ControlLightLight;
-            btnClientes.Location = new Point(62, 165);
+            btnClientes.Location = new Point(40, 235);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(120, 45);
             btnClientes.TabIndex = 13;
@@ -69,7 +69,7 @@
             btnCarros.BackColor = SystemColors.InactiveCaptionText;
             btnCarros.FlatStyle = FlatStyle.Popup;
             btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(62, 259);
+            btnCarros.Location = new Point(40, 328);
             btnCarros.Name = "btnCarros";
             btnCarros.Size = new Size(120, 45);
             btnCarros.TabIndex = 14;
@@ -79,14 +79,14 @@
             // 
             // btnEmprestimos
             // 
-            btnEmprestimos.BackColor = SystemColors.InactiveCaptionText;
-            btnEmprestimos.FlatStyle = FlatStyle.Popup;
-            btnEmprestimos.ForeColor = SystemColors.ControlLightLight;
-            btnEmprestimos.Location = new Point(62, 351);
+            btnEmprestimos.BackColor = Color.Gray;
+            btnEmprestimos.FlatStyle = FlatStyle.System;
+            btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
+            btnEmprestimos.Location = new Point(568, 515);
             btnEmprestimos.Name = "btnEmprestimos";
             btnEmprestimos.Size = new Size(120, 45);
             btnEmprestimos.TabIndex = 15;
-            btnEmprestimos.Text = "EMPRESTIMOS";
+            btnEmprestimos.Text = "NOVO EMPRESTIMO";
             btnEmprestimos.UseVisualStyleBackColor = false;
             btnEmprestimos.Click += btnEmprestimos_Click;
             // 
@@ -95,10 +95,10 @@
             dgvTabela.AllowUserToAddRows = false;
             dgvTabela.AllowUserToDeleteRows = false;
             dgvTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTabela.Location = new Point(298, 153);
+            dgvTabela.Location = new Point(214, 138);
             dgvTabela.Name = "dgvTabela";
             dgvTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTabela.Size = new Size(676, 268);
+            dgvTabela.Size = new Size(676, 346);
             dgvTabela.TabIndex = 0;
             dgvTabela.CellContentClick += dgvTabela_CellContentClick;
             // 

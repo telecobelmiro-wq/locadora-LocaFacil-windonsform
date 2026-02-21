@@ -25,8 +25,10 @@ namespace LocadoraDeCarros
                 MessageBox.Show("Digite seu nome!");
                 return;
             }
+            this.Hide();
+            new TelaPrincipal(false).ShowDialog() ;
+            
 
-            MessageBox.Show("Bem-vindo " + txtNomeCliente.Text + ", meu galo");
         }
 
         private void txtNomeCliente_TextChanged(object sender, EventArgs e)

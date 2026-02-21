@@ -1,35 +1,55 @@
 ﻿using System.ComponentModel;
 using LocadoraDeCarros.Modelo;
-using System.ComponentModel;
 using System.Linq;
 using LocadoraDeCarros.Repositories;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-
 
 namespace LocadoraDeCarros
 {
     public partial class TelaPrincipal : Form
     {
-        public TelaPrincipal()
+        private string entidadeAtual = "Cliente";
+        private string tipoUsuario;
+        private readonly bool isAdmin;
+
+        public TelaPrincipal(bool isAdmin)
         {
             InitializeComponent();
+            
+            this.isAdmin = isAdmin;
+            this.Enabled = true;
+
+            btnNovo.Enabled = isAdmin;
+            btnEditar.Enabled = isAdmin;
+            btnExcluir.Enabled = isAdmin;
 
             Load += TelaPrincipal_Load;
         }
 
-        
-
-
         private async void TelaPrincipal_Load(object sender, EventArgs e)
         {
             await AtualizarTabela();
+
+          
         }
 
         public async Task AtualizarTabela()
         {
-            var clientes = await ClienteRepository.ObterTodos();
-            dgvTabela.DataSource = new BindingList<Cliente>(clientes.ToList());
+            if (entidadeAtual == "Cliente")
+            {
+                var clientes = await ClienteRepository.ObterTodos();
+                dgvTabela.DataSource = new BindingList<Cliente>(clientes.ToList());
+            }
+            else if (entidadeAtual == "Carro")
+            {
+                var carros = await CarroRepository.ObterTodos();
+                dgvTabela.DataSource = new BindingList<Carro>(carros.ToList());
+            }
+        }
+
+        private void btnAdicionarCarro_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,74 +59,87 @@ namespace LocadoraDeCarros
 
         private void dgvTabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private async void btnCarros_Click(object sender, EventArgs e)
         {
-            dgvTabela.DataSource = await CarroRepository.ObterTodos();
+            entidadeAtual = "Carro";
+            await AtualizarTabela();
         }
 
         private async void btnClientes_Click(object sender, EventArgs e)
         {
-            dgvTabela.DataSource = null;
-            dgvTabela.DataSource = await ClienteRepository.ObterTodos();
+            entidadeAtual = "Cliente";
+            await AtualizarTabela();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e) // EDITAR
         {
- 
             if (dgvTabela.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecione um cliente para editar.");
+                MessageBox.Show("Selecione um registro para editar.");
                 return;
             }
 
-            int idCliente = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
-            
-            var atualiza = new TelaEditarCliente(idCliente);
+            int idRegistro = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
 
+            if (entidadeAtual == "Carro")
+            {
+                new TelaEditarCarro(idRegistro).ShowDialog();
+            }
+            else
+            {
+                new TelaEditarCliente(idRegistro).ShowDialog();
+            }
 
-            atualiza.ShowDialog();
-
-
-            AtualizarTabela();
+            await AtualizarTabela();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var adicionarCliente = new AdicionarCliente(this);
-            adicionarCliente.Show();
+            
+            if (entidadeAtual == "Cliente")
+            {
+                var tela = new AdicionarCliente(this);
+                tela.ShowDialog();
+            }
+            else
+            {
+                var tela = new AdicionarCarro(this);
+                tela.ShowDialog();
+            }
+            
         }
 
         private async void btnExcluir_Click(object sender, EventArgs e)
         {
-
             if (dgvTabela.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecione um cliente para excluir.");
+                MessageBox.Show("Selecione um registro para excluir.");
                 return;
             }
 
-            string nomeCliente = dgvTabela.SelectedRows[0].Cells[1].Value.ToString();
+            int id = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
+            string nome = dgvTabela.SelectedRows[0].Cells[1].Value.ToString();
 
-            var retorno = MessageBox.Show(
-                $"Tem certeza que deseja excluir o cliente {nomeCliente}?",
-                "Exclusão cliente",
+            var confirmacao = MessageBox.Show(
+                $"Tem certeza que deseja excluir {nome}?",
+                "Confirmação",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
-            if (retorno == DialogResult.Yes)
+            if (confirmacao == DialogResult.Yes)
             {
-                int idCliente = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
-
-                await ClienteRepository.Deletar(idCliente);
-
-                MessageBox.Show(
-                    $"O cliente {nomeCliente} foi deletado com sucesso!",
-                    "Exclusão cliente",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                if (entidadeAtual == "Cliente")
+                {
+                    await ClienteRepository.Deletar(id);
+                    MessageBox.Show("Cliente excluído com sucesso!");
+                }
+                else
+                {
+                    await CarroRepository.Deletar(id);
+                    MessageBox.Show("Carro excluído com sucesso!");
+                }
 
                 await AtualizarTabela();
             }
@@ -116,6 +149,12 @@ namespace LocadoraDeCarros
         {
             TelaEmprestimos tela = new TelaEmprestimos();
             tela.ShowDialog();
+        }
+
+       public TelaPrincipal(string tipo)
+        {
+            InitializeComponent();
+            tipoUsuario = tipo;
         }
     }
 }

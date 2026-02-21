@@ -147,6 +147,7 @@
             btnAdicionarCarro.TabIndex = 23;
             btnAdicionarCarro.Text = "Adicionar Carro";
             btnAdicionarCarro.UseVisualStyleBackColor = false;
+            btnAdicionarCarro.Click += btnAdicionarCarro_Click;
             // 
             // AdicionarCarro
             // 
@@ -168,6 +169,7 @@
             Controls.Add(pictureBox1);
             Name = "AdicionarCarro";
             Text = "AdicionarCarro";
+            Load += AdicionarCarro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

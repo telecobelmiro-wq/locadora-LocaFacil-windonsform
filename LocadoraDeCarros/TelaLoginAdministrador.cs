@@ -21,7 +21,7 @@ namespace LocadoraDeCarros
         {
             if (txtLogin.Text == "admin" && txtSenha.Text == "00")
             {
-                var telaPrincipal = new TelaPrincipal();
+                var telaPrincipal = new TelaPrincipal(true);
                 this.Hide();
                 telaPrincipal.ShowDialog();
                 this.Show();
