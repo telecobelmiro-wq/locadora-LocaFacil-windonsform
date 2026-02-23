@@ -21,11 +21,11 @@ namespace LocadoraDeCarros
 
         private void Centralizar(object sender, EventArgs e)
         {
-            panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
-            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
+            pnlTelaInicial.Left = (this.ClientSize.Width - pnlTelaInicial.Width) / 2;
+            pnlTelaInicial.Top = (this.ClientSize.Height - pnlTelaInicial.Height) / 2;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdministrador_Click(object sender, EventArgs e)
         {
             var telaAdministrador = new TelaLoginAdministrador();
             this.Hide();
@@ -33,14 +33,12 @@ namespace LocadoraDeCarros
             this.Show();
         }
 
-        private void btnCliente_Click(object sender, EventArgs e)
+        private void btnCliente_Click_1(object sender, EventArgs e)
         {
             var telaCliente = new TelaLoginCliente();
             this.Hide();
             telaCliente.ShowDialog();
             this.Show();
         }
-
-        
     }
 }

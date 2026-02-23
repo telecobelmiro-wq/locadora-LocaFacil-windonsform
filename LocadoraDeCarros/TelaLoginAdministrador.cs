@@ -21,7 +21,7 @@ namespace LocadoraDeCarros
         {
             if (txtLogin.Text == "admin" && txtSenha.Text == "00")
             {
-                var telaPrincipal = new TelaPrincipal();
+                var telaPrincipal = new TelaPrincipal(true);
                 this.Hide();
                 telaPrincipal.ShowDialog();
                 this.Show();
@@ -34,9 +34,10 @@ namespace LocadoraDeCarros
             }
         }
 
-        private void lblLogin_Click(object sender, EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e)
         {
-
+            pnlLoginAdmin.Left = (this.ClientSize.Width - pnlLoginAdmin.Width) / 2;
+            pnlLoginAdmin.Top = (this.ClientSize.Height - pnlLoginAdmin.Height) / 2;
         }
     }
 }

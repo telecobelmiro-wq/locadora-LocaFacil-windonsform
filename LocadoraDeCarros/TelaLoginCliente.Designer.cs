@@ -29,39 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLoginCliente));
-            pictureBox1 = new PictureBox();
-            lblLoginCliente = new Label();
-            txtNomeCliente = new TextBox();
+            pnlLoginCliente = new Panel();
             btnEntrar = new Button();
+            txtNomeCliente = new TextBox();
+            lblLoginCliente = new Label();
+            pictureBox1 = new PictureBox();
+            pnlLoginCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pnlLoginCliente
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(57, 26);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(365, 115);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
-            // 
-            // lblLoginCliente
-            // 
-            lblLoginCliente.Font = new Font("Segoe UI", 12F);
-            lblLoginCliente.Location = new Point(213, 163);
-            lblLoginCliente.Name = "lblLoginCliente";
-            lblLoginCliente.Size = new Size(57, 22);
-            lblLoginCliente.TabIndex = 13;
-            lblLoginCliente.Text = "LOGIN";
-            // 
-            // txtNomeCliente
-            // 
-            txtNomeCliente.Location = new Point(176, 188);
-            txtNomeCliente.Name = "txtNomeCliente";
-            txtNomeCliente.PlaceholderText = "Insira seu nome aqui ";
-            txtNomeCliente.Size = new Size(124, 23);
-            txtNomeCliente.TabIndex = 14;
-            txtNomeCliente.TextChanged += txtNomeCliente_TextChanged;
+            pnlLoginCliente.Controls.Add(btnEntrar);
+            pnlLoginCliente.Controls.Add(txtNomeCliente);
+            pnlLoginCliente.Controls.Add(lblLoginCliente);
+            pnlLoginCliente.Controls.Add(pictureBox1);
+            pnlLoginCliente.Location = new Point(29, 26);
+            pnlLoginCliente.Name = "pnlLoginCliente";
+            pnlLoginCliente.Size = new Size(800, 800);
+            pnlLoginCliente.TabIndex = 16;
             // 
             // btnEntrar
             // 
@@ -69,36 +55,61 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Segoe UI", 12F);
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(191, 232);
+            btnEntrar.Location = new Point(351, 467);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(99, 45);
-            btnEntrar.TabIndex = 15;
+            btnEntrar.TabIndex = 19;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
-            btnEntrar.Click += button1_Click;
+            // 
+            // txtNomeCliente
+            // 
+            txtNomeCliente.Location = new Point(336, 423);
+            txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.PlaceholderText = "Insira seu nome aqui ";
+            txtNomeCliente.Size = new Size(124, 23);
+            txtNomeCliente.TabIndex = 18;
+            // 
+            // lblLoginCliente
+            // 
+            lblLoginCliente.Font = new Font("Segoe UI", 12F);
+            lblLoginCliente.Location = new Point(373, 398);
+            lblLoginCliente.Name = "lblLoginCliente";
+            lblLoginCliente.Size = new Size(57, 22);
+            lblLoginCliente.TabIndex = 17;
+            lblLoginCliente.Text = "LOGIN";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(217, 261);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(365, 115);
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
             // 
             // TelaLoginCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(484, 361);
-            Controls.Add(btnEntrar);
-            Controls.Add(txtNomeCliente);
-            Controls.Add(lblLoginCliente);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(884, 861);
+            Controls.Add(pnlLoginCliente);
             Name = "TelaLoginCliente";
             Text = "TelaCliente";
+            WindowState = FormWindowState.Maximized;
+            Resize += Form1_Resize;
+            pnlLoginCliente.ResumeLayout(false);
+            pnlLoginCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private Label lblLoginCliente;
-        private TextBox txtNomeCliente;
+        private Panel pnlLoginCliente;
         private Button btnEntrar;
+        private TextBox txtNomeCliente;
+        private Label lblLoginCliente;
+        private PictureBox pictureBox1;
     }
 }

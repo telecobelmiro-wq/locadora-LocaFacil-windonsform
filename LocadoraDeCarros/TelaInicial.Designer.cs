@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaInicial));
-            panel1 = new Panel();
+            pnlTelaInicial = new Panel();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
             btnAdministrador = new Button();
             btnCliente = new Button();
             label3 = new Label();
-            panel1.SuspendLayout();
+            pnlTelaInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlTelaInicial
             // 
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(btnAdministrador);
-            panel1.Controls.Add(btnCliente);
-            panel1.Controls.Add(label3);
-            panel1.Location = new Point(245, 108);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(494, 497);
-            panel1.TabIndex = 14;
+            pnlTelaInicial.Controls.Add(label4);
+            pnlTelaInicial.Controls.Add(pictureBox1);
+            pnlTelaInicial.Controls.Add(label2);
+            pnlTelaInicial.Controls.Add(btnAdministrador);
+            pnlTelaInicial.Controls.Add(btnCliente);
+            pnlTelaInicial.Controls.Add(label3);
+            pnlTelaInicial.Location = new Point(245, 108);
+            pnlTelaInicial.Name = "pnlTelaInicial";
+            pnlTelaInicial.Size = new Size(494, 497);
+            pnlTelaInicial.TabIndex = 14;
             // 
             // label4
             // 
@@ -95,6 +95,7 @@
             btnAdministrador.TabIndex = 15;
             btnAdministrador.Text = "Administrador";
             btnAdministrador.UseVisualStyleBackColor = false;
+            btnAdministrador.Click += btnAdministrador_Click;
             // 
             // btnCliente
             // 
@@ -106,6 +107,7 @@
             btnCliente.TabIndex = 16;
             btnCliente.Text = "Cliente";
             btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.Click += btnCliente_Click_1;
             // 
             // label3
             // 
@@ -126,18 +128,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1213, 636);
-            Controls.Add(panel1);
+            Controls.Add(pnlTelaInicial);
             Name = "TelaInicial";
             Text = "TelaInicial";
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlTelaInicial.ResumeLayout(false);
+            pnlTelaInicial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel1;
+        private Panel pnlTelaInicial;
         private Label label4;
         private PictureBox pictureBox1;
         private Label label2;

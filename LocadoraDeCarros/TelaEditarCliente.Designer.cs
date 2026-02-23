@@ -164,7 +164,7 @@
             btnCancelarEditarCli.UseVisualStyleBackColor = false;
             btnCancelarEditarCli.Click += btnCancelarEditarCli_Click;
             // 
-            // a
+            // TelaEditarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -182,8 +182,9 @@
             Controls.Add(lblEmailEditarCLi);
             Controls.Add(lblNomEditarCli);
             Controls.Add(txtNome);
-            Name = "a";
+            Name = "TelaEditarCliente";
             Text = "TelaEditarCliente";
+            WindowState = FormWindowState.Maximized;
             Load += TelaEditarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

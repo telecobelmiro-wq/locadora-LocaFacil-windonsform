@@ -6,7 +6,7 @@ namespace LocadoraDeCarros
     public partial class TelaEditarCliente : Form
     {
         private int idCliente;
-        private string entidadeAtual = "Cliente";
+        
 
         public TelaEditarCliente(int id)
         {

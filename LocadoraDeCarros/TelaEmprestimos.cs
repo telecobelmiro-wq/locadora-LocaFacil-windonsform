@@ -41,5 +41,10 @@ namespace LocadoraDeCarros
         {
 
         }
+
+        private void btnSalvarEmprestimos_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

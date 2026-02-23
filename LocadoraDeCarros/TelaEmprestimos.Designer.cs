@@ -158,6 +158,7 @@
             btnSalvarEmprestimos.TabIndex = 26;
             btnSalvarEmprestimos.Text = "SALVAR";
             btnSalvarEmprestimos.UseVisualStyleBackColor = false;
+            btnSalvarEmprestimos.Click += btnSalvarEmprestimos_Click;
             // 
             // cmbStatusEmprestimos
             // 
@@ -193,6 +194,7 @@
             Controls.Add(pictureBox1);
             Name = "TelaEmprestimos";
             Text = "TelaEmprestimos";
+            WindowState = FormWindowState.Maximized;
             Load += TelaEmprestimos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

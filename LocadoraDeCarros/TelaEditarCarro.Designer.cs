@@ -181,6 +181,7 @@
             Controls.Add(pictureBox1);
             Name = "TelaEditarCarro";
             Text = "TelaEditarCarro";
+            WindowState = FormWindowState.Maximized;
             Load += TelaEditarCarro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
