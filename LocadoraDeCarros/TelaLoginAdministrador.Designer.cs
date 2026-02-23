@@ -52,6 +52,7 @@
             pnlLoginAdmin.Name = "pnlLoginAdmin";
             pnlLoginAdmin.Size = new Size(800, 800);
             pnlLoginAdmin.TabIndex = 19;
+            pnlLoginAdmin.Resize += Form1_Resize;
             // 
             // btnEntrar
             // 
@@ -65,6 +66,7 @@
             btnEntrar.TabIndex = 24;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click_1;
             // 
             // txtSenha
             // 
