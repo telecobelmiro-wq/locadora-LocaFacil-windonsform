@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LocadoraDeCarros.Banco;
 using LocadoraDeCarros.Modelo;
 using Dapper;
+using System.Data.SqlClient;
 
 
 
@@ -72,10 +73,10 @@ using Dapper;
                 return carro;
             }
 
-            public static async Task Atualizar(Carro carroEdicao)
-            {
-                await conexaoBanco.CriarConexao().ExecuteAsync(
-                    @"
+        public static async Task Atualizar(Carro carroEdicao)
+        {
+            await conexaoBanco.CriarConexao().ExecuteAsync(
+                @"
                     UPDATE Carro
                     SET
                         Modelo = @Modelo,
@@ -86,6 +87,10 @@ using Dapper;
                     WHERE
                         Id = @Id
                 ", carroEdicao);
-            }
+        }
+
+           
         }
     }
+        
+    

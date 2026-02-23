@@ -41,6 +41,7 @@
             txtPreco = new TextBox();
             txtCor = new TextBox();
             btnAdicionarCarro = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -59,9 +60,9 @@
             lblModelo.Font = new Font("Segoe UI", 12F);
             lblModelo.Location = new Point(69, 151);
             lblModelo.Name = "lblModelo";
-            lblModelo.Size = new Size(74, 21);
+            lblModelo.Size = new Size(63, 21);
             lblModelo.TabIndex = 13;
-            lblModelo.Text = "MODELO";
+            lblModelo.Text = "Modelo";
             // 
             // lblMarca
             // 
@@ -69,9 +70,9 @@
             lblMarca.Font = new Font("Segoe UI", 12F);
             lblMarca.Location = new Point(210, 151);
             lblMarca.Name = "lblMarca";
-            lblMarca.Size = new Size(64, 21);
+            lblMarca.Size = new Size(53, 21);
             lblMarca.TabIndex = 14;
-            lblMarca.Text = "MARCA";
+            lblMarca.Text = "Marca";
             // 
             // lblCor
             // 
@@ -79,9 +80,9 @@
             lblCor.Font = new Font("Segoe UI", 12F);
             lblCor.Location = new Point(353, 151);
             lblCor.Name = "lblCor";
-            lblCor.Size = new Size(42, 21);
+            lblCor.Size = new Size(35, 21);
             lblCor.TabIndex = 15;
-            lblCor.Text = "COR";
+            lblCor.Text = "Cor";
             // 
             // lblPreco
             // 
@@ -89,9 +90,9 @@
             lblPreco.Font = new Font("Segoe UI", 12F);
             lblPreco.Location = new Point(138, 215);
             lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(59, 21);
+            lblPreco.Size = new Size(49, 21);
             lblPreco.TabIndex = 16;
-            lblPreco.Text = "PREÇO";
+            lblPreco.Text = "Preço";
             // 
             // lblAno
             // 
@@ -99,9 +100,9 @@
             lblAno.Font = new Font("Segoe UI", 12F);
             lblAno.Location = new Point(286, 215);
             lblAno.Name = "lblAno";
-            lblAno.Size = new Size(44, 21);
+            lblAno.Size = new Size(38, 21);
             lblAno.TabIndex = 17;
-            lblAno.Text = "ANO";
+            lblAno.Text = "Ano";
             // 
             // txtModelo
             // 
@@ -140,14 +141,29 @@
             // 
             // btnAdicionarCarro
             // 
-            btnAdicionarCarro.BackColor = Color.Transparent;
-            btnAdicionarCarro.Location = new Point(172, 296);
+            btnAdicionarCarro.BackColor = Color.Black;
+            btnAdicionarCarro.FlatStyle = FlatStyle.Popup;
+            btnAdicionarCarro.ForeColor = SystemColors.ControlLight;
+            btnAdicionarCarro.Location = new Point(343, 320);
             btnAdicionarCarro.Name = "btnAdicionarCarro";
-            btnAdicionarCarro.Size = new Size(130, 38);
+            btnAdicionarCarro.Size = new Size(120, 26);
             btnAdicionarCarro.TabIndex = 23;
-            btnAdicionarCarro.Text = "Adicionar Carro";
+            btnAdicionarCarro.Text = "ADICIONAR CARRO";
             btnAdicionarCarro.UseVisualStyleBackColor = false;
             btnAdicionarCarro.Click += btnAdicionarCarro_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Black;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.ForeColor = SystemColors.ControlLight;
+            btnCancelar.Location = new Point(210, 320);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(120, 26);
+            btnCancelar.TabIndex = 24;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // AdicionarCarro
             // 
@@ -155,6 +171,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(484, 361);
+            Controls.Add(btnCancelar);
             Controls.Add(btnAdicionarCarro);
             Controls.Add(txtCor);
             Controls.Add(txtPreco);
@@ -189,5 +206,6 @@
         private TextBox txtPreco;
         private TextBox txtCor;
         private Button btnAdicionarCarro;
+        private Button btnCancelar;
     }
 }

@@ -24,20 +24,42 @@ namespace LocadoraDeCarros
 
         private async void button1_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private async void btnAdicionarCarro_Click(object sender, EventArgs e)
         {
+            
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            if (!decimal.TryParse(txtPreco.Text, out decimal preco))
+            {
+                MessageBox.Show("Preço inválido!");
+                return;
+            }
+
+            if (!int.TryParse(txtAno.Text, out int ano))
+            {
+                MessageBox.Show("Ano inválido!");
+                return;
+            }
+
             var carro = new Carro
             {
                 Cor = txtCor.Text,
-                Preco = decimal.Parse(txtPreco.Text),
+                Preco = preco,
                 Modelo = txtModelo.Text,
                 Marca = txtMarca.Text,
-                Ano = Convert.ToInt32(txtAno.Text)
+                Ano = ano
             };
+
+            await CarroRepository.Adicionar(carro);
+
+            MessageBox.Show("Carro adicionado com sucesso!");
 
             await CarroRepository.Adicionar(carro);
 
@@ -49,6 +71,11 @@ namespace LocadoraDeCarros
         private void AdicionarCarro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

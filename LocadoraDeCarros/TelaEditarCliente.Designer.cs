@@ -76,6 +76,7 @@
             txtEmailEditarCli.Name = "txtEmailEditarCli";
             txtEmailEditarCli.Size = new Size(100, 23);
             txtEmailEditarCli.TabIndex = 3;
+            txtEmailEditarCli.TextChanged += txtEmailEditarCli_TextChanged;
             // 
             // btnSalvarEditarCli
             // 
@@ -88,6 +89,7 @@
             btnSalvarEditarCli.TabIndex = 8;
             btnSalvarEditarCli.Text = "SALVAR";
             btnSalvarEditarCli.UseVisualStyleBackColor = false;
+            btnSalvarEditarCli.Click += btnSalvarEditarCli_Click;
             // 
             // pictureBox1
             // 
@@ -164,7 +166,7 @@
             btnCancelarEditarCli.UseVisualStyleBackColor = false;
             btnCancelarEditarCli.Click += btnCancelarEditarCli_Click;
             // 
-            // a
+            // TelaEditarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -182,7 +184,7 @@
             Controls.Add(lblEmailEditarCLi);
             Controls.Add(lblNomEditarCli);
             Controls.Add(txtNome);
-            Name = "a";
+            Name = "TelaEditarCliente";
             Text = "TelaEditarCliente";
             Load += TelaEditarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

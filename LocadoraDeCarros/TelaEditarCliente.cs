@@ -6,7 +6,7 @@ namespace LocadoraDeCarros
     public partial class TelaEditarCliente : Form
     {
         private int idCliente;
-        
+
 
         public TelaEditarCliente(int id)
         {
@@ -51,6 +51,16 @@ namespace LocadoraDeCarros
         private void btnCancelarEditarCli_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSalvarEditarCli_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmailEditarCli_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,9 +56,9 @@
             btnClientes.BackColor = SystemColors.InactiveCaptionText;
             btnClientes.FlatStyle = FlatStyle.Popup;
             btnClientes.ForeColor = SystemColors.ControlLightLight;
-            btnClientes.Location = new Point(40, 235);
+            btnClientes.Location = new Point(40, 230);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(120, 45);
+            btnClientes.Size = new Size(109, 41);
             btnClientes.TabIndex = 13;
             btnClientes.Text = "CLIENTES";
             btnClientes.UseVisualStyleBackColor = false;
@@ -69,9 +69,9 @@
             btnCarros.BackColor = SystemColors.InactiveCaptionText;
             btnCarros.FlatStyle = FlatStyle.Popup;
             btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(40, 328);
+            btnCarros.Location = new Point(40, 339);
             btnCarros.Name = "btnCarros";
-            btnCarros.Size = new Size(120, 45);
+            btnCarros.Size = new Size(109, 41);
             btnCarros.TabIndex = 14;
             btnCarros.Text = "CARROS";
             btnCarros.UseVisualStyleBackColor = false;
@@ -79,12 +79,12 @@
             // 
             // btnEmprestimos
             // 
-            btnEmprestimos.BackColor = Color.Gray;
-            btnEmprestimos.FlatStyle = FlatStyle.System;
-            btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
-            btnEmprestimos.Location = new Point(568, 515);
+            btnEmprestimos.BackColor = Color.Black;
+            btnEmprestimos.FlatStyle = FlatStyle.Popup;
+            btnEmprestimos.ForeColor = SystemColors.ControlLight;
+            btnEmprestimos.Location = new Point(561, 534);
             btnEmprestimos.Name = "btnEmprestimos";
-            btnEmprestimos.Size = new Size(120, 45);
+            btnEmprestimos.Size = new Size(127, 26);
             btnEmprestimos.TabIndex = 15;
             btnEmprestimos.Text = "NOVO EMPRESTIMO";
             btnEmprestimos.UseVisualStyleBackColor = false;
@@ -104,32 +104,41 @@
             // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(703, 515);
+            btnNovo.BackColor = Color.Black;
+            btnNovo.FlatStyle = FlatStyle.Popup;
+            btnNovo.ForeColor = SystemColors.ControlLight;
+            btnNovo.Location = new Point(703, 534);
             btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(120, 45);
+            btnNovo.Size = new Size(120, 26);
             btnNovo.TabIndex = 17;
             btnNovo.Text = "NOVO";
-            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.UseVisualStyleBackColor = false;
             btnNovo.Click += button1_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(838, 515);
+            btnEditar.BackColor = Color.Black;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.ForeColor = SystemColors.ControlLight;
+            btnEditar.Location = new Point(838, 534);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(120, 45);
+            btnEditar.Size = new Size(120, 26);
             btnEditar.TabIndex = 18;
             btnEditar.Text = "EDITAR";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += button2_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(974, 515);
+            btnExcluir.BackColor = Color.Black;
+            btnExcluir.FlatStyle = FlatStyle.Popup;
+            btnExcluir.ForeColor = SystemColors.ControlLight;
+            btnExcluir.Location = new Point(974, 534);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(120, 45);
+            btnExcluir.Size = new Size(120, 26);
             btnExcluir.TabIndex = 19;
             btnExcluir.Text = "EXCLUIR";
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // TelaPrincipal

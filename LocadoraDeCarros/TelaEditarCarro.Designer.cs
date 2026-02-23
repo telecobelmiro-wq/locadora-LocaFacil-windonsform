@@ -34,7 +34,7 @@
             lblMarcaEditarCar = new Label();
             lblAnoEditarCar = new Label();
             lblPrecoEditarCar = new Label();
-            lblCorEditarCli = new Label();
+            lblCorEditarCar = new Label();
             btnSalvarEditarCar = new Button();
             btnCancelarEditarCar = new Button();
             txtModelo = new TextBox();
@@ -91,39 +91,41 @@
             lblPrecoEditarCar.TabIndex = 18;
             lblPrecoEditarCar.Text = "PREÇO";
             // 
-            // lblCorEditarCli
+            // lblCorEditarCar
             // 
-            lblCorEditarCli.AutoSize = true;
-            lblCorEditarCli.Location = new Point(547, 216);
-            lblCorEditarCli.Name = "lblCorEditarCli";
-            lblCorEditarCli.Size = new Size(31, 15);
-            lblCorEditarCli.TabIndex = 19;
-            lblCorEditarCli.Text = "COR";
-            lblCorEditarCli.Click += label5_Click;
+            lblCorEditarCar.AutoSize = true;
+            lblCorEditarCar.Location = new Point(547, 216);
+            lblCorEditarCar.Name = "lblCorEditarCar";
+            lblCorEditarCar.Size = new Size(31, 15);
+            lblCorEditarCar.TabIndex = 19;
+            lblCorEditarCar.Text = "COR";
+            lblCorEditarCar.Click += label5_Click;
             // 
             // btnSalvarEditarCar
             // 
             btnSalvarEditarCar.BackColor = Color.Black;
             btnSalvarEditarCar.FlatStyle = FlatStyle.Popup;
             btnSalvarEditarCar.ForeColor = SystemColors.ControlLight;
-            btnSalvarEditarCar.Location = new Point(689, 389);
+            btnSalvarEditarCar.Location = new Point(668, 407);
             btnSalvarEditarCar.Name = "btnSalvarEditarCar";
-            btnSalvarEditarCar.Size = new Size(89, 49);
+            btnSalvarEditarCar.Size = new Size(120, 26);
             btnSalvarEditarCar.TabIndex = 20;
             btnSalvarEditarCar.Text = "SALVAR";
             btnSalvarEditarCar.UseVisualStyleBackColor = false;
+            btnSalvarEditarCar.Click += btnSalvarEditarCar_Click;
             // 
             // btnCancelarEditarCar
             // 
             btnCancelarEditarCar.BackColor = Color.Black;
             btnCancelarEditarCar.FlatStyle = FlatStyle.Popup;
             btnCancelarEditarCar.ForeColor = SystemColors.ControlLight;
-            btnCancelarEditarCar.Location = new Point(582, 389);
+            btnCancelarEditarCar.Location = new Point(527, 407);
             btnCancelarEditarCar.Name = "btnCancelarEditarCar";
-            btnCancelarEditarCar.Size = new Size(89, 49);
+            btnCancelarEditarCar.Size = new Size(120, 26);
             btnCancelarEditarCar.TabIndex = 21;
             btnCancelarEditarCar.Text = "CANCELAR";
             btnCancelarEditarCar.UseVisualStyleBackColor = false;
+            btnCancelarEditarCar.Click += btnCancelarEditarCar_Click;
             // 
             // txtModelo
             // 
@@ -131,6 +133,7 @@
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(100, 23);
             txtModelo.TabIndex = 22;
+            txtModelo.TextChanged += txtModelo_TextChanged;
             // 
             // txtMarca
             // 
@@ -173,7 +176,7 @@
             Controls.Add(txtModelo);
             Controls.Add(btnCancelarEditarCar);
             Controls.Add(btnSalvarEditarCar);
-            Controls.Add(lblCorEditarCli);
+            Controls.Add(lblCorEditarCar);
             Controls.Add(lblPrecoEditarCar);
             Controls.Add(lblAnoEditarCar);
             Controls.Add(lblMarcaEditarCar);
@@ -194,7 +197,7 @@
         private Label lblMarcaEditarCar;
         private Label lblAnoEditarCar;
         private Label lblPrecoEditarCar;
-        private Label lblCorEditarCli;
+        private Label lblCorEditarCar;
         private Button btnSalvarEditarCar;
         private Button btnCancelarEditarCar;
         private TextBox txtModelo;
