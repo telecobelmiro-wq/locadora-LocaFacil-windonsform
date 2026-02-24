@@ -62,6 +62,15 @@ namespace LocadoraDeCarros
         {
 
         }
+
+        private void AdicionarCliente_Resize(object sender, EventArgs e)
+        {
+            pnlAdicionarCliente.Left =
+                (this.ClientSize.Width - pnlAdicionarCliente.Width) / 2;
+
+            pnlAdicionarCliente.Top =
+                (this.ClientSize.Height - pnlAdicionarCliente.Height) / 2;
+        }
     }
 }
 

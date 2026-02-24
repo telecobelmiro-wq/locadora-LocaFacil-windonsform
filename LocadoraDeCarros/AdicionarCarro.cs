@@ -59,5 +59,11 @@ namespace LocadoraDeCarros
         {
             this.Close();
         }
+
+        private void AdicionarCarro_Resize(object sender, EventArgs e)
+        {
+            pnlAdicionarCarro.Left = (ClientSize.Width - pnlAdicionarCarro.Width) / 2;
+            pnlAdicionarCarro.Top = (ClientSize.Height - pnlAdicionarCarro.Height) / 2;
+        }
     }
 }
