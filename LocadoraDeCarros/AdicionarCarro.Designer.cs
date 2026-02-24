@@ -186,6 +186,7 @@
             Controls.Add(pictureBox1);
             Name = "AdicionarCarro";
             Text = "AdicionarCarro";
+            WindowState = FormWindowState.Maximized;
             Load += AdicionarCarro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

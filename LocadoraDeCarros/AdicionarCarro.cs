@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LocadoraDeCarros.Modelo;
+﻿using LocadoraDeCarros.Modelo;
 using LocadoraDeCarros.Repositories;
 
 namespace LocadoraDeCarros
@@ -31,11 +22,6 @@ namespace LocadoraDeCarros
         private async void btnAdicionarCarro_Click(object sender, EventArgs e)
         {
             
-            {
-                MessageBox.Show("Preencha todos os campos!");
-                return;
-            }
-
             if (!decimal.TryParse(txtPreco.Text, out decimal preco))
             {
                 MessageBox.Show("Preço inválido!");
@@ -56,10 +42,6 @@ namespace LocadoraDeCarros
                 Marca = txtMarca.Text,
                 Ano = ano
             };
-
-            await CarroRepository.Adicionar(carro);
-
-            MessageBox.Show("Carro adicionado com sucesso!");
 
             await CarroRepository.Adicionar(carro);
 

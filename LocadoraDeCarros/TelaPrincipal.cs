@@ -15,7 +15,7 @@ namespace LocadoraDeCarros
         public TelaPrincipal(bool isAdmin)
         {
             InitializeComponent();
-            
+
             this.isAdmin = isAdmin;
             this.Enabled = true;
 
@@ -30,7 +30,7 @@ namespace LocadoraDeCarros
         {
             await AtualizarTabela();
 
-          
+
         }
 
         public async Task AtualizarTabela()
@@ -97,7 +97,7 @@ namespace LocadoraDeCarros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (entidadeAtual == "Cliente")
             {
                 var tela = new AdicionarCliente(this);
@@ -108,7 +108,7 @@ namespace LocadoraDeCarros
                 var tela = new AdicionarCarro(this);
                 tela.ShowDialog();
             }
-            
+
         }
 
         private async void btnExcluir_Click(object sender, EventArgs e)
@@ -151,10 +151,20 @@ namespace LocadoraDeCarros
             tela.ShowDialog();
         }
 
-       public TelaPrincipal(string tipo)
+        public TelaPrincipal(string tipo)
         {
             InitializeComponent();
             tipoUsuario = tipo;
+        }
+
+        private void CentralizarPainel()
+        {
+            pnlTelaPrincipal.Left = (this.Width - pnlTelaPrincipal.Width) / 2;
+            pnlTelaPrincipal.Top = (this.Height - pnlTelaPrincipal.Height) / 2;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CentralizarPainel();
         }
     }
 }

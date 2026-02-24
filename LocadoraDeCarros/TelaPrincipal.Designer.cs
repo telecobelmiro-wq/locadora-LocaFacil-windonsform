@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
+            pnlTelaPrincipal = new Panel();
             pictureBox1 = new PictureBox();
             btnClientes = new Button();
             btnCarros = new Button();
@@ -37,9 +38,25 @@
             btnNovo = new Button();
             btnEditar = new Button();
             btnExcluir = new Button();
+            pnlTelaPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
             SuspendLayout();
+            // 
+            // pnlTelaPrincipal
+            // 
+            pnlTelaPrincipal.Controls.Add(btnExcluir);
+            pnlTelaPrincipal.Controls.Add(btnEditar);
+            pnlTelaPrincipal.Controls.Add(btnNovo);
+            pnlTelaPrincipal.Controls.Add(dgvTabela);
+            pnlTelaPrincipal.Controls.Add(btnEmprestimos);
+            pnlTelaPrincipal.Controls.Add(btnCarros);
+            pnlTelaPrincipal.Controls.Add(btnClientes);
+            pnlTelaPrincipal.Controls.Add(pictureBox1);
+            pnlTelaPrincipal.Location = new Point(46, 49);
+            pnlTelaPrincipal.Name = "pnlTelaPrincipal";
+            pnlTelaPrincipal.Size = new Size(1100, 700);
+            pnlTelaPrincipal.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -56,7 +73,7 @@
             btnClientes.BackColor = SystemColors.InactiveCaptionText;
             btnClientes.FlatStyle = FlatStyle.Popup;
             btnClientes.ForeColor = SystemColors.ControlLightLight;
-            btnClientes.Location = new Point(40, 230);
+            btnClientes.Location = new Point(40, 235);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(109, 41);
             btnClientes.TabIndex = 13;
@@ -69,7 +86,7 @@
             btnCarros.BackColor = SystemColors.InactiveCaptionText;
             btnCarros.FlatStyle = FlatStyle.Popup;
             btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(40, 339);
+            btnCarros.Location = new Point(40, 328);
             btnCarros.Name = "btnCarros";
             btnCarros.Size = new Size(109, 41);
             btnCarros.TabIndex = 14;
@@ -79,10 +96,10 @@
             // 
             // btnEmprestimos
             // 
-            btnEmprestimos.BackColor = Color.Black;
-            btnEmprestimos.FlatStyle = FlatStyle.Popup;
-            btnEmprestimos.ForeColor = SystemColors.ControlLight;
-            btnEmprestimos.Location = new Point(561, 534);
+            btnEmprestimos.BackColor = Color.Gray;
+            btnEmprestimos.FlatStyle = FlatStyle.System;
+            btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
+            btnEmprestimos.Location = new Point(568, 515);
             btnEmprestimos.Name = "btnEmprestimos";
             btnEmprestimos.Size = new Size(127, 26);
             btnEmprestimos.TabIndex = 15;
@@ -155,8 +172,11 @@
             Controls.Add(btnCarros);
             Controls.Add(btnClientes);
             Controls.Add(pictureBox1);
+            Controls.Add(pnlTelaPrincipal);
             Name = "TelaPrincipal";
             Text = "TelaPrincipal";
+            WindowState = FormWindowState.Maximized;
+            pnlTelaPrincipal.ResumeLayout(false);
             Load += TelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).EndInit();
@@ -165,6 +185,7 @@
 
         #endregion
 
+        private Panel pnlTelaPrincipal;
         private PictureBox pictureBox1;
         private Button btnClientes;
         private Button btnCarros;

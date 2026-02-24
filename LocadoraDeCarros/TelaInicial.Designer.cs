@@ -29,46 +29,85 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaInicial));
+            pnlTelaInicial = new Panel();
             label4 = new Label();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
-            btnCliente = new Button();
+            label2 = new Label();
             btnAdministrador = new Button();
+            btnCliente = new Button();
+            label3 = new Label();
+            pnlTelaInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // pnlTelaInicial
+            // 
+            pnlTelaInicial.Controls.Add(label4);
+            pnlTelaInicial.Controls.Add(pictureBox1);
+            pnlTelaInicial.Controls.Add(label2);
+            pnlTelaInicial.Controls.Add(btnAdministrador);
+            pnlTelaInicial.Controls.Add(btnCliente);
+            pnlTelaInicial.Controls.Add(label3);
+            pnlTelaInicial.Location = new Point(245, 108);
+            pnlTelaInicial.Name = "pnlTelaInicial";
+            pnlTelaInicial.Size = new Size(494, 497);
+            pnlTelaInicial.TabIndex = 14;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Gray;
-            label4.Font = new Font("Segoe UI", 10F);
+            label4.Font = new Font("Segoe UI", 20F);
             label4.ForeColor = SystemColors.ControlText;
-            label4.Location = new Point(268, 217);
+            label4.Location = new Point(264, 295);
             label4.Name = "label4";
-            label4.Size = new Size(51, 19);
-            label4.TabIndex = 13;
+            label4.Size = new Size(94, 37);
+            label4.TabIndex = 20;
             label4.Text = "_______";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(170, 217);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 19);
-            label2.TabIndex = 12;
-            label2.Text = "_______";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(53, 37);
+            pictureBox1.Location = new Point(58, 78);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(373, 115);
-            pictureBox1.TabIndex = 11;
+            pictureBox1.Size = new Size(389, 119);
+            pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20F);
+            label2.ForeColor = SystemColors.ControlText;
+            label2.Location = new Point(123, 295);
+            label2.Name = "label2";
+            label2.Size = new Size(94, 37);
+            label2.TabIndex = 19;
+            label2.Text = "_______";
+            // 
+            // btnAdministrador
+            // 
+            btnAdministrador.BackColor = SystemColors.GradientInactiveCaption;
+            btnAdministrador.ForeColor = SystemColors.ControlText;
+            btnAdministrador.Location = new Point(123, 236);
+            btnAdministrador.Name = "btnAdministrador";
+            btnAdministrador.Size = new Size(235, 56);
+            btnAdministrador.TabIndex = 15;
+            btnAdministrador.Text = "Administrador";
+            btnAdministrador.UseVisualStyleBackColor = false;
+            btnAdministrador.Click += btnAdministrador_Click;
+            // 
+            // btnCliente
+            // 
+            btnCliente.AutoSize = true;
+            btnCliente.ForeColor = SystemColors.ControlText;
+            btnCliente.Location = new Point(123, 369);
+            btnCliente.Name = "btnCliente";
+            btnCliente.Size = new Size(235, 57);
+            btnCliente.TabIndex = 16;
+            btnCliente.Text = "Cliente";
+            btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.Click += btnCliente_Click_1;
             // 
             // label3
             // 
@@ -76,63 +115,36 @@
             label3.BackColor = Color.Gray;
             label3.Font = new Font("Segoe UI", 15F);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(227, 217);
+            label3.Location = new Point(223, 314);
             label3.Name = "label3";
             label3.Size = new Size(35, 28);
-            label3.TabIndex = 10;
+            label3.TabIndex = 17;
             label3.Text = "ou";
-            // 
-            // btnCliente
-            // 
-            btnCliente.AutoSize = true;
-            btnCliente.ForeColor = SystemColors.ControlText;
-            btnCliente.Location = new Point(183, 259);
-            btnCliente.Name = "btnCliente";
-            btnCliente.Size = new Size(120, 34);
-            btnCliente.TabIndex = 9;
-            btnCliente.Text = "Cliente";
-            btnCliente.UseVisualStyleBackColor = true;
-            btnCliente.Click += btnCliente_Click;
-            // 
-            // btnAdministrador
-            // 
-            btnAdministrador.BackColor = SystemColors.GradientInactiveCaption;
-            btnAdministrador.ForeColor = SystemColors.ControlText;
-            btnAdministrador.Location = new Point(183, 178);
-            btnAdministrador.Name = "btnAdministrador";
-            btnAdministrador.Size = new Size(120, 36);
-            btnAdministrador.TabIndex = 8;
-            btnAdministrador.Text = "Administrador";
-            btnAdministrador.UseVisualStyleBackColor = false;
-            btnAdministrador.Click += button1_Click;
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TelaInicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(484, 361);
-            Controls.Add(label4);
-            Controls.Add(label2);
-            Controls.Add(pictureBox1);
-            Controls.Add(label3);
-            Controls.Add(btnCliente);
-            Controls.Add(btnAdministrador);
+            ClientSize = new Size(1213, 636);
+            Controls.Add(pnlTelaInicial);
             Name = "TelaInicial";
             Text = "TelaInicial";
+            WindowState = FormWindowState.Maximized;
+            pnlTelaInicial.ResumeLayout(false);
+            pnlTelaInicial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
+        private Panel pnlTelaInicial;
         private Label label4;
-        private Label label2;
         private PictureBox pictureBox1;
-        private Label label3;
-        private Button btnCliente;
+        private Label label2;
         private Button btnAdministrador;
-
+        private Button btnCliente;
+        private Label label3;
     }
 }

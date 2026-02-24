@@ -198,6 +198,7 @@
             Controls.Add(lblModelo);
             Name = "AdicionarCliente";
             Text = "AdicionarCliente";
+            WindowState = FormWindowState.Maximized;
             Load += AdicionarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

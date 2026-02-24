@@ -17,7 +17,7 @@ namespace LocadoraDeCarros
             InitializeComponent();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             if (txtLogin.Text == "admin" && txtSenha.Text == "00")
             {
@@ -34,9 +34,10 @@ namespace LocadoraDeCarros
             }
         }
 
-        private void lblLogin_Click(object sender, EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e)
         {
-
+            pnlLoginAdmin.Left = (this.ClientSize.Width - pnlLoginAdmin.Width) / 2;
+            pnlLoginAdmin.Top = (this.ClientSize.Height - pnlLoginAdmin.Height) / 2;
         }
     }
 }

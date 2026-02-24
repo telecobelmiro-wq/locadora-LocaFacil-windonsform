@@ -186,6 +186,7 @@
             Controls.Add(txtNome);
             Name = "TelaEditarCliente";
             Text = "TelaEditarCliente";
+            WindowState = FormWindowState.Maximized;
             Load += TelaEditarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

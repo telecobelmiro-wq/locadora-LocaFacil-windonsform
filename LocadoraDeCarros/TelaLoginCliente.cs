@@ -26,14 +26,25 @@ namespace LocadoraDeCarros
                 return;
             }
             this.Hide();
-            new TelaPrincipal(false).ShowDialog() ;
-            
+            new TelaPrincipal(false).ShowDialog();
+
 
         }
 
-        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
+            CentralizarPainel();
+        }
 
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            CentralizarPainel();
+        }
+
+        private void CentralizarPainel()
+        {
+            pnlLoginCliente.Left = (this.Width - pnlLoginCliente.Width) / 2;
+            pnlLoginCliente.Top = (this.Height - pnlLoginCliente.Height) / 2;
         }
     }
 }
