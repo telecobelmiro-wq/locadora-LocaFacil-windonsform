@@ -21,34 +21,62 @@ namespace LocadoraDeCarros
 
         private async void btnAdicionarCarro_Click(object sender, EventArgs e)
         {
-            
-            if (!decimal.TryParse(txtPreco.Text, out decimal preco))
+            try
             {
-                MessageBox.Show("Preço inválido!");
-                return;
+                if (string.IsNullOrWhiteSpace(txtModelo.Text) ||
+                    string.IsNullOrWhiteSpace(txtMarca.Text) ||
+                    string.IsNullOrWhiteSpace(txtCor.Text) ||
+                    string.IsNullOrWhiteSpace(txtPreco.Text) ||
+                    string.IsNullOrWhiteSpace(txtAno.Text))
+                {
+                    MessageBox.Show("Preencha todos os campos.");
+                    return;
+                }
+
+                if (!int.TryParse(txtAno.Text, out int ano))
+                {
+                    MessageBox.Show("Ano inválido.");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtPreco.Text, out decimal preco))
+                {
+                    MessageBox.Show("Preço inválido.");
+                    return;
+                }
+
+                if (ano < 1900 || ano > DateTime.Now.Year + 1)
+                {
+                    MessageBox.Show("Ano fora do intervalo válido.");
+                    return;
+                }
+
+                if (preco <= 0)
+                {
+                    MessageBox.Show("Preço deve ser maior que zero.");
+                    return;
+                }
+
+                Carro carro = new Carro
+                {
+                    Modelo = txtModelo.Text,
+                    Marca = txtMarca.Text,
+                    Cor = txtCor.Text,
+                    Ano = ano,
+                    Preco = preco
+                };
+
+                await CarroRepository.Adicionar(carro);
+
+                MessageBox.Show("Carro cadastrado com sucesso!");
+                this.Close();
             }
-
-            if (!int.TryParse(txtAno.Text, out int ano))
+            catch (Exception ex)
             {
-                MessageBox.Show("Ano inválido!");
-                return;
+                MessageBox.Show("Erro: " + ex.Message);
+
             }
-
-            var carro = new Carro
-            {
-                Cor = txtCor.Text,
-                Preco = preco,
-                Modelo = txtModelo.Text,
-                Marca = txtMarca.Text,
-                Ano = ano
-            };
-
-            await CarroRepository.Adicionar(carro);
-
-            MessageBox.Show("Carro adicionado com sucesso!");
-            await telaPrincipal.AtualizarTabela();
-            this.Close();
-        }
+            }
 
         private void AdicionarCarro_Load(object sender, EventArgs e)
         {

@@ -30,120 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             pnlTelaPrincipal = new Panel();
-            pictureBox1 = new PictureBox();
-            btnClientes = new Button();
-            btnCarros = new Button();
-            btnEmprestimos = new Button();
-            dgvTabela = new DataGridView();
-            btnNovo = new Button();
-            btnEditar = new Button();
             btnExcluir = new Button();
+            btnEditar = new Button();
+            btnNovo = new Button();
+            dgvTabela = new DataGridView();
+            btnEmprestimos = new Button();
+            btnCarros = new Button();
+            btnClientes = new Button();
+            pictureBox1 = new PictureBox();
             pnlTelaPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlTelaPrincipal
             // 
-            pnlTelaPrincipal.Controls.Add(btnExcluir);
-            pnlTelaPrincipal.Controls.Add(btnEditar);
-            pnlTelaPrincipal.Controls.Add(btnNovo);
-            pnlTelaPrincipal.Controls.Add(dgvTabela);
             pnlTelaPrincipal.Controls.Add(btnEmprestimos);
-            pnlTelaPrincipal.Controls.Add(btnCarros);
-            pnlTelaPrincipal.Controls.Add(btnClientes);
-            pnlTelaPrincipal.Controls.Add(pictureBox1);
             pnlTelaPrincipal.Location = new Point(46, 49);
             pnlTelaPrincipal.Name = "pnlTelaPrincipal";
             pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(380, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(308, 109);
-            pictureBox1.TabIndex = 12;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // btnClientes
-            // 
-            btnClientes.BackColor = SystemColors.InactiveCaptionText;
-            btnClientes.FlatStyle = FlatStyle.Popup;
-            btnClientes.ForeColor = SystemColors.ControlLightLight;
-            btnClientes.Location = new Point(40, 235);
-            btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(109, 41);
-            btnClientes.TabIndex = 13;
-            btnClientes.Text = "CLIENTES";
-            btnClientes.UseVisualStyleBackColor = false;
-            btnClientes.Click += btnClientes_Click;
-            // 
-            // btnCarros
-            // 
-            btnCarros.BackColor = SystemColors.InactiveCaptionText;
-            btnCarros.FlatStyle = FlatStyle.Popup;
-            btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(40, 328);
-            btnCarros.Name = "btnCarros";
-            btnCarros.Size = new Size(109, 41);
-            btnCarros.TabIndex = 14;
-            btnCarros.Text = "CARROS";
-            btnCarros.UseVisualStyleBackColor = false;
-            btnCarros.Click += btnCarros_Click;
-            // 
-            // btnEmprestimos
-            // 
-            btnEmprestimos.BackColor = Color.Gray;
-            btnEmprestimos.FlatStyle = FlatStyle.System;
-            btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
-            btnEmprestimos.Location = new Point(568, 515);
-            btnEmprestimos.Name = "btnEmprestimos";
-            btnEmprestimos.Size = new Size(127, 26);
-            btnEmprestimos.TabIndex = 15;
-            btnEmprestimos.Text = "NOVO EMPRESTIMO";
-            btnEmprestimos.UseVisualStyleBackColor = false;
-            btnEmprestimos.Click += btnEmprestimos_Click;
-            // 
-            // dgvTabela
-            // 
-            dgvTabela.AllowUserToAddRows = false;
-            dgvTabela.AllowUserToDeleteRows = false;
-            dgvTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTabela.Location = new Point(214, 138);
-            dgvTabela.Name = "dgvTabela";
-            dgvTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTabela.Size = new Size(676, 346);
-            dgvTabela.TabIndex = 0;
-            dgvTabela.CellContentClick += dgvTabela_CellContentClick;
-            // 
-            // btnNovo
-            // 
-            btnNovo.BackColor = Color.Black;
-            btnNovo.FlatStyle = FlatStyle.Popup;
-            btnNovo.ForeColor = SystemColors.ControlLight;
-            btnNovo.Location = new Point(703, 534);
-            btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(120, 26);
-            btnNovo.TabIndex = 17;
-            btnNovo.Text = "NOVO";
-            btnNovo.UseVisualStyleBackColor = false;
-            btnNovo.Click += button1_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.Black;
-            btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.ForeColor = SystemColors.ControlLight;
-            btnEditar.Location = new Point(838, 534);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(120, 26);
-            btnEditar.TabIndex = 18;
-            btnEditar.Text = "EDITAR";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += button2_Click;
             // 
             // btnExcluir
             // 
@@ -158,6 +64,93 @@
             btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.Black;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.ForeColor = SystemColors.ControlLight;
+            btnEditar.Location = new Point(838, 534);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(120, 26);
+            btnEditar.TabIndex = 18;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += button2_Click;
+            // 
+            // btnNovo
+            // 
+            btnNovo.BackColor = Color.Black;
+            btnNovo.FlatStyle = FlatStyle.Popup;
+            btnNovo.ForeColor = SystemColors.ControlLight;
+            btnNovo.Location = new Point(703, 534);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(120, 26);
+            btnNovo.TabIndex = 17;
+            btnNovo.Text = "NOVO";
+            btnNovo.UseVisualStyleBackColor = false;
+            btnNovo.Click += button1_Click;
+            // 
+            // dgvTabela
+            // 
+            dgvTabela.AllowUserToAddRows = false;
+            dgvTabela.AllowUserToDeleteRows = false;
+            dgvTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTabela.Location = new Point(214, 138);
+            dgvTabela.Name = "dgvTabela";
+            dgvTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTabela.Size = new Size(676, 346);
+            dgvTabela.TabIndex = 0;
+            dgvTabela.CellContentClick += dgvTabela_CellContentClick;
+            // 
+            // btnEmprestimos
+            // 
+            btnEmprestimos.BackColor = Color.Gray;
+            btnEmprestimos.FlatStyle = FlatStyle.System;
+            btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
+            btnEmprestimos.Location = new Point(524, 485);
+            btnEmprestimos.Name = "btnEmprestimos";
+            btnEmprestimos.Size = new Size(127, 26);
+            btnEmprestimos.TabIndex = 15;
+            btnEmprestimos.Text = "NOVO EMPRESTIMO";
+            btnEmprestimos.UseVisualStyleBackColor = false;
+            btnEmprestimos.Click += btnEmprestimos_Click;
+            // 
+            // btnCarros
+            // 
+            btnCarros.BackColor = SystemColors.InactiveCaptionText;
+            btnCarros.FlatStyle = FlatStyle.Popup;
+            btnCarros.ForeColor = SystemColors.ControlLightLight;
+            btnCarros.Location = new Point(40, 328);
+            btnCarros.Name = "btnCarros";
+            btnCarros.Size = new Size(109, 41);
+            btnCarros.TabIndex = 14;
+            btnCarros.Text = "CARROS";
+            btnCarros.UseVisualStyleBackColor = false;
+            btnCarros.Click += btnCarros_Click;
+            // 
+            // btnClientes
+            // 
+            btnClientes.BackColor = SystemColors.InactiveCaptionText;
+            btnClientes.FlatStyle = FlatStyle.Popup;
+            btnClientes.ForeColor = SystemColors.ControlLightLight;
+            btnClientes.Location = new Point(40, 235);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(109, 41);
+            btnClientes.TabIndex = 13;
+            btnClientes.Text = "CLIENTES";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(380, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(308, 109);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,7 +161,6 @@
             Controls.Add(btnEditar);
             Controls.Add(btnNovo);
             Controls.Add(dgvTabela);
-            Controls.Add(btnEmprestimos);
             Controls.Add(btnCarros);
             Controls.Add(btnClientes);
             Controls.Add(pictureBox1);
@@ -176,10 +168,10 @@
             Name = "TelaPrincipal";
             Text = "TelaPrincipal";
             WindowState = FormWindowState.Maximized;
-            pnlTelaPrincipal.ResumeLayout(false);
             Load += TelaPrincipal_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlTelaPrincipal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvTabela).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
