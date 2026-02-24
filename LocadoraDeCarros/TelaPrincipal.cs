@@ -160,15 +160,5 @@ namespace LocadoraDeCarros
             InitializeComponent();
             tipoUsuario = tipo;
         }
-
-        private void CentralizarPainel()
-        {
-            pnlTelaPrincipal.Left = (this.Width - pnlTelaPrincipal.Width) / 2;
-            pnlTelaPrincipal.Top = (this.Height - pnlTelaPrincipal.Height) / 2;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CentralizarPainel();
-        }
     }
 }

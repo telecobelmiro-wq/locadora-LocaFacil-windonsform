@@ -76,16 +76,17 @@ namespace LocadoraDeCarros
                 MessageBox.Show("Erro: " + ex.Message);
 
             }
-            }
-
-        private void AdicionarCarro_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AdicionarCarro_Resize(object sender, EventArgs e)
+        {
+            pnlAdicionarCarro.Left = (ClientSize.Width - pnlAdicionarCarro.Width) / 2;
+            pnlAdicionarCarro.Top = (ClientSize.Height - pnlAdicionarCarro.Height) / 2;
         }
     }
 }
