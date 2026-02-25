@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarCliente));
             pnlAdicionarCliente = new Panel();
+            btnCancelarAdcCli = new Button();
             pictureBox1 = new PictureBox();
             lblErro = new Label();
             dtpDataNascimento = new DateTimePicker();
@@ -51,6 +52,7 @@
             // pnlAdicionarCliente
             // 
             pnlAdicionarCliente.Anchor = AnchorStyles.None;
+            pnlAdicionarCliente.Controls.Add(btnCancelarAdcCli);
             pnlAdicionarCliente.Controls.Add(pictureBox1);
             pnlAdicionarCliente.Controls.Add(lblErro);
             pnlAdicionarCliente.Controls.Add(dtpDataNascimento);
@@ -69,6 +71,19 @@
             pnlAdicionarCliente.Name = "pnlAdicionarCliente";
             pnlAdicionarCliente.Size = new Size(1100, 700);
             pnlAdicionarCliente.TabIndex = 0;
+            // 
+            // btnCancelarAdcCli
+            // 
+            btnCancelarAdcCli.BackColor = Color.Black;
+            btnCancelarAdcCli.FlatStyle = FlatStyle.Popup;
+            btnCancelarAdcCli.ForeColor = SystemColors.ControlLight;
+            btnCancelarAdcCli.Location = new Point(405, 535);
+            btnCancelarAdcCli.Name = "btnCancelarAdcCli";
+            btnCancelarAdcCli.Size = new Size(129, 40);
+            btnCancelarAdcCli.TabIndex = 43;
+            btnCancelarAdcCli.Text = "CANCELAR";
+            btnCancelarAdcCli.UseVisualStyleBackColor = false;
+            btnCancelarAdcCli.Click += btnCancelarAdcCli_Click;
             // 
             // pictureBox1
             // 
@@ -155,12 +170,13 @@
             btnAdicionarNovoCliente.BackColor = Color.Black;
             btnAdicionarNovoCliente.FlatStyle = FlatStyle.Popup;
             btnAdicionarNovoCliente.ForeColor = SystemColors.ControlLight;
-            btnAdicionarNovoCliente.Location = new Point(453, 544);
+            btnAdicionarNovoCliente.Location = new Point(583, 535);
             btnAdicionarNovoCliente.Name = "btnAdicionarNovoCliente";
-            btnAdicionarNovoCliente.Size = new Size(238, 40);
+            btnAdicionarNovoCliente.Size = new Size(129, 40);
             btnAdicionarNovoCliente.TabIndex = 33;
-            btnAdicionarNovoCliente.Text = "ADICIONAR NOVO CLIENTE";
+            btnAdicionarNovoCliente.Text = "ADICIONAR";
             btnAdicionarNovoCliente.UseVisualStyleBackColor = false;
+            btnAdicionarNovoCliente.Click += btnAdicionarNovoCliente_Click_1;
             // 
             // lblSexo
             // 
@@ -233,5 +249,6 @@
         private Label lblPreco;
         private Label lblMarca;
         private Label lblModelo;
+        private Button btnCancelarAdcCli;
     }
 }

@@ -48,9 +48,9 @@
             btnExcluir.BackColor = Color.Black;
             btnExcluir.FlatStyle = FlatStyle.Popup;
             btnExcluir.ForeColor = SystemColors.ControlLight;
-            btnExcluir.Location = new Point(974, 534);
+            btnExcluir.Location = new Point(977, 509);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(120, 26);
+            btnExcluir.Size = new Size(120, 40);
             btnExcluir.TabIndex = 19;
             btnExcluir.Text = "EXCLUIR";
             btnExcluir.UseVisualStyleBackColor = false;
@@ -61,9 +61,9 @@
             btnEditar.BackColor = Color.Black;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.ForeColor = SystemColors.ControlLight;
-            btnEditar.Location = new Point(838, 534);
+            btnEditar.Location = new Point(851, 509);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(120, 26);
+            btnEditar.Size = new Size(120, 40);
             btnEditar.TabIndex = 18;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = false;
@@ -74,9 +74,9 @@
             btnNovo.BackColor = Color.Black;
             btnNovo.FlatStyle = FlatStyle.Popup;
             btnNovo.ForeColor = SystemColors.ControlLight;
-            btnNovo.Location = new Point(703, 534);
+            btnNovo.Location = new Point(725, 509);
             btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(120, 26);
+            btnNovo.Size = new Size(120, 40);
             btnNovo.TabIndex = 17;
             btnNovo.Text = "NOVO";
             btnNovo.UseVisualStyleBackColor = false;
@@ -87,10 +87,10 @@
             dgvTabela.AllowUserToAddRows = false;
             dgvTabela.AllowUserToDeleteRows = false;
             dgvTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTabela.Location = new Point(214, 138);
+            dgvTabela.Location = new Point(262, 16);
             dgvTabela.Name = "dgvTabela";
             dgvTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTabela.Size = new Size(676, 346);
+            dgvTabela.Size = new Size(835, 472);
             dgvTabela.TabIndex = 0;
             dgvTabela.CellContentClick += dgvTabela_CellContentClick;
             // 
@@ -99,25 +99,31 @@
             btnCarros.BackColor = SystemColors.InactiveCaptionText;
             btnCarros.FlatStyle = FlatStyle.Popup;
             btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(40, 328);
+            btnCarros.Location = new Point(28, 238);
             btnCarros.Name = "btnCarros";
-            btnCarros.Size = new Size(109, 41);
+            btnCarros.Size = new Size(181, 44);
             btnCarros.TabIndex = 14;
-            btnCarros.Text = "CARROS";
+            btnCarros.Text = "Carros";
             btnCarros.UseVisualStyleBackColor = false;
             btnCarros.Click += btnCarros_Click;
             // 
             // btnClientes
             // 
-            btnClientes.Location = new Point(28, 350);
+            btnClientes.BackColor = Color.Black;
+            btnClientes.FlatStyle = FlatStyle.Popup;
+            btnClientes.ForeColor = SystemColors.ControlLightLight;
+            btnClientes.Location = new Point(28, 337);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(75, 23);
+            btnClientes.Size = new Size(181, 44);
             btnClientes.TabIndex = 20;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click_1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(380, 12);
+            pictureBox1.Location = new Point(-65, 16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(308, 109);
             pictureBox1.TabIndex = 12;
@@ -129,21 +135,27 @@
             btnEmprestimos.BackColor = Color.Black;
             btnEmprestimos.FlatStyle = FlatStyle.System;
             btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
-            btnEmprestimos.Location = new Point(549, 494);
+            btnEmprestimos.Location = new Point(599, 509);
             btnEmprestimos.Name = "btnEmprestimos";
-            btnEmprestimos.Size = new Size(127, 26);
+            btnEmprestimos.Size = new Size(120, 40);
             btnEmprestimos.TabIndex = 15;
-            btnEmprestimos.Text = "NOVO EMPRESTIMO";
+            btnEmprestimos.Text = "EMPRESTIMO";
             btnEmprestimos.UseVisualStyleBackColor = false;
             btnEmprestimos.Click += btnEmprestimos_Click;
             // 
             // pnlTelaPrincipal
             // 
+            pnlTelaPrincipal.Controls.Add(btnExcluir);
             pnlTelaPrincipal.Controls.Add(btnClientes);
+            pnlTelaPrincipal.Controls.Add(btnEditar);
             pnlTelaPrincipal.Controls.Add(btnEmprestimos);
-            pnlTelaPrincipal.Location = new Point(12, 40);
+            pnlTelaPrincipal.Controls.Add(btnNovo);
+            pnlTelaPrincipal.Controls.Add(pictureBox1);
+            pnlTelaPrincipal.Controls.Add(btnCarros);
+            pnlTelaPrincipal.Controls.Add(dgvTabela);
+            pnlTelaPrincipal.Location = new Point(42, 27);
             pnlTelaPrincipal.Name = "pnlTelaPrincipal";
-            pnlTelaPrincipal.Size = new Size(1057, 525);
+            pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
             // 
             // TelaPrincipal
@@ -151,13 +163,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1106, 577);
-            Controls.Add(btnExcluir);
-            Controls.Add(btnEditar);
-            Controls.Add(btnNovo);
-            Controls.Add(dgvTabela);
-            Controls.Add(btnCarros);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(1184, 761);
             Controls.Add(pnlTelaPrincipal);
             Name = "TelaPrincipal";
             Text = "TelaPrincipal";

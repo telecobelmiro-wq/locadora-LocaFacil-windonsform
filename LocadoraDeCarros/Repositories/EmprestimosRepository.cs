@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LocadoraDeCarros.Banco;
+﻿using LocadoraDeCarros.Banco;
+using LocadoraDeCarros.Modelo;
+using Dapper;
 
 namespace LocadoraDeCarros.Repositories
 {
@@ -11,6 +8,80 @@ namespace LocadoraDeCarros.Repositories
     {
         private static readonly ConexaoBanco conexaoBanco = new ConexaoBanco();
 
+        public static async Task<IEnumerable<Emprestimos>> ObterTodos()
+        {
+            var emprestimos = await conexaoBanco.CriarConexao()
+                .QueryAsync<Emprestimos>(
+                @"
+                    SELECT
+                        Id,
+                        IdCliente,
+                        IdVeiculo,
+                        Status,
+                        ValorTotal,
+                        DataRetirada,
+                        DataDevolucao
+                    FROM Emprestimos
+                ");
 
+            return emprestimos;
+        }
+
+        public static async Task Adicionar(Emprestimos emprestimo)
+        {
+            await conexaoBanco.CriarConexao().ExecuteAsync(
+                @"
+                    INSERT INTO Emprestimos
+                    (IdCliente, IdVeiculo, Status, ValorTotal, DataRetirada, DataDevolucao)
+                    VALUES
+                    (@IdCliente, @IdVeiculo, @Status, @ValorTotal, @DataRetirada, @DataDevolucao)
+                ", emprestimo);
+        }
+
+        public static async Task Deletar(int id)
+        {
+            await conexaoBanco.CriarConexao().ExecuteAsync(
+                @"
+                    DELETE FROM Emprestimos
+                    WHERE Id = @Id
+                ", new { Id = id });
+        }
+
+        public static async Task<Emprestimos> ObterPorId(int id)
+        {
+            var emprestimo = await conexaoBanco.CriarConexao()
+                .QueryFirstOrDefaultAsync<Emprestimos>(
+                @"
+                    SELECT
+                        Id,
+                        IdCliente,
+                        IdVeiculo,
+                        Status,
+                        ValorTotal,
+                        DataRetirada,
+                        DataDevolucao
+                    FROM Emprestimos
+                    WHERE Id = @Id
+                ", new { Id = id });
+
+            return emprestimo;
+        }
+
+        public static async Task Atualizar(Emprestimos emprestimo)
+        {
+            await conexaoBanco.CriarConexao().ExecuteAsync(
+                @"
+                    UPDATE Emprestimos
+                    SET
+                        IdCliente = @IdCliente,
+                        IdVeiculo = @IdVeiculo,
+                        Status = @Status,
+                        ValorTotal = @ValorTotal,
+                        DataRetirada = @DataRetirada,
+                        DataDevolucao = @DataDevolucao
+                    WHERE
+                        Id = @Id
+                ", emprestimo);
+        }
     }
 }

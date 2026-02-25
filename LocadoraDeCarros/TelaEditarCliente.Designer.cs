@@ -83,9 +83,9 @@
             btnSalvarEditarCli.BackColor = Color.Black;
             btnSalvarEditarCli.FlatStyle = FlatStyle.Popup;
             btnSalvarEditarCli.ForeColor = SystemColors.ControlLight;
-            btnSalvarEditarCli.Location = new Point(673, 379);
+            btnSalvarEditarCli.Location = new Point(673, 400);
             btnSalvarEditarCli.Name = "btnSalvarEditarCli";
-            btnSalvarEditarCli.Size = new Size(89, 49);
+            btnSalvarEditarCli.Size = new Size(89, 28);
             btnSalvarEditarCli.TabIndex = 8;
             btnSalvarEditarCli.Text = "SALVAR";
             btnSalvarEditarCli.UseVisualStyleBackColor = false;
@@ -158,9 +158,9 @@
             btnCancelarEditarCli.BackColor = Color.Black;
             btnCancelarEditarCli.FlatStyle = FlatStyle.Popup;
             btnCancelarEditarCli.ForeColor = SystemColors.ControlLight;
-            btnCancelarEditarCli.Location = new Point(559, 379);
+            btnCancelarEditarCli.Location = new Point(559, 400);
             btnCancelarEditarCli.Name = "btnCancelarEditarCli";
-            btnCancelarEditarCli.Size = new Size(89, 49);
+            btnCancelarEditarCli.Size = new Size(89, 28);
             btnCancelarEditarCli.TabIndex = 17;
             btnCancelarEditarCli.Text = "CANCELAR";
             btnCancelarEditarCli.UseVisualStyleBackColor = false;

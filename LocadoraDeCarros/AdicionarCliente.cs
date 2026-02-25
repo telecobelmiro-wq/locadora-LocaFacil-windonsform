@@ -22,41 +22,7 @@ namespace LocadoraDeCarros
 
         }
 
-        private async void btnAdicionarNovoCliente_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = new Cliente()
-            {
-                Nome = txtNome.Text,
-                Cpf = txtCpf.Text,
-                Email = txtEmail.Text,
-                Sexo = rbMasculino.Checked ? 'M' : 'F',
-                DataNascimento = dtpDataNascimento.Value,
-            };
-
-            var stringBuilder = new StringBuilder();
-            var listaDeErros = new List<ValidationResult>();
-
-            var contexto = new ValidationContext(cliente);
-            Validator.TryValidateObject(cliente, contexto, listaDeErros, true);
-
-            if (listaDeErros.Count > 0)
-            {
-                foreach (var erro in listaDeErros)
-                {
-                    stringBuilder.Append(erro.ErrorMessage + "\n");
-                }
-
-                lblErro.Text = stringBuilder.ToString();
-            }
-            else
-            {
-                await ClienteRepository.Adicionar(cliente);
-                MessageBox.Show("Cliente cadastrado com sucesso!");
-
-                this.telaPrincipal.AtualizarTabela();
-                this.Close();
-            }
-        }
+    
 
         private void AdicionarCliente_Load(object sender, EventArgs e)
         {
@@ -71,8 +37,97 @@ namespace LocadoraDeCarros
             pnlAdicionarCliente.Top =
                 (this.ClientSize.Height - pnlAdicionarCliente.Height) / 2;
         }
+
+        private async void btnAdicionarNovoCliente_Click_1(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                MessageBox.Show("Digite o nome.");
+                txtNome.Focus();
+                return;
+            }
+
+            if (!txtNome.Text.All(char.IsLetter) && txtNome.Text.Contains(" ") == false)
+            {
+                MessageBox.Show("Nome deve conter apenas letras.");
+                txtNome.Focus();
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Digite o email.");
+                txtEmail.Focus();
+                return;
+            }
+
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(txtEmail.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Email inválido.");
+                txtEmail.Focus();
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(txtCpf.Text))
+            {
+                MessageBox.Show("Digite o CPF.");
+                txtCpf.Focus();
+                return;
+            }
+
+            if (txtCpf.Text.Length < 11)
+            {
+                MessageBox.Show("CPF inválido.");
+                txtCpf.Focus();
+                return;
+            }
+
+
+            if (dtpDataNascimento.Value.Date > DateTime.Now.Date)
+            {
+                MessageBox.Show("Data de nascimento inválida.");
+                return;
+            }
+
+
+            if (!rbMasculino.Checked && !rbFeminino.Checked)
+            {
+                MessageBox.Show("Selecione o sexo.");
+                return;
+            }
+
+            Cliente cliente = new Cliente()
+            {
+                Nome = txtNome.Text,
+                Cpf = txtCpf.Text,
+                Email = txtEmail.Text,
+                Sexo = rbMasculino.Checked ? 'M' : 'F',
+                DataNascimento = dtpDataNascimento.Value,
+            };
+
+            await ClienteRepository.Adicionar(cliente);
+            
+            MessageBox.Show("Cliente cadastrado com sucesso!");
+           
+            await this.telaPrincipal.AtualizarTabela();
+
+            this.Close();
+        }
+
+        private void btnCancelarAdcCli_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+
 
     
     

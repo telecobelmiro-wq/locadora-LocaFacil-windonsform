@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LocadoraDeCarros.Modelo;
+using LocadoraDeCarros.Repositories;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace LocadoraDeCarros
 {
@@ -42,9 +45,24 @@ namespace LocadoraDeCarros
 
         }
 
-        private void btnSalvarEmprestimos_Click(object sender, EventArgs e)
+        private async void btnSalvarEmprestimos_Click(object sender, EventArgs e)
         {
-            
+            var emprestimo = new Emprestimos();
+
+            emprestimo.IdCliente = int.Parse(txtIdClienteEmprestimos.Text);
+            emprestimo.IdVeiculos = int.Parse(txtIdVeiculosEmprestimos.Text);
+            emprestimo.Status = cmbStatusEmprestimos.Text;
+            emprestimo.ValorTotal = decimal.Parse(txtValorTotalEmprestimos.Text);
+            emprestimo.DataRetirada = dtpRetiradaVeiculo.Value;
+            emprestimo.DataDevolucao = dtpDevolucaoVeiculo.Value;
+
+            await EmprestimosRepository.Adicionar(emprestimo);
+
+            MessageBox.Show("Salvo!");
+            this.Close();
         }
+
     }
 }
+
+

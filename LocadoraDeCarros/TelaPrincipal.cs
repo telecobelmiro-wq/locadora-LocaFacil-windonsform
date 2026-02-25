@@ -29,8 +29,6 @@ namespace LocadoraDeCarros
         private async void TelaPrincipal_Load(object sender, EventArgs e)
         {
             await AtualizarTabela();
-
-
         }
 
         public async Task AtualizarTabela()
@@ -61,9 +59,9 @@ namespace LocadoraDeCarros
         {
 
         }
-            
-                
-            
+
+
+
 
         private async void btnCarros_Click(object sender, EventArgs e)
         {
@@ -71,13 +69,14 @@ namespace LocadoraDeCarros
             await AtualizarTabela();
         }
 
+
         private async void btnClientes_Click(object sender, EventArgs e)
         {
             entidadeAtual = "Cliente";
             await AtualizarTabela();
         }
 
-        private async void button2_Click(object sender, EventArgs e) // EDITAR
+        private async void button2_Click(object sender, EventArgs e) 
         {
             if (dgvTabela.SelectedRows.Count == 0)
             {
@@ -99,20 +98,20 @@ namespace LocadoraDeCarros
             await AtualizarTabela();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
 
             if (entidadeAtual == "Cliente")
             {
                 var tela = new AdicionarCliente(this);
-                tela.ShowDialog();
+                tela.ShowDialog();            
             }
             else
             {
                 var tela = new AdicionarCarro(this);
                 tela.ShowDialog();
             }
-
+            await AtualizarTabela();
         }
 
         private async void btnExcluir_Click(object sender, EventArgs e)
@@ -159,6 +158,12 @@ namespace LocadoraDeCarros
         {
             InitializeComponent();
             tipoUsuario = tipo;
+        }
+
+        private async void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            entidadeAtual = "Cliente";
+            await AtualizarTabela();
         }
     }
 }
