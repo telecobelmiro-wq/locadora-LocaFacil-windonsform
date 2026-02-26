@@ -6,12 +6,18 @@ namespace LocadoraDeCarros
     public partial class TelaEditarCliente : Form
     {
         private int idCliente;
+       
 
+
+        
 
         public TelaEditarCliente(int id)
         {
             InitializeComponent();
             idCliente = id;
+
+            
+           
         }
 
         private async void TelaEditarCliente_Load(object sender, EventArgs e)

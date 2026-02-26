@@ -29,7 +29,7 @@ namespace LocadoraDeCarros
 
         private void TelaEmprestimos_Load(object sender, EventArgs e)
         {
-            cmbStatusEmprestimos.DataSource = Enum.GetValues(typeof(StatusEmprestimo));
+           
         }
 
 
@@ -50,17 +50,15 @@ namespace LocadoraDeCarros
             var emprestimo = new Emprestimos();
 
             emprestimo.IdCliente = int.Parse(txtIdClienteEmprestimos.Text);
-            emprestimo.IdVeiculos = int.Parse(txtIdVeiculosEmprestimos.Text);
-            emprestimo.Status = cmbStatusEmprestimos.Text;
-            emprestimo.ValorTotal = decimal.Parse(txtValorTotalEmprestimos.Text);
-            emprestimo.DataRetirada = dtpRetiradaVeiculo.Value;
-            emprestimo.DataDevolucao = dtpDevolucaoVeiculo.Value;
+            emprestimo.IdCarro = int.Parse(txtIdVeiculosEmprestimos.Text);
+           
 
             await EmprestimosRepository.Adicionar(emprestimo);
 
             MessageBox.Show("Salvo!");
             this.Close();
         }
+
 
     }
 }

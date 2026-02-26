@@ -39,9 +39,9 @@ using System.Data.SqlClient;
                 await conexaoBanco.CriarConexao().ExecuteAsync(
                     @"
                     INSERT INTO Carro
-                    (Modelo, Marca, Cor, Preco, Ano)
+                    (Modelo, Marca, Cor, Preco, Ano, Categoria)
                     VALUES
-                    (@Modelo, @Marca, @Cor, @Preco, @Ano)
+                    (@Modelo, @Marca, @Cor, @Preco, @Ano, @Categoria)
                 ", carro);
             }
 
@@ -88,6 +88,7 @@ using System.Data.SqlClient;
                         Id = @Id
                 ", carroEdicao);
         }
+
 
            
         }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LocadoraDeCarros.Modelo;
 using LocadoraDeCarros.Repositories;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LocadoraDeCarros
 {
@@ -17,7 +18,7 @@ namespace LocadoraDeCarros
     {
         private int idCarro;
         private string entidadeAtual = "Carro";
-
+        private Carro carro;
 
         public TelaEditarCarro(int id)
         {
@@ -29,41 +30,13 @@ namespace LocadoraDeCarros
         private async void CarregarDados()
         {
             var carro = await CarroRepository.ObterPorId(idCarro);
+            this.carro = carro;
 
             txtModelo.Text = carro.Modelo;
             txtMarca.Text = carro.Marca;
             txtCor.Text = carro.Cor;
             txtAno.Text = carro.Ano.ToString();
             txtPreco.Text = carro.Preco.ToString();
-        }
-
-        private async void txtSalvar_Click(object sender, EventArgs e)
-        {
-            var carro = new Carro
-            {
-                Id = idCarro,
-                Modelo = txtModelo.Text,
-                Marca = txtMarca.Text,
-                Cor = txtCor.Text,
-                Ano = int.Parse(txtAno.Text),
-                Preco = decimal.Parse(txtPreco.Text)
-            };
-
-            await CarroRepository.Atualizar(carro);
-
-            MessageBox.Show("Carro atualizado!");
-            this.Close();
-        }
-
-        private void txtCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        public TelaEditarCarro()
-        {
-            InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -90,7 +63,7 @@ namespace LocadoraDeCarros
         {
             if (
                 //se algum campo estiver vazio, execute o que está dentro do if.
-                string.IsNullOrWhiteSpace(txtCor.Text) || 
+                string.IsNullOrWhiteSpace(txtCor.Text) ||
                 string.IsNullOrWhiteSpace(txtPreco.Text) ||
                 string.IsNullOrWhiteSpace(txtModelo.Text) ||
                 string.IsNullOrWhiteSpace(txtMarca.Text) ||
@@ -112,35 +85,42 @@ namespace LocadoraDeCarros
                 return;
             }
 
-            var carro = new Carro
-            {
-                Cor = txtCor.Text,
-                Preco = preco,
-                Modelo = txtModelo.Text,
-                Marca = txtMarca.Text,
-                Ano = ano
-            };
 
-            await CarroRepository.Adicionar(carro);
+            carro.Cor = txtCor.Text;
+            carro.Preco = preco;
+            carro.Modelo = txtModelo.Text;
+            carro.Marca = txtMarca.Text;
+            carro.Ano = ano;    
+            carro.Categoria = txtMarca.Text;
 
-            MessageBox.Show("Carro adicionado com sucesso!");
+            
             try
             {
-              
+
 
                 await CarroRepository.Atualizar(carro);
                 MessageBox.Show("Carro atualizado com sucesso!");
                 this.Close();
-                
+
             }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao salvar: " + ex.Message);
-                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar: " + ex.Message);
+            }
+
+
+
+           
+
 
         }
 
         private void txtModelo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

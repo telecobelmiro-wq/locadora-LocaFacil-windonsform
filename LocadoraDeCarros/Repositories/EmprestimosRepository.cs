@@ -16,7 +16,7 @@ namespace LocadoraDeCarros.Repositories
                     SELECT
                         Id,
                         IdCliente,
-                        IdVeiculo,
+                        IdCarro,
                         Status,
                         ValorTotal,
                         DataRetirada,
@@ -32,9 +32,9 @@ namespace LocadoraDeCarros.Repositories
             await conexaoBanco.CriarConexao().ExecuteAsync(
                 @"
                     INSERT INTO Emprestimos
-                    (IdCliente, IdVeiculo, Status, ValorTotal, DataRetirada, DataDevolucao)
+                    (IdCliente, IdCarro, Status, ValorTotal, DataRetirada, DataDevolucao)
                     VALUES
-                    (@IdCliente, @IdVeiculo, @Status, @ValorTotal, @DataRetirada, @DataDevolucao)
+                    (@IdCliente, @IdCarro, @Status, @ValorTotal, @DataRetirada, @DataDevolucao)
                 ", emprestimo);
         }
 
@@ -55,7 +55,7 @@ namespace LocadoraDeCarros.Repositories
                     SELECT
                         Id,
                         IdCliente,
-                        IdVeiculo,
+                        IdCarro,
                         Status,
                         ValorTotal,
                         DataRetirada,
@@ -71,14 +71,14 @@ namespace LocadoraDeCarros.Repositories
         {
             await conexaoBanco.CriarConexao().ExecuteAsync(
                 @"
-                    UPDATE Emprestimos
-                    SET
+                    UPDATE 
                         IdCliente = @IdCliente,
-                        IdVeiculo = @IdVeiculo,
+                        IdCarro = @IdCarro,
                         Status = @Status,
                         ValorTotal = @ValorTotal,
                         DataRetirada = @DataRetirada,
                         DataDevolucao = @DataDevolucao
+                    FROM Emprestimos
                     WHERE
                         Id = @Id
                 ", emprestimo);
