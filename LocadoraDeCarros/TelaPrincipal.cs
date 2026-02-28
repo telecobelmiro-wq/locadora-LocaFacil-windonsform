@@ -11,6 +11,17 @@ namespace LocadoraDeCarros
         private string entidadeAtual = "Cliente";
         private string tipoUsuario;
         private readonly bool isAdmin;
+        private Cliente cliente;
+        private Cliente clienteLogado;
+        
+        public TelaPrincipal(Cliente cliente)
+        {
+            InitializeComponent();
+
+            clienteLogado = cliente;
+            lblUsuario.Text = "Bem-vindo, " + clienteLogado.Nome;
+        }
+
 
         public TelaPrincipal(bool isAdmin)
         {
@@ -66,17 +77,17 @@ namespace LocadoraDeCarros
         private async void btnCarros_Click(object sender, EventArgs e)
         {
             entidadeAtual = "Carro";
+            btnEmprestimos.Enabled = true;
             await AtualizarTabela();
+
+
+
+
+
         }
 
 
-        private async void btnClientes_Click(object sender, EventArgs e)
-        {
-            entidadeAtual = "Cliente";
-            await AtualizarTabela();
-        }
-
-        private async void button2_Click(object sender, EventArgs e) 
+        private async void button2_Click(object sender, EventArgs e)
         {
             if (dgvTabela.SelectedRows.Count == 0)
             {
@@ -104,7 +115,7 @@ namespace LocadoraDeCarros
             if (entidadeAtual == "Cliente")
             {
                 var tela = new AdicionarCliente(this);
-                tela.ShowDialog();            
+                tela.ShowDialog();
             }
             else
             {
@@ -150,20 +161,50 @@ namespace LocadoraDeCarros
 
         private void btnEmprestimos_Click(object sender, EventArgs e)
         {
-            TelaEmprestimos tela = new TelaEmprestimos();
-            tela.ShowDialog();
+
+
+            if (dgvTabela.CurrentRow != null)
+            {
+                int idCarro = Convert.ToInt32(dgvTabela.CurrentRow.Cells["Id"].Value);
+
+                TelaEmprestimos tela = new TelaEmprestimos(idCarro);
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um carro primeiro!");
+            }
+
         }
 
-        public TelaPrincipal(string tipo)
-        {
-            InitializeComponent();
-            tipoUsuario = tipo;
-        }
 
         private async void btnClientes_Click_1(object sender, EventArgs e)
         {
             entidadeAtual = "Cliente";
+            btnEmprestimos.Enabled = false;
             await AtualizarTabela();
         }
+
+        private void pnlTelaPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private  void btnTelaEmprestimos_Click(object sender, EventArgs e)
+        {
+            if (dgvTabela.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um usuário primeiro.");
+                return;
+            }
+
+            int idUsuario = Convert.ToInt32(dgvTabela.CurrentRow.Cells["Id"].Value);
+
+            TelaDetalheEmprestimos tela = new TelaDetalheEmprestimos(idUsuario);
+            tela.ShowDialog();
+
+        }
+
+
     }
 }

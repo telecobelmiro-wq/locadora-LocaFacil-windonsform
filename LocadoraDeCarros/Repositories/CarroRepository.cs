@@ -27,7 +27,8 @@ using System.Data.SqlClient;
                         Marca,
                         Cor,
                         Preco,
-                        Ano
+                        Ano, 
+                        Categoria
                     FROM Carro
                 ");
 
@@ -65,7 +66,8 @@ using System.Data.SqlClient;
                         Marca,
                         Cor,
                         Preco,
-                        Ano
+                        Ano, 
+                        Categoria
                     FROM Carro
                     WHERE Id = @Id
                 ", new { Id = idCarro });
@@ -83,7 +85,8 @@ using System.Data.SqlClient;
                         Marca = @Marca,
                         Cor = @Cor,
                         Preco = @Preco,
-                        Ano = @Ano
+                        Ano = @Ano,
+                        Categoria = @Categoria
                     WHERE
                         Id = @Id
                 ", carroEdicao);

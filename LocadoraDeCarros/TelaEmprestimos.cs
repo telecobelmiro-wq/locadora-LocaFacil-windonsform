@@ -15,6 +15,21 @@ namespace LocadoraDeCarros
 {
     public partial class TelaEmprestimos : Form
     {
+
+        private Carro carroSelecionado;
+        private int idCarroSelecionado;
+
+
+        public TelaEmprestimos(int idCarro)
+        {
+            InitializeComponent();
+            idCarroSelecionado = idCarro;
+
+           txtIdVeiculosEmprestimos.Text = idCarroSelecionado.ToString();
+
+            Load += TelaEmprestimos_Load;
+        }
+
         public enum StatusEmprestimo
         {
             Ativo,
@@ -22,14 +37,9 @@ namespace LocadoraDeCarros
             Finalizado
         }
 
-        public TelaEmprestimos()
+        private async void TelaEmprestimos_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-        }
-
-        private void TelaEmprestimos_Load(object sender, EventArgs e)
-        {
-           
+            carroSelecionado = await CarroRepository.ObterPorId(idCarroSelecionado);
         }
 
 
@@ -47,19 +57,26 @@ namespace LocadoraDeCarros
 
         private async void btnSalvarEmprestimos_Click(object sender, EventArgs e)
         {
-            var emprestimo = new Emprestimos();
+            Emprestimos emp = new Emprestimos
+            {
+                IdCliente = Convert.ToInt32(txtIdClienteEmprestimos.Text),
+                IdCarro = Convert.ToInt32(txtIdVeiculosEmprestimos.Text),
+                Status = "Ativo",
+                DataRetirada = DateTime.Now
+            };
 
-            emprestimo.IdCliente = int.Parse(txtIdClienteEmprestimos.Text);
-            emprestimo.IdCarro = int.Parse(txtIdVeiculosEmprestimos.Text);
-           
+            
+            emp.CalcularDataDevolucao("Ouro"); 
 
-            await EmprestimosRepository.Adicionar(emprestimo);
-
-            MessageBox.Show("Salvo!");
+            await EmprestimosRepository.Adicionar(emp);
             this.Close();
+            
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

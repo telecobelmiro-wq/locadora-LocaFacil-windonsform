@@ -38,6 +38,8 @@
             pictureBox1 = new PictureBox();
             btnEmprestimos = new Button();
             pnlTelaPrincipal = new Panel();
+            btnTelaEmprestimos = new Button();
+            lblUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlTelaPrincipal.SuspendLayout();
@@ -99,7 +101,7 @@
             btnCarros.BackColor = SystemColors.InactiveCaptionText;
             btnCarros.FlatStyle = FlatStyle.Popup;
             btnCarros.ForeColor = SystemColors.ControlLightLight;
-            btnCarros.Location = new Point(28, 238);
+            btnCarros.Location = new Point(28, 293);
             btnCarros.Name = "btnCarros";
             btnCarros.Size = new Size(181, 44);
             btnCarros.TabIndex = 14;
@@ -112,7 +114,7 @@
             btnClientes.BackColor = Color.Black;
             btnClientes.FlatStyle = FlatStyle.Popup;
             btnClientes.ForeColor = SystemColors.ControlLightLight;
-            btnClientes.Location = new Point(28, 337);
+            btnClientes.Location = new Point(28, 206);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(181, 44);
             btnClientes.TabIndex = 20;
@@ -133,6 +135,7 @@
             // btnEmprestimos
             // 
             btnEmprestimos.BackColor = Color.Black;
+            btnEmprestimos.Enabled = false;
             btnEmprestimos.FlatStyle = FlatStyle.System;
             btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
             btnEmprestimos.Location = new Point(599, 509);
@@ -145,6 +148,8 @@
             // 
             // pnlTelaPrincipal
             // 
+            pnlTelaPrincipal.Controls.Add(btnTelaEmprestimos);
+            pnlTelaPrincipal.Controls.Add(lblUsuario);
             pnlTelaPrincipal.Controls.Add(btnExcluir);
             pnlTelaPrincipal.Controls.Add(btnClientes);
             pnlTelaPrincipal.Controls.Add(btnEditar);
@@ -157,6 +162,29 @@
             pnlTelaPrincipal.Name = "pnlTelaPrincipal";
             pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
+            pnlTelaPrincipal.Paint += pnlTelaPrincipal_Paint;
+            // 
+            // btnTelaEmprestimos
+            // 
+            btnTelaEmprestimos.BackColor = SystemColors.InactiveCaptionText;
+            btnTelaEmprestimos.FlatStyle = FlatStyle.Popup;
+            btnTelaEmprestimos.ForeColor = SystemColors.ControlLightLight;
+            btnTelaEmprestimos.Location = new Point(28, 382);
+            btnTelaEmprestimos.Name = "btnTelaEmprestimos";
+            btnTelaEmprestimos.Size = new Size(181, 44);
+            btnTelaEmprestimos.TabIndex = 22;
+            btnTelaEmprestimos.Text = "Visualizar Emprestimos";
+            btnTelaEmprestimos.UseVisualStyleBackColor = false;
+            btnTelaEmprestimos.Click += btnTelaEmprestimos_Click;
+            // 
+            // lblUsuario
+            // 
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(98, 156);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(38, 15);
+            lblUsuario.TabIndex = 21;
+            lblUsuario.Text = "label1";
             // 
             // TelaPrincipal
             // 
@@ -172,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvTabela).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlTelaPrincipal.ResumeLayout(false);
+            pnlTelaPrincipal.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -185,5 +214,7 @@
         private Button btnExcluir;
         private Button btnEmprestimos;
         private Panel pnlTelaPrincipal;
+        private Label lblUsuario;
+        private Button btnTelaEmprestimos;
     }
 }

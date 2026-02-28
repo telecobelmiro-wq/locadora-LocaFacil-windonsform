@@ -12,12 +12,11 @@ namespace LocadoraDeCarros.Modelo
         public int IdCliente { get; set; }
         public int IdCarro { get; set; }
         public string Status { get; set; }
-        public decimal ValorTotal { get; set; }
         public DateTime DataRetirada { get; set; }
         public DateTime DataDevolucao { get; set; }
 
 
-        public void CalcularDataEntrega(string categoria)
+        public void CalcularDataDevolucao(string categoria)
         {
             if (categoria == "Ouro")
                 DataDevolucao = DateTime.Now.AddDays(9);

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaLoginCliente));
             pnlLoginCliente = new Panel();
             btnEntrar = new Button();
-            txtNomeCliente = new TextBox();
+            txtLogin = new TextBox();
             lblLoginCliente = new Label();
             pictureBox1 = new PictureBox();
             pnlLoginCliente.SuspendLayout();
@@ -41,7 +41,7 @@
             // pnlLoginCliente
             // 
             pnlLoginCliente.Controls.Add(btnEntrar);
-            pnlLoginCliente.Controls.Add(txtNomeCliente);
+            pnlLoginCliente.Controls.Add(txtLogin);
             pnlLoginCliente.Controls.Add(lblLoginCliente);
             pnlLoginCliente.Controls.Add(pictureBox1);
             pnlLoginCliente.Location = new Point(29, 26);
@@ -55,20 +55,21 @@
             btnEntrar.FlatStyle = FlatStyle.Popup;
             btnEntrar.Font = new Font("Segoe UI", 12F);
             btnEntrar.ForeColor = Color.Cornsilk;
-            btnEntrar.Location = new Point(351, 467);
+            btnEntrar.Location = new Point(342, 471);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(99, 45);
+            btnEntrar.Size = new Size(120, 40);
             btnEntrar.TabIndex = 19;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click;
             // 
-            // txtNomeCliente
+            // txtLogin
             // 
-            txtNomeCliente.Location = new Point(336, 423);
-            txtNomeCliente.Name = "txtNomeCliente";
-            txtNomeCliente.PlaceholderText = "Insira seu nome aqui ";
-            txtNomeCliente.Size = new Size(124, 23);
-            txtNomeCliente.TabIndex = 18;
+            txtLogin.Location = new Point(361, 429);
+            txtLogin.Name = "txtLogin";
+            txtLogin.PlaceholderText = "Insira seu id";
+            txtLogin.Size = new Size(81, 23);
+            txtLogin.TabIndex = 18;
             // 
             // lblLoginCliente
             // 
@@ -108,7 +109,7 @@
         #endregion
         private Panel pnlLoginCliente;
         private Button btnEntrar;
-        private TextBox txtNomeCliente;
+        private TextBox txtLogin;
         private Label lblLoginCliente;
         private PictureBox pictureBox1;
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LocadoraDeCarros.Repositories;
 
 namespace LocadoraDeCarros
 {
@@ -20,7 +21,7 @@ namespace LocadoraDeCarros
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (txtNomeCliente.Text == "")
+            if (txtLogin.Text == "")
             {
                 MessageBox.Show("Digite seu nome!");
                 return;
@@ -45,6 +46,30 @@ namespace LocadoraDeCarros
         {
             pnlLoginCliente.Left = (this.Width - pnlLoginCliente.Width) / 2;
             pnlLoginCliente.Top = (this.Height - pnlLoginCliente.Height) / 2;
+        }
+
+        private async void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtLogin.Text, out int id))
+            {
+                MessageBox.Show("Digite um ID válido!");
+                return;
+            }
+
+            var cliente = await ClienteRepository.ObterPorId(id);
+
+            if (cliente == null)
+            {
+                MessageBox.Show("Cliente não encontrado!");
+                return;
+            }
+
+            MessageBox.Show("Login realizado com sucesso!");
+            this.Hide();
+            TelaPrincipal tela = new TelaPrincipal(cliente);
+            tela.ShowDialog();
+            this.Show();
+            
         }
     }
 }

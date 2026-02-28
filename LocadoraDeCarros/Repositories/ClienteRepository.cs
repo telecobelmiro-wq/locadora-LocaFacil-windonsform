@@ -1,6 +1,7 @@
 ﻿using LocadoraDeCarros.Banco;
 using LocadoraDeCarros.Modelo;
 using Dapper;
+using System.Data.SqlClient;
 namespace LocadoraDeCarros.Repositories
 {
     public class ClienteRepository
@@ -78,7 +79,9 @@ namespace LocadoraDeCarros.Repositories
                         Id = @Id
                 ", clienteEdicao);
         }
+     
+            }
+        }
 
 
-    }
-}
+ 

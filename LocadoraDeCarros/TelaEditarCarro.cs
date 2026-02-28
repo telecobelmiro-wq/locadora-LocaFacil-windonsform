@@ -51,7 +51,7 @@ namespace LocadoraDeCarros
 
         private void TelaEditarCarro_Load(object sender, EventArgs e)
         {
-
+            cbCategoria.SelectedIndex = 0;
         }
 
         private void btnCancelarEditarCar_Click(object sender, EventArgs e)
@@ -68,6 +68,7 @@ namespace LocadoraDeCarros
                 string.IsNullOrWhiteSpace(txtModelo.Text) ||
                 string.IsNullOrWhiteSpace(txtMarca.Text) ||
                 string.IsNullOrWhiteSpace(txtAno.Text))
+                
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
@@ -84,16 +85,19 @@ namespace LocadoraDeCarros
                 MessageBox.Show("Ano inválido!");
                 return;
             }
-
+            if (cbCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione uma categoria!");
+                return;
+            }
 
             carro.Cor = txtCor.Text;
             carro.Preco = preco;
             carro.Modelo = txtModelo.Text;
             carro.Marca = txtMarca.Text;
-            carro.Ano = ano;    
-            carro.Categoria = txtMarca.Text;
+            carro.Ano = ano;
+            carro.Categoria = cbCategoria.SelectedItem.ToString();
 
-            
             try
             {
 
@@ -107,11 +111,6 @@ namespace LocadoraDeCarros
             {
                 MessageBox.Show("Erro ao salvar: " + ex.Message);
             }
-
-
-
-           
-
 
         }
 

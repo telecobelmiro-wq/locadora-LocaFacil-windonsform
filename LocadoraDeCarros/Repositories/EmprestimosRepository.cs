@@ -32,9 +32,9 @@ namespace LocadoraDeCarros.Repositories
             await conexaoBanco.CriarConexao().ExecuteAsync(
                 @"
                     INSERT INTO Emprestimos
-                    (IdCliente, IdCarro, Status, ValorTotal, DataRetirada, DataDevolucao)
+                    (IdCliente, IdCarro, Status, DataRetirada, DataDevolucao)
                     VALUES
-                    (@IdCliente, @IdCarro, @Status, @ValorTotal, @DataRetirada, @DataDevolucao)
+                    (@IdCliente, @IdCarro, @Status, @DataRetirada, @DataDevolucao)
                 ", emprestimo);
         }
 
@@ -82,6 +82,15 @@ namespace LocadoraDeCarros.Repositories
                     WHERE
                         Id = @Id
                 ", emprestimo);
+        }
+        public static async Task<Emprestimos> ObterPorUsuario(int idUsuario)
+        {
+            var emp = await conexaoBanco.CriarConexao()
+                .QueryFirstOrDefaultAsync<Emprestimos>(
+                @"SELECT * FROM Emprestimos WHERE IdCliente = @Id",
+                new { Id = idUsuario });
+
+            return emp;
         }
     }
 }
