@@ -18,7 +18,6 @@ namespace LocadoraDeCarros.Repositories
                         IdCliente,
                         IdCarro,
                         Status,
-                        ValorTotal,
                         DataRetirada,
                         DataDevolucao
                     FROM Emprestimos
@@ -57,7 +56,6 @@ namespace LocadoraDeCarros.Repositories
                         IdCliente,
                         IdCarro,
                         Status,
-                        ValorTotal,
                         DataRetirada,
                         DataDevolucao
                     FROM Emprestimos
@@ -70,18 +68,16 @@ namespace LocadoraDeCarros.Repositories
         public static async Task Atualizar(Emprestimos emprestimo)
         {
             await conexaoBanco.CriarConexao().ExecuteAsync(
-                @"
-                    UPDATE 
-                        IdCliente = @IdCliente,
-                        IdCarro = @IdCarro,
-                        Status = @Status,
-                        ValorTotal = @ValorTotal,
-                        DataRetirada = @DataRetirada,
-                        DataDevolucao = @DataDevolucao
-                    FROM Emprestimos
-                    WHERE
-                        Id = @Id
-                ", emprestimo);
+      @"
+            UPDATE Emprestimos
+            SET
+                IdCliente = @IdCliente,
+                IdCarro = @IdCarro,
+                Status = @Status,
+                DataRetirada = @DataRetirada,
+                DataDevolucao = @DataDevolucao
+            WHERE Id = @Id
+        ", emprestimo);
         }
         public static async Task<Emprestimos> ObterPorUsuario(int idUsuario)
         {

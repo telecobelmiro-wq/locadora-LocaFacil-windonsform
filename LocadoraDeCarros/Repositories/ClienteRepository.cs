@@ -64,23 +64,18 @@ namespace LocadoraDeCarros.Repositories
             return cliente;
         }
 
-        public static async Task Atualizar(Cliente clienteEdicao)
+        public static async Task Atualizar(Cliente cliente)
         {
             await conexaoBanco.CriarConexao().ExecuteAsync(
-                @"
-                    UPDATE Cliente
-                    SET
-                        Nome = @Nome,
-                        Email = @Email,
-                        Sexo = @Sexo,
-                        Cpf = @Cpf,
-                        DataNascimento = @DataNascimento
-                    WHERE
-                        Id = @Id
-                ", clienteEdicao);
+            @"UPDATE Cliente SET
+                     Nome = @Nome,
+                     Email = @Email,
+                     Sexo = @Sexo,
+                     Cpf = @Cpf
+                WHERE Id = @Id", cliente);
         }
-     
-            }
+
+    }
         }
 
 

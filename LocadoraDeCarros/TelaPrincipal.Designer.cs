@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             btnEmprestimos = new Button();
             pnlTelaPrincipal = new Panel();
+            btnDevolverEmpre = new Button();
             btnTelaEmprestimos = new Button();
             lblUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
@@ -138,7 +139,7 @@
             btnEmprestimos.Enabled = false;
             btnEmprestimos.FlatStyle = FlatStyle.System;
             btnEmprestimos.ForeColor = SystemColors.ActiveCaptionText;
-            btnEmprestimos.Location = new Point(599, 509);
+            btnEmprestimos.Location = new Point(473, 509);
             btnEmprestimos.Name = "btnEmprestimos";
             btnEmprestimos.Size = new Size(120, 40);
             btnEmprestimos.TabIndex = 15;
@@ -148,6 +149,7 @@
             // 
             // pnlTelaPrincipal
             // 
+            pnlTelaPrincipal.Controls.Add(btnDevolverEmpre);
             pnlTelaPrincipal.Controls.Add(btnTelaEmprestimos);
             pnlTelaPrincipal.Controls.Add(lblUsuario);
             pnlTelaPrincipal.Controls.Add(btnExcluir);
@@ -163,6 +165,19 @@
             pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
             pnlTelaPrincipal.Paint += pnlTelaPrincipal_Paint;
+            // 
+            // btnDevolverEmpre
+            // 
+            btnDevolverEmpre.BackColor = Color.Black;
+            btnDevolverEmpre.FlatStyle = FlatStyle.Popup;
+            btnDevolverEmpre.ForeColor = SystemColors.ControlLight;
+            btnDevolverEmpre.Location = new Point(599, 509);
+            btnDevolverEmpre.Name = "btnDevolverEmpre";
+            btnDevolverEmpre.Size = new Size(120, 40);
+            btnDevolverEmpre.TabIndex = 23;
+            btnDevolverEmpre.Text = "DEVOLVER";
+            btnDevolverEmpre.UseVisualStyleBackColor = false;
+            btnDevolverEmpre.Click += btnDevolverEmpre_Click;
             // 
             // btnTelaEmprestimos
             // 
@@ -180,7 +195,7 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(98, 156);
+            lblUsuario.Location = new Point(77, 159);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(38, 15);
             lblUsuario.TabIndex = 21;
@@ -216,5 +231,6 @@
         private Panel pnlTelaPrincipal;
         private Label lblUsuario;
         private Button btnTelaEmprestimos;
+        private Button btnDevolverEmpre;
     }
 }

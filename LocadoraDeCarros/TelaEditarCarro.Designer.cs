@@ -43,8 +43,8 @@
             txtPreco = new TextBox();
             txtCor = new TextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            cbCategoria = new ComboBox();
             lblCategoria = new Label();
+            cbCategoria = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -166,17 +166,6 @@
             txtCor.Size = new Size(100, 23);
             txtCor.TabIndex = 26;
             // 
-            // cbCategoria
-            // 
-            cbCategoria.FormattingEnabled = true;
-            cbCategoria.Items.AddRange(new object[] { "Bronze ", "Prata", "Ouro" });
-            cbCategoria.Location = new Point(547, 306);
-            cbCategoria.Name = "cbCategoria";
-            cbCategoria.Size = new Size(121, 23);
-            cbCategoria.TabIndex = 27;
-            cbCategoria.UseWaitCursor = true;
-            cbCategoria.SelectedIndexChanged += cbCategoria_SelectedIndexChanged;
-            // 
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
@@ -185,6 +174,16 @@
             lblCategoria.Size = new Size(70, 15);
             lblCategoria.TabIndex = 28;
             lblCategoria.Text = "CATEGORIA";
+            lblCategoria.Click += lblCategoria_Click;
+            // 
+            // cbCategoria
+            // 
+            cbCategoria.FormattingEnabled = true;
+            cbCategoria.Items.AddRange(new object[] { "Bronze", "Prata", "Ouro" });
+            cbCategoria.Location = new Point(547, 306);
+            cbCategoria.Name = "cbCategoria";
+            cbCategoria.Size = new Size(121, 23);
+            cbCategoria.TabIndex = 29;
             // 
             // TelaEditarCarro
             // 
@@ -192,8 +191,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblCategoria);
             Controls.Add(cbCategoria);
+            Controls.Add(lblCategoria);
             Controls.Add(txtCor);
             Controls.Add(txtPreco);
             Controls.Add(txtAno);
@@ -232,7 +231,7 @@
         private TextBox txtPreco;
         private TextBox txtCor;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private ComboBox cbCategoria;
         private Label lblCategoria;
+        private ComboBox cbCategoria;
     }
 }

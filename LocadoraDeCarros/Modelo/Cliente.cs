@@ -18,9 +18,9 @@ namespace LocadoraDeCarros.Modelo
         [Required(ErrorMessage = "o campo email é obrigatório")]
         [EmailAddress(ErrorMessage = "o campo email é inválido")]
         public string Email { get; set; }
-        public char Sexo { get; set; }
+        public string Sexo { get; set; }
         public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
-        public string TipoUsuario { get; set; } // ADICIONE ISSO
+        public string TipoUsuario { get; set; } 
     }
 }

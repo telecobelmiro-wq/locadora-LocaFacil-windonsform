@@ -71,6 +71,7 @@
             pnlAdicionarCliente.Name = "pnlAdicionarCliente";
             pnlAdicionarCliente.Size = new Size(1100, 700);
             pnlAdicionarCliente.TabIndex = 0;
+            pnlAdicionarCliente.Paint += pnlAdicionarCliente_Paint;
             // 
             // btnCancelarAdcCli
             // 
@@ -140,6 +141,7 @@
             rbMasculino.TabStop = true;
             rbMasculino.Text = "MASCULINO";
             rbMasculino.UseVisualStyleBackColor = true;
+            rbMasculino.CheckedChanged += rbMasculino_CheckedChanged;
             // 
             // txtCpf
             // 

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarCarro));
             pnlAdicionarCarro = new Panel();
+            label1 = new Label();
+            cbCategoriaAddCar = new ComboBox();
             btnCancelar = new Button();
             btnAdicionarCarro = new Button();
             txtCor = new TextBox();
@@ -50,6 +52,8 @@
             // pnlAdicionarCarro
             // 
             pnlAdicionarCarro.Anchor = AnchorStyles.None;
+            pnlAdicionarCarro.Controls.Add(label1);
+            pnlAdicionarCarro.Controls.Add(cbCategoriaAddCar);
             pnlAdicionarCarro.Controls.Add(btnCancelar);
             pnlAdicionarCarro.Controls.Add(btnAdicionarCarro);
             pnlAdicionarCarro.Controls.Add(txtCor);
@@ -67,13 +71,35 @@
             pnlAdicionarCarro.Name = "pnlAdicionarCarro";
             pnlAdicionarCarro.Size = new Size(1100, 700);
             pnlAdicionarCarro.TabIndex = 25;
+            pnlAdicionarCarro.Paint += pnlAdicionarCarro_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.Location = new Point(337, 491);
+            label1.Name = "label1";
+            label1.Size = new Size(77, 21);
+            label1.TabIndex = 39;
+            label1.Text = "Categoria";
+            label1.Click += label1_Click;
+            // 
+            // cbCategoriaAddCar
+            // 
+            cbCategoriaAddCar.FormattingEnabled = true;
+            cbCategoriaAddCar.Items.AddRange(new object[] { "Ouro", "Prata", "Bronze" });
+            cbCategoriaAddCar.Location = new Point(335, 515);
+            cbCategoriaAddCar.Name = "cbCategoriaAddCar";
+            cbCategoriaAddCar.Size = new Size(378, 23);
+            cbCategoriaAddCar.TabIndex = 38;
+            cbCategoriaAddCar.SelectedIndexChanged += cbCategoriaAddCar_SelectedIndexChanged;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.Black;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.ForeColor = SystemColors.ControlLight;
-            btnCancelar.Location = new Point(566, 519);
+            btnCancelar.Location = new Point(374, 566);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(120, 26);
             btnCancelar.TabIndex = 37;
@@ -86,7 +112,7 @@
             btnAdicionarCarro.BackColor = Color.Black;
             btnAdicionarCarro.FlatStyle = FlatStyle.Popup;
             btnAdicionarCarro.ForeColor = SystemColors.ControlLight;
-            btnAdicionarCarro.Location = new Point(383, 519);
+            btnAdicionarCarro.Location = new Point(555, 566);
             btnAdicionarCarro.Name = "btnAdicionarCarro";
             btnAdicionarCarro.Size = new Size(120, 26);
             btnAdicionarCarro.TabIndex = 36;
@@ -198,6 +224,7 @@
             Name = "AdicionarCarro";
             Text = "AdicionarCarro";
             WindowState = FormWindowState.Maximized;
+            Load += AdicionarCarro_Load;
             pnlAdicionarCarro.ResumeLayout(false);
             pnlAdicionarCarro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -220,5 +247,7 @@
         private Label lblMarca;
         private Label lblModelo;
         private PictureBox pictureBox1;
+        private ComboBox cbCategoriaAddCar;
+        private Label label1;
     }
 }

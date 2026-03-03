@@ -22,7 +22,7 @@ namespace LocadoraDeCarros
 
         }
 
-    
+
 
         private void AdicionarCliente_Load(object sender, EventArgs e)
         {
@@ -108,14 +108,14 @@ namespace LocadoraDeCarros
                 Nome = txtNome.Text,
                 Cpf = txtCpf.Text,
                 Email = txtEmail.Text,
-                Sexo = rbMasculino.Checked ? 'M' : 'F',
+                Sexo = rbMasculino.Checked ? "M" : "F",
                 DataNascimento = dtpDataNascimento.Value,
             };
 
             await ClienteRepository.Adicionar(cliente);
-            
+
             MessageBox.Show("Cliente cadastrado com sucesso!");
-           
+
             await this.telaPrincipal.AtualizarTabela();
 
             this.Close();
@@ -124,6 +124,16 @@ namespace LocadoraDeCarros
         private void btnCancelarAdcCli_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlAdicionarCliente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rbMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

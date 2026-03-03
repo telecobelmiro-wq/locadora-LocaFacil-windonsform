@@ -28,6 +28,7 @@ namespace LocadoraDeCarros
                     string.IsNullOrWhiteSpace(txtCor.Text) ||
                     string.IsNullOrWhiteSpace(txtPreco.Text) ||
                     string.IsNullOrWhiteSpace(txtAno.Text))
+
                 {
                     MessageBox.Show("Preencha todos os campos.");
                     return;
@@ -57,13 +58,19 @@ namespace LocadoraDeCarros
                     return;
                 }
 
+                if (cbCategoriaAddCar.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecione uma categoria.");
+                    return;
+                }
                 Carro carro = new Carro
                 {
                     Modelo = txtModelo.Text,
                     Marca = txtMarca.Text,
                     Cor = txtCor.Text,
                     Ano = ano,
-                    Preco = preco
+                    Preco = preco,
+                    Categoria = cbCategoriaAddCar.SelectedItem.ToString()
                 };
 
                 await CarroRepository.Adicionar(carro);
@@ -88,5 +95,26 @@ namespace LocadoraDeCarros
             pnlAdicionarCarro.Left = (ClientSize.Width - pnlAdicionarCarro.Width) / 2;
             pnlAdicionarCarro.Top = (ClientSize.Height - pnlAdicionarCarro.Height) / 2;
         }
+
+        private void cbCategoriaAddCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAdicionarCarro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AdicionarCarro_Load(object sender, EventArgs e)
+        {
+         
+        }
     }
+   
 }

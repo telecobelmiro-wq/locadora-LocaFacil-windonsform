@@ -13,7 +13,7 @@ namespace LocadoraDeCarros
         private readonly bool isAdmin;
         private Cliente cliente;
         private Cliente clienteLogado;
-        
+
         public TelaPrincipal(Cliente cliente)
         {
             InitializeComponent();
@@ -54,11 +54,12 @@ namespace LocadoraDeCarros
                 var carros = await CarroRepository.ObterTodos();
                 dgvTabela.DataSource = new BindingList<Carro>(carros.ToList());
             }
-        }
-
-        private void btnAdicionarCarro_Click(object sender, EventArgs e)
-        {
-
+            // se entidade for emprestimo, busca do emprestimo repository
+            else if (entidadeAtual == "Emprestimo")
+            {
+                var emprestimos = await EmprestimosRepository.ObterTodos();
+                dgvTabela.DataSource = new BindingList<Emprestimos>(emprestimos.ToList());
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -72,17 +73,15 @@ namespace LocadoraDeCarros
         }
 
 
-
-
         private async void btnCarros_Click(object sender, EventArgs e)
         {
             entidadeAtual = "Carro";
             btnEmprestimos.Enabled = true;
             await AtualizarTabela();
 
-
-
-
+            btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
+            btnNovo.Enabled = true;
 
         }
 
@@ -95,19 +94,28 @@ namespace LocadoraDeCarros
                 return;
             }
 
-            int idRegistro = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells[0].Value);
+            if (entidadeAtual == "Cliente")
+            {
+                var cliente = dgvTabela.SelectedRows[0].DataBoundItem as Cliente;
 
-            if (entidadeAtual == "Carro")
-            {
-                new TelaEditarCarro(idRegistro).ShowDialog();
+                if (cliente != null)
+                {
+                    new TelaEditarCliente(cliente.Id).ShowDialog();
+                }
             }
-            else
+            else if (entidadeAtual == "Carro")
             {
-                new TelaEditarCliente(idRegistro).ShowDialog();
+                var carro = dgvTabela.SelectedRows[0].DataBoundItem as Carro;
+
+                if (carro != null)
+                {
+                    new TelaEditarCarro(carro.Id).ShowDialog();
+                }
             }
 
             await AtualizarTabela();
         }
+
 
         private async void button1_Click(object sender, EventArgs e)
         {
@@ -159,7 +167,7 @@ namespace LocadoraDeCarros
             }
         }
 
-        private void btnEmprestimos_Click(object sender, EventArgs e)
+        private async void btnEmprestimos_Click(object sender, EventArgs e)
         {
 
 
@@ -175,6 +183,12 @@ namespace LocadoraDeCarros
                 MessageBox.Show("Selecione um carro primeiro!");
             }
 
+            entidadeAtual = "Emprestimo";
+
+            btnEmprestimos.Enabled = false;
+
+            await AtualizarTabela();
+
         }
 
 
@@ -183,28 +197,54 @@ namespace LocadoraDeCarros
             entidadeAtual = "Cliente";
             btnEmprestimos.Enabled = false;
             await AtualizarTabela();
+
+            btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
+            btnNovo.Enabled = true;
         }
 
         private void pnlTelaPrincipal_Paint(object sender, PaintEventArgs e)
         {
-
+            lblUsuario.Enabled = true;
         }
 
-        private  void btnTelaEmprestimos_Click(object sender, EventArgs e)
+        private async void btnTelaEmprestimos_Click(object sender, EventArgs e)
         {
-            if (dgvTabela.CurrentRow == null)
+            entidadeAtual = "Emprestimo";
+            await AtualizarTabela();
+
+            btnExcluir.Enabled = false;
+            btnEditar.Enabled = false;
+            btnNovo.Enabled = false;
+        }
+
+        private async void btnDevolverEmpre_Click(object sender, EventArgs e)
+        {
+            if (dgvTabela.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Selecione um usuário primeiro.");
+                MessageBox.Show("Selecione um empréstimo.");
                 return;
             }
 
-            int idUsuario = Convert.ToInt32(dgvTabela.CurrentRow.Cells["Id"].Value);
 
-            TelaDetalheEmprestimos tela = new TelaDetalheEmprestimos(idUsuario);
-            tela.ShowDialog();
+            int id = Convert.ToInt32(dgvTabela.SelectedRows[0].Cells["Id"].Value);
 
+            var emprestimo = await EmprestimosRepository.ObterPorId(id);
+
+            if (emprestimo == null)
+            {
+                MessageBox.Show("Empréstimo não encontrado.");
+                return;
+            }
+
+            emprestimo.Status = "Finalizado";
+            emprestimo.DataDevolucao = DateTime.Now;
+
+            await EmprestimosRepository.Atualizar(emprestimo);
+
+            MessageBox.Show("Devolvido com sucesso!");
+
+            await AtualizarTabela();
         }
-
-
     }
 }

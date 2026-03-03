@@ -68,7 +68,7 @@ namespace LocadoraDeCarros
                 string.IsNullOrWhiteSpace(txtModelo.Text) ||
                 string.IsNullOrWhiteSpace(txtMarca.Text) ||
                 string.IsNullOrWhiteSpace(txtAno.Text))
-                
+
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
@@ -119,7 +119,7 @@ namespace LocadoraDeCarros
 
         }
 
-        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        private void lblCategoria_Click(object sender, EventArgs e)
         {
 
         }
