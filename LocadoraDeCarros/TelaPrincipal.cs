@@ -112,7 +112,7 @@ namespace LocadoraDeCarros
                     new TelaEditarCarro(carro.Id).ShowDialog();
                 }
             }
-
+            
             await AtualizarTabela();
         }
 

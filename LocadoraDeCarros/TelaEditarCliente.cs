@@ -6,11 +6,7 @@ namespace LocadoraDeCarros
     public partial class TelaEditarCliente : Form
     {
         private int idCliente;
-
-
-
-
-
+        private Cliente cliente;
 
         public TelaEditarCliente(int idCliente)
         {
@@ -20,7 +16,7 @@ namespace LocadoraDeCarros
 
         private async void TelaEditarCliente_Load(object sender, EventArgs e)
         {
-            var cliente = await ClienteRepository.ObterPorId(idCliente);
+            cliente = await ClienteRepository.ObterPorId(idCliente);
 
             if (cliente == null)
             {
@@ -32,24 +28,15 @@ namespace LocadoraDeCarros
             txtNome.Text = cliente.Nome;
             txtEmailEditarCli.Text = cliente.Email;
             txtCpfEditarCli.Text = cliente.Cpf;
-        }
 
-        private async void btnSalvar_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = new Cliente
+            if (cliente.Sexo == "M")
             {
-                Id = idCliente,
-                Nome = txtNome.Text,
-                Email = txtEmailEditarCli.Text,
-                Cpf = txtCpfEditarCli.Text,
-
-            };
-
-            await ClienteRepository.Atualizar(cliente);
-
-            MessageBox.Show("Cliente atualizado com sucesso!");
-
-            this.Close();
+                rbMaculinoEditarCli.Checked = true;
+            }
+            else if (cliente.Sexo == "F")
+            {
+                rbFemininoEditarCli.Checked = true;
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -66,37 +53,34 @@ namespace LocadoraDeCarros
         {
             try
             {
-                string sexo;
+                string sexo = null;
 
                 if (rbMaculinoEditarCli.Checked)
-                {
-                    sexo = "Masculino";
-                }
+                    sexo = "M";
                 else if (rbFemininoEditarCli.Checked)
+                    sexo = "F";
+
+                if (sexo == null)
                 {
-                    sexo = "Feminino";
+                    MessageBox.Show("Selecione o sexo.");
+                    return;
                 }
 
-
-                Cliente cliente = new Cliente
-                {
-                    Id = idCliente,
-                    Nome = txtNome.Text,
-                    Email = txtEmailEditarCli.Text,
-                    Cpf = txtCpfEditarCli.Text,
-
-                };
+                // 🔥 ATUALIZA O OBJETO QUE JÁ EXISTE
+                cliente.Nome = txtNome.Text;
+                cliente.Email = txtEmailEditarCli.Text;
+                cliente.Cpf = txtCpfEditarCli.Text;
+                cliente.Sexo = sexo;
 
                 await ClienteRepository.Atualizar(cliente);
 
-                
+                MessageBox.Show("Atualizado com sucesso!");
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
-
-            this.Close();
         }
 
         private void txtEmailEditarCli_TextChanged(object sender, EventArgs e)

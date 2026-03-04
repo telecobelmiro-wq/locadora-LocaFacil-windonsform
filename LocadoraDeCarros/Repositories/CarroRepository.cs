@@ -46,16 +46,16 @@ using System.Data.SqlClient;
                 ", carro);
             }
 
-            public static async Task Deletar(int idCarro)
-            {
-                await conexaoBanco.CriarConexao().ExecuteAsync(
-                    @"
-                    DELETE FROM Carro
-                    WHERE Id = @Id
-                ", new { Id = idCarro });
-            }
+        public static async Task Deletar(int idCarro)
+        {
+            await conexaoBanco.CriarConexao().ExecuteAsync(
+                @"DELETE FROM Carro
+          WHERE Id = @Id",
+                new { Id = idCarro }
+            );
+        }
 
-            public static async Task<Carro> ObterPorId(int idCarro)
+        public static async Task<Carro> ObterPorId(int idCarro)
             {
                 var carro = await conexaoBanco.CriarConexao()
                     .QueryFirstOrDefaultAsync<Carro>(
