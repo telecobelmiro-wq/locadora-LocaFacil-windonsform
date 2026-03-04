@@ -21,6 +21,6 @@ namespace LocadoraDeCarros.Modelo
         public string Sexo { get; set; }
         public string Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
-        public string TipoUsuario { get; set; } 
-    }
+            }
 }
+

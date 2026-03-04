@@ -27,5 +27,12 @@ namespace LocadoraDeCarros.Modelo
             else if (categoria == "Bronze")
                 DataDevolucao = DateTime.Now.AddDays(20);
         }
+        public string StatusPrazo
+        {
+            get
+            {
+                return DataDevolucao > DateTime.Now ? "EmDia" : "EmAtraso";
+            }
+        }
     }
 }

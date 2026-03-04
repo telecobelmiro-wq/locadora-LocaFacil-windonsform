@@ -19,7 +19,7 @@ namespace LocadoraDeCarros
             InitializeComponent();
 
             clienteLogado = cliente;
-            lblUsuario.Text = "Bem-vindo, " + clienteLogado.Nome;
+            
         }
 
 
@@ -112,7 +112,7 @@ namespace LocadoraDeCarros
                     new TelaEditarCarro(carro.Id).ShowDialog();
                 }
             }
-            
+
             await AtualizarTabela();
         }
 
@@ -203,10 +203,7 @@ namespace LocadoraDeCarros
             btnNovo.Enabled = true;
         }
 
-        private void pnlTelaPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-            lblUsuario.Enabled = true;
-        }
+        
 
         private async void btnTelaEmprestimos_Click(object sender, EventArgs e)
         {

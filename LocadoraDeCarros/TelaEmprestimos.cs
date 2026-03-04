@@ -65,12 +65,10 @@ namespace LocadoraDeCarros
                 DataRetirada = DateTime.Now
             };
 
-            
-            emp.CalcularDataDevolucao("Ouro"); 
+            emp.CalcularDataDevolucao(carroSelecionado.Categoria);
 
             await EmprestimosRepository.Adicionar(emp);
-            this.Close();
-            
+            this.Close();  
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

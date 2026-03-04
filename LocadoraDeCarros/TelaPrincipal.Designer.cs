@@ -40,7 +40,6 @@
             pnlTelaPrincipal = new Panel();
             btnDevolverEmpre = new Button();
             btnTelaEmprestimos = new Button();
-            lblUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTabela).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlTelaPrincipal.SuspendLayout();
@@ -151,7 +150,6 @@
             // 
             pnlTelaPrincipal.Controls.Add(btnDevolverEmpre);
             pnlTelaPrincipal.Controls.Add(btnTelaEmprestimos);
-            pnlTelaPrincipal.Controls.Add(lblUsuario);
             pnlTelaPrincipal.Controls.Add(btnExcluir);
             pnlTelaPrincipal.Controls.Add(btnClientes);
             pnlTelaPrincipal.Controls.Add(btnEditar);
@@ -164,7 +162,7 @@
             pnlTelaPrincipal.Name = "pnlTelaPrincipal";
             pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
-            pnlTelaPrincipal.Paint += pnlTelaPrincipal_Paint;
+            
             // 
             // btnDevolverEmpre
             // 
@@ -192,15 +190,6 @@
             btnTelaEmprestimos.UseVisualStyleBackColor = false;
             btnTelaEmprestimos.Click += btnTelaEmprestimos_Click;
             // 
-            // lblUsuario
-            // 
-            lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(77, 159);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(38, 15);
-            lblUsuario.TabIndex = 21;
-            lblUsuario.Text = "label1";
-            // 
             // TelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,7 +204,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvTabela).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlTelaPrincipal.ResumeLayout(false);
-            pnlTelaPrincipal.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -229,7 +217,6 @@
         private Button btnExcluir;
         private Button btnEmprestimos;
         private Panel pnlTelaPrincipal;
-        private Label lblUsuario;
         private Button btnTelaEmprestimos;
         private Button btnDevolverEmpre;
     }
