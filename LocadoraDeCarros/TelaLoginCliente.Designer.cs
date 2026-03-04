@@ -79,6 +79,7 @@
             lblLoginCliente.Size = new Size(57, 22);
             lblLoginCliente.TabIndex = 17;
             lblLoginCliente.Text = "LOGIN";
+            lblLoginCliente.Click += lblLoginCliente_Click;
             // 
             // pictureBox1
             // 

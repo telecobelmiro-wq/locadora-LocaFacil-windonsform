@@ -25,7 +25,7 @@ namespace LocadoraDeCarros
             InitializeComponent();
             idCarroSelecionado = idCarro;
 
-           txtIdVeiculosEmprestimos.Text = idCarroSelecionado.ToString();
+            txtIdVeiculosEmprestimos.Text = idCarroSelecionado.ToString();
 
             Load += TelaEmprestimos_Load;
         }
@@ -68,12 +68,17 @@ namespace LocadoraDeCarros
             emp.CalcularDataDevolucao(carroSelecionado.Categoria);
 
             await EmprestimosRepository.Adicionar(emp);
-            this.Close();  
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

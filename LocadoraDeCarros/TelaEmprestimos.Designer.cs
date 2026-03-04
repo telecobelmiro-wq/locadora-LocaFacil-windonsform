@@ -36,6 +36,7 @@
             txtIdVeiculosEmprestimos = new TextBox();
             btnSalvarEmprestimos = new Button();
             panel1 = new Panel();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -90,9 +91,9 @@
             btnSalvarEmprestimos.BackColor = Color.Black;
             btnSalvarEmprestimos.FlatStyle = FlatStyle.Popup;
             btnSalvarEmprestimos.ForeColor = Color.Cornsilk;
-            btnSalvarEmprestimos.Location = new Point(540, 471);
+            btnSalvarEmprestimos.Location = new Point(600, 484);
             btnSalvarEmprestimos.Name = "btnSalvarEmprestimos";
-            btnSalvarEmprestimos.Size = new Size(100, 36);
+            btnSalvarEmprestimos.Size = new Size(75, 23);
             btnSalvarEmprestimos.TabIndex = 26;
             btnSalvarEmprestimos.Text = "SALVAR";
             btnSalvarEmprestimos.UseVisualStyleBackColor = false;
@@ -100,6 +101,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnSalvarEmprestimos);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblClienteEmprestimos);
@@ -110,6 +112,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1100, 700);
             panel1.TabIndex = 27;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.Black;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.ForeColor = SystemColors.ControlLight;
+            btnCancelar.Location = new Point(505, 484);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 27;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // TelaEmprestimos
             // 
@@ -137,5 +152,6 @@
         private TextBox txtIdVeiculosEmprestimos;
         private Button btnSalvarEmprestimos;
         private Panel panel1;
+        private Button btnCancelar;
     }
 }

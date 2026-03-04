@@ -99,7 +99,7 @@
             btnCancelar.BackColor = Color.Black;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.ForeColor = SystemColors.ControlLight;
-            btnCancelar.Location = new Point(374, 566);
+            btnCancelar.Location = new Point(402, 566);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(120, 26);
             btnCancelar.TabIndex = 37;
@@ -112,7 +112,7 @@
             btnAdicionarCarro.BackColor = Color.Black;
             btnAdicionarCarro.FlatStyle = FlatStyle.Popup;
             btnAdicionarCarro.ForeColor = SystemColors.ControlLight;
-            btnAdicionarCarro.Location = new Point(555, 566);
+            btnAdicionarCarro.Location = new Point(540, 566);
             btnAdicionarCarro.Name = "btnAdicionarCarro";
             btnAdicionarCarro.Size = new Size(120, 26);
             btnAdicionarCarro.TabIndex = 36;

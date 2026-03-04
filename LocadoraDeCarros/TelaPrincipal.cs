@@ -10,16 +10,16 @@ namespace LocadoraDeCarros
     {
         private string entidadeAtual = "Cliente";
         private string tipoUsuario;
-        private readonly bool isAdmin;
+        private  bool isAdmin;
         private Cliente cliente;
         private Cliente clienteLogado;
+
 
         public TelaPrincipal(Cliente cliente)
         {
             InitializeComponent();
-
             clienteLogado = cliente;
-            
+            isAdmin = false;
         }
 
 
@@ -29,17 +29,18 @@ namespace LocadoraDeCarros
 
             this.isAdmin = isAdmin;
             this.Enabled = true;
-
-            btnNovo.Enabled = isAdmin;
-            btnEditar.Enabled = isAdmin;
+            
             btnExcluir.Enabled = isAdmin;
-
+            btnEditar.Enabled = isAdmin;
+            btnNovo.Enabled = isAdmin;
+            
             Load += TelaPrincipal_Load;
         }
 
         private async void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            await AtualizarTabela();
+         
+            
         }
 
         public async Task AtualizarTabela()
@@ -54,11 +55,11 @@ namespace LocadoraDeCarros
                 var carros = await CarroRepository.ObterTodos();
                 dgvTabela.DataSource = new BindingList<Carro>(carros.ToList());
             }
-            // se entidade for emprestimo, busca do emprestimo repository
+
             else if (entidadeAtual == "Emprestimo")
             {
                 var emprestimos = await EmprestimosRepository.ObterTodos();
-                dgvTabela.DataSource = new BindingList<Emprestimos>(emprestimos.ToList());
+                dgvTabela.DataSource = new BindingList<EmprestimoView>(emprestimos.ToList());
             }
         }
 
@@ -79,10 +80,9 @@ namespace LocadoraDeCarros
             btnEmprestimos.Enabled = true;
             await AtualizarTabela();
 
-            btnExcluir.Enabled = true;
-            btnEditar.Enabled = true;
-            btnNovo.Enabled = true;
-
+            btnNovo.Enabled = isAdmin;
+            btnEditar.Enabled = isAdmin;
+            btnExcluir.Enabled = isAdmin;
         }
 
 
@@ -198,21 +198,28 @@ namespace LocadoraDeCarros
             btnEmprestimos.Enabled = false;
             await AtualizarTabela();
 
-            btnExcluir.Enabled = true;
-            btnEditar.Enabled = true;
-            btnNovo.Enabled = true;
+            btnNovo.Enabled = isAdmin;
+            btnEditar.Enabled = isAdmin;
+            btnExcluir.Enabled = isAdmin;
         }
 
-        
+
 
         private async void btnTelaEmprestimos_Click(object sender, EventArgs e)
         {
             entidadeAtual = "Emprestimo";
             await AtualizarTabela();
 
-            btnExcluir.Enabled = false;
-            btnEditar.Enabled = false;
-            btnNovo.Enabled = false;
+            btnNovo.Enabled = isAdmin;
+            btnEditar.Enabled = isAdmin;
+            btnExcluir.Enabled = isAdmin;
+
+        }
+
+        private async void btnVisualizarEmprestimos_Click(object sender, EventArgs e)
+        {
+            var lista = await EmprestimosRepository.ObterTodos();
+            dgvTabela.DataSource = lista.ToList();
         }
 
         private async void btnDevolverEmpre_Click(object sender, EventArgs e)
@@ -242,6 +249,25 @@ namespace LocadoraDeCarros
             MessageBox.Show("Devolvido com sucesso!");
 
             await AtualizarTabela();
+        }
+
+        private void pnlTelaPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+        public TelaPrincipal()
+        {
+            InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            pnlTelaPrincipal.Left = (this.ClientSize.Width - pnlTelaPrincipal.Width) / 2;
+            pnlTelaPrincipal.Top = (this.ClientSize.Height - pnlTelaPrincipal.Height) / 2;
         }
     }
 }

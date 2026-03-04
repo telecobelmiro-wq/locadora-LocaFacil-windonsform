@@ -8,23 +8,28 @@ namespace LocadoraDeCarros.Repositories
     {
         private static readonly ConexaoBanco conexaoBanco = new ConexaoBanco();
 
-        public static async Task<IEnumerable<Emprestimos>> ObterTodos()
+        public static async Task<IEnumerable<EmprestimoView>> ObterTodos()
         {
-            var emprestimos = await conexaoBanco.CriarConexao()
-                .QueryAsync<Emprestimos>(
-                @"
-                    SELECT
-                        Id,
-                        IdCliente,
-                        IdCarro,
-                        Status,
-                        DataRetirada,
-                        DataDevolucao
-                    FROM Emprestimos
-                ");
+            using (var conexao = conexaoBanco.CriarConexao())
+            {
+                string sql = @"
+                    SELECT 
+                    e.Id,
+                    c.Nome AS NomeCliente,
+                    ca.Marca + ' ' + ca.Modelo AS NomeCarro,
+                    e.Status,
+                    e.DataRetirada,
+                    e.DataDevolucao
+                    FROM Emprestimos e
+                    INNER JOIN Cliente c ON e.IdCliente = c.Id
+                    INNER JOIN Carro ca ON e.IdCarro = ca.Id
+";
 
-            return emprestimos;
+                    return await conexao.QueryAsync<EmprestimoView>(sql);
+            }
         }
+
+
 
         public static async Task Adicionar(Emprestimos emprestimo)
         {

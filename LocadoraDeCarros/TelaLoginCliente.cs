@@ -69,7 +69,12 @@ namespace LocadoraDeCarros
             TelaPrincipal tela = new TelaPrincipal(cliente);
             tela.ShowDialog();
             this.Show();
-            
+
+        }
+
+        private void lblLoginCliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -148,6 +148,7 @@
             // 
             // pnlTelaPrincipal
             // 
+            pnlTelaPrincipal.Anchor = AnchorStyles.None;
             pnlTelaPrincipal.Controls.Add(btnDevolverEmpre);
             pnlTelaPrincipal.Controls.Add(btnTelaEmprestimos);
             pnlTelaPrincipal.Controls.Add(btnExcluir);
@@ -162,7 +163,7 @@
             pnlTelaPrincipal.Name = "pnlTelaPrincipal";
             pnlTelaPrincipal.Size = new Size(1100, 700);
             pnlTelaPrincipal.TabIndex = 0;
-            
+            pnlTelaPrincipal.Paint += pnlTelaPrincipal_Paint;
             // 
             // btnDevolverEmpre
             // 
