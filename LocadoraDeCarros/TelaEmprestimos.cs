@@ -80,6 +80,19 @@ namespace LocadoraDeCarros
         {
             this.Close();
         }
+
+        public TelaEmprestimos()
+        {
+            InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            pnlTelaEmprestimos.Left = (this.ClientSize.Width - pnlTelaEmprestimos.Width) / 2;
+            pnlTelaEmprestimos.Top = (this.ClientSize.Height - pnlTelaEmprestimos.Height) / 2;
+        }
     }
 }
 

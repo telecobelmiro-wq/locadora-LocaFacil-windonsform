@@ -78,9 +78,9 @@
             btnCancelarAdcCli.BackColor = Color.Black;
             btnCancelarAdcCli.FlatStyle = FlatStyle.Popup;
             btnCancelarAdcCli.ForeColor = SystemColors.ControlLight;
-            btnCancelarAdcCli.Location = new Point(405, 535);
+            btnCancelarAdcCli.Location = new Point(576, 571);
             btnCancelarAdcCli.Name = "btnCancelarAdcCli";
-            btnCancelarAdcCli.Size = new Size(129, 40);
+            btnCancelarAdcCli.Size = new Size(120, 26);
             btnCancelarAdcCli.TabIndex = 43;
             btnCancelarAdcCli.Text = "CANCELAR";
             btnCancelarAdcCli.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(368, 52);
+            pictureBox1.Location = new Point(366, 94);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(383, 109);
             pictureBox1.TabIndex = 42;
@@ -99,14 +99,14 @@
             // 
             lblErro.AutoSize = true;
             lblErro.ForeColor = Color.Red;
-            lblErro.Location = new Point(405, 253);
+            lblErro.Location = new Point(403, 295);
             lblErro.Name = "lblErro";
             lblErro.Size = new Size(0, 15);
             lblErro.TabIndex = 41;
             // 
             // dtpDataNascimento
             // 
-            dtpDataNascimento.Location = new Point(368, 392);
+            dtpDataNascimento.Location = new Point(366, 434);
             dtpDataNascimento.Name = "dtpDataNascimento";
             dtpDataNascimento.Size = new Size(383, 23);
             dtpDataNascimento.TabIndex = 40;
@@ -114,7 +114,7 @@
             // lblDataNascimento
             // 
             lblDataNascimento.AutoSize = true;
-            lblDataNascimento.Location = new Point(368, 374);
+            lblDataNascimento.Location = new Point(366, 416);
             lblDataNascimento.Name = "lblDataNascimento";
             lblDataNascimento.Size = new Size(131, 15);
             lblDataNascimento.TabIndex = 39;
@@ -123,7 +123,7 @@
             // rbFeminino
             // 
             rbFeminino.AutoSize = true;
-            rbFeminino.Location = new Point(466, 464);
+            rbFeminino.Location = new Point(464, 506);
             rbFeminino.Name = "rbFeminino";
             rbFeminino.Size = new Size(81, 19);
             rbFeminino.TabIndex = 38;
@@ -134,7 +134,7 @@
             // rbMasculino
             // 
             rbMasculino.AutoSize = true;
-            rbMasculino.Location = new Point(367, 464);
+            rbMasculino.Location = new Point(365, 506);
             rbMasculino.Name = "rbMasculino";
             rbMasculino.Size = new Size(93, 19);
             rbMasculino.TabIndex = 37;
@@ -145,7 +145,7 @@
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(367, 328);
+            txtCpf.Location = new Point(365, 370);
             txtCpf.Name = "txtCpf";
             txtCpf.PlaceholderText = "000.000.000-00";
             txtCpf.Size = new Size(384, 23);
@@ -153,7 +153,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(367, 271);
+            txtEmail.Location = new Point(365, 313);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "exemplo@gmail.com";
             txtEmail.Size = new Size(384, 23);
@@ -161,7 +161,7 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(368, 216);
+            txtNome.Location = new Point(366, 258);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Dioclésio Santos";
             txtNome.Size = new Size(383, 23);
@@ -172,9 +172,9 @@
             btnAdicionarNovoCliente.BackColor = Color.Black;
             btnAdicionarNovoCliente.FlatStyle = FlatStyle.Popup;
             btnAdicionarNovoCliente.ForeColor = SystemColors.ControlLight;
-            btnAdicionarNovoCliente.Location = new Point(583, 535);
+            btnAdicionarNovoCliente.Location = new Point(425, 571);
             btnAdicionarNovoCliente.Name = "btnAdicionarNovoCliente";
-            btnAdicionarNovoCliente.Size = new Size(129, 40);
+            btnAdicionarNovoCliente.Size = new Size(120, 26);
             btnAdicionarNovoCliente.TabIndex = 33;
             btnAdicionarNovoCliente.Text = "ADICIONAR";
             btnAdicionarNovoCliente.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@
             // lblSexo
             // 
             lblSexo.AutoSize = true;
-            lblSexo.Location = new Point(367, 446);
+            lblSexo.Location = new Point(365, 488);
             lblSexo.Name = "lblSexo";
             lblSexo.Size = new Size(35, 15);
             lblSexo.TabIndex = 32;
@@ -192,7 +192,7 @@
             // lblPreco
             // 
             lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(367, 310);
+            lblPreco.Location = new Point(365, 352);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(28, 15);
             lblPreco.TabIndex = 31;
@@ -201,7 +201,7 @@
             // lblMarca
             // 
             lblMarca.AutoSize = true;
-            lblMarca.Location = new Point(368, 253);
+            lblMarca.Location = new Point(366, 295);
             lblMarca.Name = "lblMarca";
             lblMarca.Size = new Size(41, 15);
             lblMarca.TabIndex = 30;
@@ -210,7 +210,7 @@
             // lblModelo
             // 
             lblModelo.AutoSize = true;
-            lblModelo.Location = new Point(368, 198);
+            lblModelo.Location = new Point(366, 240);
             lblModelo.Name = "lblModelo";
             lblModelo.Size = new Size(42, 15);
             lblModelo.TabIndex = 29;

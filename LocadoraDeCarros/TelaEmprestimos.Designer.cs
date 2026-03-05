@@ -35,10 +35,10 @@
             txtIdClienteEmprestimos = new TextBox();
             txtIdVeiculosEmprestimos = new TextBox();
             btnSalvarEmprestimos = new Button();
-            panel1 = new Panel();
+            pnlTelaEmprestimos = new Panel();
             btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            pnlTelaEmprestimos.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -91,7 +91,7 @@
             btnSalvarEmprestimos.BackColor = Color.Black;
             btnSalvarEmprestimos.FlatStyle = FlatStyle.Popup;
             btnSalvarEmprestimos.ForeColor = Color.Cornsilk;
-            btnSalvarEmprestimos.Location = new Point(600, 484);
+            btnSalvarEmprestimos.Location = new Point(497, 484);
             btnSalvarEmprestimos.Name = "btnSalvarEmprestimos";
             btnSalvarEmprestimos.Size = new Size(75, 23);
             btnSalvarEmprestimos.TabIndex = 26;
@@ -99,26 +99,27 @@
             btnSalvarEmprestimos.UseVisualStyleBackColor = false;
             btnSalvarEmprestimos.Click += btnSalvarEmprestimos_Click;
             // 
-            // panel1
+            // pnlTelaEmprestimos
             // 
-            panel1.Controls.Add(btnCancelar);
-            panel1.Controls.Add(btnSalvarEmprestimos);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(lblClienteEmprestimos);
-            panel1.Controls.Add(txtIdClienteEmprestimos);
-            panel1.Controls.Add(txtIdVeiculosEmprestimos);
-            panel1.Controls.Add(lblVeiculosEmprestimos);
-            panel1.Location = new Point(33, 25);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1100, 700);
-            panel1.TabIndex = 27;
+            pnlTelaEmprestimos.Anchor = AnchorStyles.None;
+            pnlTelaEmprestimos.Controls.Add(btnCancelar);
+            pnlTelaEmprestimos.Controls.Add(btnSalvarEmprestimos);
+            pnlTelaEmprestimos.Controls.Add(pictureBox1);
+            pnlTelaEmprestimos.Controls.Add(lblClienteEmprestimos);
+            pnlTelaEmprestimos.Controls.Add(txtIdClienteEmprestimos);
+            pnlTelaEmprestimos.Controls.Add(txtIdVeiculosEmprestimos);
+            pnlTelaEmprestimos.Controls.Add(lblVeiculosEmprestimos);
+            pnlTelaEmprestimos.Location = new Point(33, 25);
+            pnlTelaEmprestimos.Name = "pnlTelaEmprestimos";
+            pnlTelaEmprestimos.Size = new Size(1100, 700);
+            pnlTelaEmprestimos.TabIndex = 27;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.Black;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.ForeColor = SystemColors.ControlLight;
-            btnCancelar.Location = new Point(505, 484);
+            btnCancelar.Location = new Point(595, 484);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 27;
@@ -132,14 +133,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1184, 761);
-            Controls.Add(panel1);
+            Controls.Add(pnlTelaEmprestimos);
             Name = "TelaEmprestimos";
             Text = "TelaEmprestimos";
             WindowState = FormWindowState.Maximized;
             Load += TelaEmprestimos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            pnlTelaEmprestimos.ResumeLayout(false);
+            pnlTelaEmprestimos.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -151,7 +152,7 @@
         private TextBox txtIdClienteEmprestimos;
         private TextBox txtIdVeiculosEmprestimos;
         private Button btnSalvarEmprestimos;
-        private Panel panel1;
+        private Panel pnlTelaEmprestimos;
         private Button btnCancelar;
     }
 }

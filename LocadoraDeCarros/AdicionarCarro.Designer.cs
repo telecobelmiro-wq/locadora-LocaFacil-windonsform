@@ -77,7 +77,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(337, 491);
+            label1.Location = new Point(363, 502);
             label1.Name = "label1";
             label1.Size = new Size(77, 21);
             label1.TabIndex = 39;
@@ -88,7 +88,7 @@
             // 
             cbCategoriaAddCar.FormattingEnabled = true;
             cbCategoriaAddCar.Items.AddRange(new object[] { "Ouro", "Prata", "Bronze" });
-            cbCategoriaAddCar.Location = new Point(335, 515);
+            cbCategoriaAddCar.Location = new Point(361, 526);
             cbCategoriaAddCar.Name = "cbCategoriaAddCar";
             cbCategoriaAddCar.Size = new Size(378, 23);
             cbCategoriaAddCar.TabIndex = 38;
@@ -99,7 +99,7 @@
             btnCancelar.BackColor = Color.Black;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.ForeColor = SystemColors.ControlLight;
-            btnCancelar.Location = new Point(402, 566);
+            btnCancelar.Location = new Point(584, 578);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(120, 26);
             btnCancelar.TabIndex = 37;
@@ -112,7 +112,7 @@
             btnAdicionarCarro.BackColor = Color.Black;
             btnAdicionarCarro.FlatStyle = FlatStyle.Popup;
             btnAdicionarCarro.ForeColor = SystemColors.ControlLight;
-            btnAdicionarCarro.Location = new Point(540, 566);
+            btnAdicionarCarro.Location = new Point(439, 578);
             btnAdicionarCarro.Name = "btnAdicionarCarro";
             btnAdicionarCarro.Size = new Size(120, 26);
             btnAdicionarCarro.TabIndex = 36;
@@ -122,35 +122,35 @@
             // 
             // txtCor
             // 
-            txtCor.Location = new Point(337, 392);
+            txtCor.Location = new Point(363, 403);
             txtCor.Name = "txtCor";
             txtCor.Size = new Size(376, 23);
             txtCor.TabIndex = 35;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(337, 457);
+            txtPreco.Location = new Point(363, 468);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(376, 23);
             txtPreco.TabIndex = 34;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(337, 270);
+            txtMarca.Location = new Point(363, 281);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(376, 23);
             txtMarca.TabIndex = 33;
             // 
             // txtAno
             // 
-            txtAno.Location = new Point(337, 335);
+            txtAno.Location = new Point(363, 346);
             txtAno.Name = "txtAno";
             txtAno.Size = new Size(376, 23);
             txtAno.TabIndex = 32;
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(337, 210);
+            txtModelo.Location = new Point(363, 221);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(376, 23);
             txtModelo.TabIndex = 31;
@@ -159,7 +159,7 @@
             // 
             lblAno.AutoSize = true;
             lblAno.Font = new Font("Segoe UI", 12F);
-            lblAno.Location = new Point(337, 311);
+            lblAno.Location = new Point(363, 322);
             lblAno.Name = "lblAno";
             lblAno.Size = new Size(38, 21);
             lblAno.TabIndex = 30;
@@ -169,7 +169,7 @@
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 12F);
-            lblPreco.Location = new Point(337, 433);
+            lblPreco.Location = new Point(363, 444);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(49, 21);
             lblPreco.TabIndex = 29;
@@ -179,7 +179,7 @@
             // 
             lblCor.AutoSize = true;
             lblCor.Font = new Font("Segoe UI", 12F);
-            lblCor.Location = new Point(337, 368);
+            lblCor.Location = new Point(363, 379);
             lblCor.Name = "lblCor";
             lblCor.Size = new Size(35, 21);
             lblCor.TabIndex = 28;
@@ -189,7 +189,7 @@
             // 
             lblMarca.AutoSize = true;
             lblMarca.Font = new Font("Segoe UI", 12F);
-            lblMarca.Location = new Point(337, 246);
+            lblMarca.Location = new Point(363, 257);
             lblMarca.Name = "lblMarca";
             lblMarca.Size = new Size(53, 21);
             lblMarca.TabIndex = 27;
@@ -199,7 +199,7 @@
             // 
             lblModelo.AutoSize = true;
             lblModelo.Font = new Font("Segoe UI", 12F);
-            lblModelo.Location = new Point(337, 186);
+            lblModelo.Location = new Point(363, 197);
             lblModelo.Name = "lblModelo";
             lblModelo.Size = new Size(63, 21);
             lblModelo.TabIndex = 26;
@@ -208,7 +208,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(335, 52);
+            pictureBox1.Location = new Point(361, 63);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(378, 115);
             pictureBox1.TabIndex = 25;

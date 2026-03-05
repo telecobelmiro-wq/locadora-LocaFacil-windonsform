@@ -41,21 +41,23 @@
             rbFemininoEditarCli = new RadioButton();
             lblSexoEditarCli = new Label();
             btnCancelarEditarCli = new Button();
+            pnlEditarCliente = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlEditarCliente.SuspendLayout();
             SuspendLayout();
             // 
             // txtNome
             // 
             txtNome.Enabled = false;
-            txtNome.Location = new Point(196, 204);
+            txtNome.Location = new Point(365, 290);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(100, 23);
+            txtNome.Size = new Size(390, 23);
             txtNome.TabIndex = 0;
             // 
             // lblNomEditarCli
             // 
             lblNomEditarCli.AutoSize = true;
-            lblNomEditarCli.Location = new Point(196, 186);
+            lblNomEditarCli.Location = new Point(365, 272);
             lblNomEditarCli.Name = "lblNomEditarCli";
             lblNomEditarCli.Size = new Size(42, 15);
             lblNomEditarCli.TabIndex = 1;
@@ -64,7 +66,7 @@
             // lblEmailEditarCLi
             // 
             lblEmailEditarCLi.AutoSize = true;
-            lblEmailEditarCLi.Location = new Point(196, 273);
+            lblEmailEditarCLi.Location = new Point(365, 325);
             lblEmailEditarCLi.Name = "lblEmailEditarCLi";
             lblEmailEditarCLi.Size = new Size(41, 15);
             lblEmailEditarCLi.TabIndex = 2;
@@ -72,9 +74,9 @@
             // 
             // txtEmailEditarCli
             // 
-            txtEmailEditarCli.Location = new Point(196, 291);
+            txtEmailEditarCli.Location = new Point(365, 343);
             txtEmailEditarCli.Name = "txtEmailEditarCli";
-            txtEmailEditarCli.Size = new Size(100, 23);
+            txtEmailEditarCli.Size = new Size(390, 23);
             txtEmailEditarCli.TabIndex = 3;
             txtEmailEditarCli.TextChanged += txtEmailEditarCli_TextChanged;
             // 
@@ -83,9 +85,9 @@
             btnSalvarEditarCli.BackColor = Color.Black;
             btnSalvarEditarCli.FlatStyle = FlatStyle.Popup;
             btnSalvarEditarCli.ForeColor = SystemColors.ControlLight;
-            btnSalvarEditarCli.Location = new Point(673, 400);
+            btnSalvarEditarCli.Location = new Point(439, 539);
             btnSalvarEditarCli.Name = "btnSalvarEditarCli";
-            btnSalvarEditarCli.Size = new Size(89, 28);
+            btnSalvarEditarCli.Size = new Size(120, 26);
             btnSalvarEditarCli.TabIndex = 8;
             btnSalvarEditarCli.Text = "SALVAR";
             btnSalvarEditarCli.UseVisualStyleBackColor = false;
@@ -94,9 +96,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(230, 24);
+            pictureBox1.Location = new Point(365, 136);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(308, 109);
+            pictureBox1.Size = new Size(390, 109);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
@@ -104,7 +106,7 @@
             // 
             lblCpfEdiatrCli.AutoSize = true;
             lblCpfEdiatrCli.Enabled = false;
-            lblCpfEdiatrCli.Location = new Point(503, 273);
+            lblCpfEdiatrCli.Location = new Point(365, 379);
             lblCpfEdiatrCli.Name = "lblCpfEdiatrCli";
             lblCpfEdiatrCli.Size = new Size(28, 15);
             lblCpfEdiatrCli.TabIndex = 4;
@@ -113,16 +115,16 @@
             // txtCpfEditarCli
             // 
             txtCpfEditarCli.Enabled = false;
-            txtCpfEditarCli.Location = new Point(503, 291);
+            txtCpfEditarCli.Location = new Point(365, 397);
             txtCpfEditarCli.Name = "txtCpfEditarCli";
-            txtCpfEditarCli.Size = new Size(100, 23);
+            txtCpfEditarCli.Size = new Size(390, 23);
             txtCpfEditarCli.TabIndex = 5;
             // 
             // rbMaculinoEditarCli
             // 
             rbMaculinoEditarCli.AutoSize = true;
             rbMaculinoEditarCli.Enabled = false;
-            rbMaculinoEditarCli.Location = new Point(503, 204);
+            rbMaculinoEditarCli.Location = new Point(365, 459);
             rbMaculinoEditarCli.Name = "rbMaculinoEditarCli";
             rbMaculinoEditarCli.Size = new Size(93, 19);
             rbMaculinoEditarCli.TabIndex = 14;
@@ -134,7 +136,7 @@
             // 
             rbFemininoEditarCli.AutoSize = true;
             rbFemininoEditarCli.Enabled = false;
-            rbFemininoEditarCli.Location = new Point(503, 229);
+            rbFemininoEditarCli.Location = new Point(365, 484);
             rbFemininoEditarCli.Name = "rbFemininoEditarCli";
             rbFemininoEditarCli.Size = new Size(81, 19);
             rbFemininoEditarCli.TabIndex = 15;
@@ -147,7 +149,7 @@
             // 
             lblSexoEditarCli.AutoSize = true;
             lblSexoEditarCli.Enabled = false;
-            lblSexoEditarCli.Location = new Point(503, 186);
+            lblSexoEditarCli.Location = new Point(365, 441);
             lblSexoEditarCli.Name = "lblSexoEditarCli";
             lblSexoEditarCli.Size = new Size(35, 15);
             lblSexoEditarCli.TabIndex = 16;
@@ -158,39 +160,49 @@
             btnCancelarEditarCli.BackColor = Color.Black;
             btnCancelarEditarCli.FlatStyle = FlatStyle.Popup;
             btnCancelarEditarCli.ForeColor = SystemColors.ControlLight;
-            btnCancelarEditarCli.Location = new Point(559, 400);
+            btnCancelarEditarCli.Location = new Point(574, 539);
             btnCancelarEditarCli.Name = "btnCancelarEditarCli";
-            btnCancelarEditarCli.Size = new Size(89, 28);
+            btnCancelarEditarCli.Size = new Size(120, 26);
             btnCancelarEditarCli.TabIndex = 17;
             btnCancelarEditarCli.Text = "CANCELAR";
             btnCancelarEditarCli.UseVisualStyleBackColor = false;
             btnCancelarEditarCli.Click += btnCancelarEditarCli_Click;
+            // 
+            // pnlEditarCliente
+            // 
+            pnlEditarCliente.Anchor = AnchorStyles.None;
+            pnlEditarCliente.Controls.Add(btnCancelarEditarCli);
+            pnlEditarCliente.Controls.Add(pictureBox1);
+            pnlEditarCliente.Controls.Add(lblSexoEditarCli);
+            pnlEditarCliente.Controls.Add(txtCpfEditarCli);
+            pnlEditarCliente.Controls.Add(rbFemininoEditarCli);
+            pnlEditarCliente.Controls.Add(lblCpfEdiatrCli);
+            pnlEditarCliente.Controls.Add(btnSalvarEditarCli);
+            pnlEditarCliente.Controls.Add(txtEmailEditarCli);
+            pnlEditarCliente.Controls.Add(rbMaculinoEditarCli);
+            pnlEditarCliente.Controls.Add(lblEmailEditarCLi);
+            pnlEditarCliente.Controls.Add(lblNomEditarCli);
+            pnlEditarCliente.Controls.Add(txtNome);
+            pnlEditarCliente.Location = new Point(25, 49);
+            pnlEditarCliente.Name = "pnlEditarCliente";
+            pnlEditarCliente.Size = new Size(1100, 700);
+            pnlEditarCliente.TabIndex = 18;
             // 
             // TelaEditarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnCancelarEditarCli);
-            Controls.Add(lblSexoEditarCli);
-            Controls.Add(rbFemininoEditarCli);
-            Controls.Add(rbMaculinoEditarCli);
-            Controls.Add(pictureBox1);
-            Controls.Add(btnSalvarEditarCli);
-            Controls.Add(txtCpfEditarCli);
-            Controls.Add(lblCpfEdiatrCli);
-            Controls.Add(txtEmailEditarCli);
-            Controls.Add(lblEmailEditarCLi);
-            Controls.Add(lblNomEditarCli);
-            Controls.Add(txtNome);
+            ClientSize = new Size(1184, 761);
+            Controls.Add(pnlEditarCliente);
             Name = "TelaEditarCliente";
             Text = "TelaEditarCliente";
             WindowState = FormWindowState.Maximized;
             Load += TelaEditarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlEditarCliente.ResumeLayout(false);
+            pnlEditarCliente.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -207,5 +219,6 @@
         private RadioButton rbFemininoEditarCli;
         private Label lblSexoEditarCli;
         private Button btnCancelarEditarCli;
+        private Panel pnlEditarCliente;
     }
 }

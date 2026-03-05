@@ -115,6 +115,19 @@ namespace LocadoraDeCarros
         {
          
         }
+
+        public AdicionarCarro()
+        {
+            InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            pnlAdicionarCarro.Left = (this.ClientSize.Width - pnlAdicionarCarro.Width) / 2;
+            pnlAdicionarCarro.Top = (this.ClientSize.Height - pnlAdicionarCarro.Height) / 2;
+        }
     }
    
 }

@@ -1,0 +1,117 @@
+**SCRIPT — TABELA Carro:**
+
+
+
+CREATE TABLE Carro (
+ Id INT IDENTITY(1,1) PRIMARY KEY,
+
+   Modelo VARCHAR(100) NOT NULL,
+
+   Marca VARCHAR(100) NOT NULL,
+
+   Cor VARCHAR(50) NOT NULL,
+
+   Preco DECIMAL(10,2) NOT NULL,
+
+   Ano INT NOT NULL,
+
+   Categoria VARCHAR(50) NOT NULL
+
+);
+
+
+
+**SCRIPT — TABELA Cliente:**
+
+
+
+CREATE TABLE Cliente (
+
+   Id INT IDENTITY(1,1) PRIMARY KEY,
+
+   Nome VARCHAR(100) NOT NULL,
+
+   Email VARCHAR(150) NOT NULL,
+
+   Sexo VARCHAR(1) NOT NULL,
+
+   Cpf VARCHAR(11) NOT NULL,
+
+   DataNascimento DATE NOT NULL,
+
+   TipoUsuario VARCHAR(50) NULL
+
+);
+
+
+
+**SCRIPT — TABELA Empréstimos:**
+
+
+
+CREATE TABLE Emprestimos (
+
+   Id INT IDENTITY(1,1) PRIMARY KEY,
+
+   IdCliente INT NOT NULL,
+
+   IdCarro INT NOT NULL,
+
+   Status VARCHAR(50) NOT NULL,
+
+   DataRetirada DATETIME NOT NULL,
+
+   DataDevolucao DATETIME NOT NULL,
+
+
+
+   FOREIGN KEY (IdCliente) REFERENCES Cliente(Id),
+
+   FOREIGN KEY (IdCarro) REFERENCES Carro(Id)
+
+);
+
+
+
+**INSERT EXEMPLO Cliente:**
+
+
+
+INSERT INTO Cliente
+
+(Nome, Email, Sexo, Cpf, DataNascimento, TipoUsuario)
+
+VALUES
+
+('João Silva', 'joao@email.com', 'M', '12345678901', '2000-05-10', 'Comum');
+
+
+
+**INSERT EXEMPLO Carro:**
+
+
+
+INSERT INTO Carro
+
+(Modelo, Marca, Cor, Preco, Ano, Categoria)
+
+VALUES
+
+('Civic', 'Honda', 'Preto', 95000.00, 2022, 'Ouro');
+
+
+
+**INSERT EXEMPLO Empréstimo:**
+
+
+
+INSERT INTO Emprestimos
+
+(IdCliente, IdCarro, Status, DataRetirada, DataDevolucao)
+
+VALUES
+
+(1, 1, 'Ativo', GETDATE(), DATEADD(DAY, 9, GETDATE()));
+
+
+

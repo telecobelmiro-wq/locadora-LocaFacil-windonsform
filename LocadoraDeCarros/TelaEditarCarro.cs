@@ -123,5 +123,18 @@ namespace LocadoraDeCarros
         {
 
         }
+
+        public TelaEditarCarro()
+        {
+            InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            pnlEditarCarro.Left = (this.ClientSize.Width - pnlEditarCarro.Width) / 2;
+            pnlEditarCarro.Top = (this.ClientSize.Height - pnlEditarCarro.Height) / 2;
+        }
     }
 }

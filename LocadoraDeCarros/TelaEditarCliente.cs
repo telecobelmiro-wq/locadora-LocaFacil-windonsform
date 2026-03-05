@@ -87,5 +87,18 @@ namespace LocadoraDeCarros
         {
 
         }
+
+        public TelaEditarCliente()
+        {
+            InitializeComponent();
+            this.Load += Centralizar;
+            this.Resize += Centralizar;
+        }
+
+        private void Centralizar(object sender, EventArgs e)
+        {
+            pnlEditarCliente.Left = (this.ClientSize.Width - pnlEditarCliente.Width) / 2;
+            pnlEditarCliente.Top = (this.ClientSize.Height - pnlEditarCliente.Height) / 2;
+        }
     }
 }
