@@ -84,6 +84,8 @@ INSERT INTO Cliente
 VALUES
 
 ('João Silva', 'joao@email.com', 'M', '12345678901', '2000-05-10', 'Comum');
+('Júlia Perereira', 'julia@email.com', 'F', '10987654321', '2008-07-10', 'Comum');
+('Felipe Mello', 'felipe@email.com', 'M', '11122233344', '2010-05-17', 'Comum');
 
 
 
@@ -97,7 +99,9 @@ INSERT INTO Carro
 
 VALUES
 
-('Civic', 'Honda', 'Preto', 95000.00, 2022, 'Ouro');
+('Civic SI', 'Honda', 'Preto', 120000.00, 2022, 'Ouro');
+('Focus', 'Ford', 'Branco', 60000.00, 2017, 'Prata');
+('206', 'Peugeot', 'Vermelho', 95000.00, 2012, 'Bronze');
 
 
 
